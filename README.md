@@ -21,12 +21,4 @@ Things you may want to cover:
 
 - Deployment instructions
 
-<<<<<<< Updated upstream
-* ...
 
-test2
-=======
-- ...
-
-sugamoto
->>>>>>> Stashed changes
