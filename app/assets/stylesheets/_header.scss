@@ -1,0 +1,25 @@
+.header{
+  background-color: white;
+  height: 100px;
+
+}
+
+.header-inner{
+  width: 700px;
+  height: 92px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+
+  &__top{
+    height: 40px;
+  }
+  &__lwr{
+    height: 44px;
+    margin: 8px 0 0;
+  }
+
+.lwr-menu{
+  float: left;
+  height: 44px;
+}
+}
