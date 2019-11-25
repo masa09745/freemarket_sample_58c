@@ -1,1 +1,42 @@
-=render "shared/header"
+.content
+  =render "shared/header"
+  
+  %section.content-main
+    %h1.goods-name test goods
+    %p.goods-detail
+      この商品はtestさんが出品した商品になります
+    .goods-main
+      .goods-photo
+      %table.goods-info
+        %tr
+          %th 出品者
+          %td テストさん
+        %tr
+          %th カテゴリー
+          %td テストカテゴリ
+        %tr
+          %th ブランド
+          %td テストブランド
+        %tr
+          %th 商品サイズ
+          %td M
+        %tr
+          %th 商品の状態
+          %td 非常に良い
+        %tr
+          %th 配送料の負担
+          %td 出品者の負担
+        %tr
+          %th 配送の方法
+          %td メルカリらくらく便
+        %tr
+          %th 配送元地域
+          %td 大阪
+        %tr
+          %th 発送日の目安
+          %td 1〜2日
+        
+    .price-box
+      %span.price-box__cash ¥1,800
+      %span.price-box__tax (税込)
+      %span.price-box_shipping 送料込み

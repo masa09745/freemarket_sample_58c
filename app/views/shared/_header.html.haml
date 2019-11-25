@@ -1,7 +1,29 @@
-.header
+%header.main-header
   .header-inner
     .header-inner__top
-    
+      %div
+        %a{href:"",}
+        = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
+      %form{action:"/", method:"post", class: "header-inner__top__search"}
+        %input{type:"search", placeholder:"何かお探しですか",class:"header-inner__input"}
     .header-inner__lwr
-      .lwr-menu
+      %nav.lwr-menu
+        %ul.lwr-menu__list
+          %li<
+            %h2
+              %a{href:"",class:"lwr-menu__category"}
+                %i= fa_icon 'list-ul'
+                %span カテゴリーから探す
+          %li<
+            %h2
+              %a{href:"",class:"lwr-menu__brand"}
+                %i= fa_icon 'tags'
+                %span ブランドから探す
       .lwr-user
+        %ul.lwr-user__menu
+          %li<
+            %a{class:"lwr-user__new btn-red"}
+              新規会員登録
+          %li<
+            %a{class:"lwr-user__login"}
+              ログイン
