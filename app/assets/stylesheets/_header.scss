@@ -1,5 +1,5 @@
 header{
-  background-color: white;
+  background-color: #fff;
   height: 100px;
   font-weight: 500;
   position: relative;
@@ -12,104 +12,66 @@ header{
   height: 92px;
   margin: 0 auto;
   padding: 8px 0 0;
+}
 
-  &__top{
-    height: 40px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    &__search{
-      margin-left: 45px;
-      width: 100%;
-      position: relative;
-    }
-  }
-  &__lwr{
-    height: 44px;
-    margin: 8px 0 0;
-  }
-  &__input{
-    width: 100%;
-    height: 40px;
-    background: #f5f5f5;
-    padding: 0 42px 0 10px;
+.inner-top{
+  width: 700px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  &__form{
+    margin-left: 45px;
+    width:100%;
   }
 }
 
-.lwr-menu{
-  float: left;
+.inner-lwr{
+  margin: 8px 0 0;
   height: 44px;
-  &__list{
-    li{
-    position: relative;
-    display: inline-block;
-    padding: 0 11px;
-    cursor: pointer;
-    text-align: -webkit-match-parent;
-    }
-    a{
-      display: block;
-      color: #333;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    h2{
-    font-size: 14px;
-    font-weight: 400;
-    }
-  }
 }
 
 .lwr-user{
   float: right;
-  height: 44px;
-  &__menu{
-    list-style: none;
-    li{
-      display: inline-block;
-    }
-  }
-  &__new{
-    padding: 0 6px;
-    border-radius: 4px;
-    text-align: center;
-    line-height: 26px;
-  }
-  &__login{
-    padding: 0 10px;
-    line-height: 30px;
-    border: 1px solid #0099e8;
-    background: #fff;
-    color: #0099e8;
-    border-radius: 4px;
-  }
-}
-
-.btn-red{
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-}
-
-.fa{
-  color: #ea352d;
-  font-size: 12px;
-  margin-right: 4px;
-  display: inline-block;
 }
 
 .lwr-menu{
+  float: left;
+  &__list{
+    li{
+      position: relative;
+      display: inline-block;
+      padding: 0 11px 0 0;
+      cursor: pointer;
+    }
+    h2{
+      font-size: 14px;
+      font-weight: 400;
+    }
+    a{
+    display: block;
+    color: #333;
+    }
+  }
+}
+
+.menu-category{
   position: relative;
   height: 44px;
   line-height: 32px;
-    span{
-      vertical-align: middle;
-    }
+}
+.menu-brand{
+  position: relative;
+  height: 44px;
+  line-height: 32px;
 }
 
-.icon-search{
-  position: absolute;
-  display: flex;
+.fa-list-ul{
+  color: #ea352d;
+  font-size: 12px;
+  margin-right: 4px;
+}
+.fa-tags{
+  color: #ea352d;
+  font-size: 12px;
+  margin-right: 4px;
 }

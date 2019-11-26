@@ -1,23 +1,23 @@
 %header.main-header
   .header-inner
-    .header-inner__top
+    .inner-top
       %div
-        %a{href:"",}
-        = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
-      %form{action:"/", method:"post", class: "header-search"}
-        %input{type:"search", placeholder:"何かお探しですか",class:"header-search_input"}
+        %a{href:"#"}
+          = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
+      %form{action:"/", method:"post", class: "inner-top__form"}
+        %input{type:"search", placeholder:"何かお探しですか",class:"search-form"}
           = fa_icon 'search',class:"icon-search"
-    .header-inner__lwr
+    .inner-lwr
       %nav.lwr-menu
         %ul.lwr-menu__list
           %li<
             %h2
-              %a{href:"",class:"lwr-menu__category"}
+              %a{href:"",class:"menu-category"}
                 = fa_icon 'list-ul'
                 %span カテゴリーから探す
           %li<
             %h2
-              %a{href:"",class:"lwr-menu__brand"}
+              %a{href:"",class:"menu-brand"}
                 = fa_icon 'tags'
                 %span ブランドから探す
       .lwr-user
