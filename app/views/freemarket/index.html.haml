@@ -1,0 +1,70 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "UTF-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %link{href: "style.css", rel: "stylesheet"}/
+    %link{crossorigin: "anonymous", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css", integrity: "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS", rel: "stylesheet"}/
+    %title Document
+  %body
+    %header
+    #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+        %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+        %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+      .carousel-inner
+        .carousel-item.active
+          %svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100{"aria-label" => "Placeholder: First slide", focusable: "false", height: "400", preserveaspectratio: "xMidYMid slice", role: "img", width: "800", xmlns: "http://www.w3.org/2000/svg"}
+            %title Placeholder
+            %rect{fill: "#777", height: "100%", width: "100%"}
+            %text{dy: ".3em", fill: "#555", x: "50%", y: "50%"} First slide
+        .carousel-item
+          %svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100{"aria-label" => "Placeholder: Second slide", focusable: "false", height: "400", preserveaspectratio: "xMidYMid slice", role: "img", width: "800", xmlns: "http://www.w3.org/2000/svg"}
+            %title Placeholder
+            %rect{fill: "#666", height: "100%", width: "100%"}
+            %text{dy: ".3em", fill: "#444", x: "50%", y: "50%"} Second slide
+        .carousel-item
+          %svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100{"aria-label" => "Placeholder: Third slide", focusable: "false", height: "400", preserveaspectratio: "xMidYMid slice", role: "img", width: "800", xmlns: "http://www.w3.org/2000/svg"}
+            %title Placeholder
+            %rect{fill: "#555", height: "100%", width: "100%"}
+            %text{dy: ".3em", fill: "#333", x: "50%", y: "50%"} Third slide
+      %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
+        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+        %span.sr-only Previous
+      %a.carousel-control-next{"data-slide" => "next", href: "#carouselExampleIndicators", role: "button"}
+        %span.carousel-control-next-icon{"aria-hidden" => "true"}
+        %span.sr-only Next
+    .container
+      .tag
+        %h2 人気のカテゴリー
+        %ul
+          %li レディース
+          %li メンズ
+          %li 家電・スマホ・カメラ
+          %li おもちゃ・ホビー・グッズ
+      .section
+        .content
+          .item
+            %h2 レディース新着アイテム
+            %a{href: ""} もっと見る 〉
+          .list
+            %ul
+              %li
+        .item
+          %h2 メンズ新着アイテム
+          %a{href: ""} もっと見る
+        .item
+          %h2 家電・スマホ・カメラ新着アイテム
+          %a{href: ""} もっと見る
+        .item
+          %h2 おもちゃ・ホビー・グッズ新着アイテム
+          %a{href: ""} もっと見る
+    %footer
+    / Optional JavaScript
+    / jQuery first, then Popper.js, then Bootstrap JS
+    %script{crossorigin: "anonymous", integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
+    %script{crossorigin: "anonymous", integrity: "sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut", src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"}
+    %script{crossorigin: "anonymous", integrity: "sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k", src: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"}
