@@ -23,6 +23,10 @@ header{
     &__search{
       margin-left: 45px;
       width: 100%;
+<<<<<<< Updated upstream
+=======
+      position: relative;
+>>>>>>> Stashed changes
     }
   }
   &__lwr{
@@ -106,4 +110,12 @@ header{
     span{
       vertical-align: middle;
     }
+<<<<<<< Updated upstream
+=======
+}
+
+.icon-search{
+  position: absolute;
+  display: flex;
+>>>>>>> Stashed changes
 }

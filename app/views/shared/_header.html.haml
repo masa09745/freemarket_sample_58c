@@ -4,20 +4,34 @@
       %div
         %a{href:"",}
         = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
+<<<<<<< Updated upstream
       %form{action:"/", method:"post", class: "header-inner__top__search"}
         %input{type:"search", placeholder:"何かお探しですか",class:"header-inner__input"}
+=======
+      %form{action:"/", method:"post", class: "header-search"}
+        %input{type:"search", placeholder:"何かお探しですか",class:"header-search_input"}
+          = fa_icon 'search',class:"icon-search"
+>>>>>>> Stashed changes
     .header-inner__lwr
       %nav.lwr-menu
         %ul.lwr-menu__list
           %li<
             %h2
               %a{href:"",class:"lwr-menu__category"}
+<<<<<<< Updated upstream
                 %i= fa_icon 'list-ul'
+=======
+                = fa_icon 'list-ul'
+>>>>>>> Stashed changes
                 %span カテゴリーから探す
           %li<
             %h2
               %a{href:"",class:"lwr-menu__brand"}
+<<<<<<< Updated upstream
                 %i= fa_icon 'tags'
+=======
+                = fa_icon 'tags'
+>>>>>>> Stashed changes
                 %span ブランドから探す
       .lwr-user
         %ul.lwr-user__menu
