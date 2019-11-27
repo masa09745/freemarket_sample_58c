@@ -49,92 +49,88 @@ header{
   }
 }
 
-
 .inner-lwr{
-  margin: 8px 0 0;
-  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
+.lwr-menu{
+  display: flex;
+  float: left;
+  &__category{
+    cursor: pointer;
+    height: 44px;
+    position: relative;
+    padding: 0px 10px;
+  }
+  &__brand{
+    cursor: pointer;
+    height: 44px;
+    position: relative;
+    padding: 0px 10px;
+  }
+}
+.menu{
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  white-space: nowrap;
+  i{
+    max-width: 100%;
+    max-height: 100%;
+    color: rgb(234, 53, 45);
+    height: 12px;
+    margin-right: 4px;
+  }
+}
+
+.fa-search{
+  height: 14px;
+  width: 14px;
+  margin-top: 2px;
+}
+
+
 .lwr-user{
-  float: right;
-  &__menu{
-    li{
-      display: inline-block;
-    }
+  display: flex;
+  &__new{
+    text-align: center;
+  }
+  &__login{
+    text-align: center;
+    margin-left: 11px;
   }
 }
 
 .user-new{
   display: block;
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
+  font-size: 14px;
+  padding: 8px 10px;
+  background-color: rgb(234, 53, 45);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(234, 53, 45);
+  border-image: initial;
   border-radius: 4px;
-  text-align: center;
-  padding: 0 10px;
-  line-height: 30px;
 }
 .user-login{
   display: block;
-  border: 1px solid #0099e8;
-  background: #fff;
-  color: #0099e8;
-  padding: 0 10px;
-  line-height: 30px;
+  font-size: 14px;
+  padding: 8px 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 149, 238);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 149, 238);
+  border-image: initial;
   border-radius: 4px;
-  text-align: center;
-  display: inline-block;
-  margin: 0 0 0 8px;
-}
-
-.lwr-menu{
-  float: left;
-  &__list{
-    li{
-      position: relative;
-      display: inline-block;
-      padding: 0 11px 0 0;
-      cursor: pointer;
-    }
-    h2{
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-    a{
-    display: block;
-    color: #333;
-    text-decoration: none;
-    }
-  }
 }
 
 
-.menu-category{
-  position: relative;
-  height: 44px;
-  line-height: 32px;
-  font-weight: 700;
-}
-.menu-brand{
-  position: relative;
-  height: 44px;
-  line-height: 32px;
-  font-weight: 700;
-}
-
-.fa-list-ul{
-  color: #ea352d;
-  font-size: 12px;
-  margin-right: 4px;
-}
-.fa-tags{
-  color: #ea352d;
-  font-size: 12px;
-  margin-right: 4px;
-}
-.fa-search{
-  height: 14px;
-  width: 14px;
-  margin-top: 2px;
+a{
+  text-decoration: none;
+  color: #333;
 }

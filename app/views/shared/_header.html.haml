@@ -9,23 +9,19 @@
         %button{type:"submit", class:"search-form__icon"}
           = fa_icon 'search',class:"icon"
     .inner-lwr
-      %nav.lwr-menu
-        %ul.lwr-menu__list
-          %li<
-            %h2
-              %a{href:"",class:"menu-category"}
-                = fa_icon 'list-ul'
-                %span カテゴリーから探す
-          %li<
-            %h2
-              %a{href:"",class:"menu-brand"}
-                = fa_icon 'tags'
-                %span ブランドから探す
+      .lwr-menu
+        .lwr-menu__category
+          %a{href:"",class:"menu"}
+            = fa_icon 'list-ul'
+            %span カテゴリーから探す
+        .lwr-menu__brand
+          %a{href:"",class:"menu"}
+            = fa_icon 'tags'
+            %span ブランドから探す
       .lwr-user
-        %ul.lwr-user__menu
-          %li<
-            %a{class:"user-new btn-red"}
-              新規会員登録
-          %li<
-            %a{class:"user-login"}
-              ログイン
+        .lwr-user__new
+          %a{class:"user-new btn-red"}
+            新規会員登録
+        .lwr-user__login
+          %a{class:"user-login"}
+            ログイン
