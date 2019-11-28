@@ -33,12 +33,12 @@ body{
   }
   
   &__category-bottom{
-  height: 100vh;
+  height: 100%;
   background-color: rgb(239, 239, 239);
-    &__text{
-      display: flex;
-      justify-content: space-between;
-      padding: 42px 0;
+  .item{
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 0;
 
       & h2{
       font-size:24px;
