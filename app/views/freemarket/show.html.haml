@@ -1,13 +1,14 @@
 .content
   =render "shared/header"
-  
+
   %section.content-main
-    %h1.goods-name test goods
-    %p.goods-detail
+    %h1.goods-name サンプル商品
+    %p.goods-info
       この商品はtestさんが出品した商品になります
     .goods-main
       .goods-photo
-      %table.goods-info
+        .goods-photo__main
+      %table.goods-data
         %tr
           %th 出品者
           %td テストさん
@@ -35,8 +36,29 @@
         %tr
           %th 発送日の目安
           %td 1〜2日
-        
     .price-box
       %span.price-box__cash ¥1,800
       %span.price-box__tax (税込)
       %span.price-box_shipping 送料込み
+
+    %a.buy-btn
+      購入画面に進む
+    .goods-detail
+      %p.goods-detail_comment
+        これはテスト商品です。
+
+        テストのために出品しました。
+        新品未使用となります。
+    .btn-box
+  .message
+  .another-goods
+    .another-goods__back
+    .another-goods__next
+  .sns-link
+    .facebook
+    .twetter
+    .line
+    .pintalest
+  .user-items
+  
+
