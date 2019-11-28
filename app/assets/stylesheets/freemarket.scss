@@ -1,9 +1,14 @@
 @import "variable";
 
+@mixin card-item{
+
+};
 * {box-sizing:border-box}
 
 body{
   font-size:14px;
+  background-color:$back-color;
+
 }
 
 .toppage-main{
@@ -30,19 +35,19 @@ body{
     }
   &__category-bottom{
     display: block;
-    width: 1020px;
     height: 100%;
+    width: 1020px;
     background-color: rgb(245, 245, 245);
     padding: 42px 0 100px;
     flex-direction: column;
-    margin: auto;
+    margin:  auto ;
   }
   &__text {
     font-size: 24px;
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     float: center;
     box-sizing: border-box;
-    width: 1020px;
+
     height: 33px;
     text-align: left;
     font-weight: 900;
