@@ -1,6 +1,7 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "./reset";
 @import "./header";
-@import "font-awesome";
 @import "./show";
 
 body{
@@ -16,4 +17,5 @@ body{
 *{
   border-style: solid;
   border-width: 0;
+  box-sizing: border-box;
 }

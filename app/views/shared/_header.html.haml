@@ -7,16 +7,16 @@
       %form{action:"/", method:"post", class: "inner-top__form"}
         %input{type:"search", placeholder:"何かお探しですか",class:"search-form"}
         %button{type:"submit", class:"search-form__icon"}
-          = fa_icon 'search',class:"icon"
+          = icon('fas','search',class:'icon')
     .inner-lwr
       .lwr-menu
         .lwr-menu__category
           %a{href:"",class:"menu"}
-            = fa_icon 'list-ul'
+            =icon('fas', 'list-ul')
             %span カテゴリーから探す
         .lwr-menu__brand
           %a{href:"",class:"menu"}
-            = fa_icon 'tags'
+            =icon('fas', 'tags')
             %span ブランドから探す
       .lwr-user
         .lwr-user__new
