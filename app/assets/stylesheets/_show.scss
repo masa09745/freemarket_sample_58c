@@ -188,3 +188,71 @@ table{
     font-size: 18px;
   }
 }
+
+.user-items{
+  width: 700px;
+  margin: 0 auto;
+  h2{
+    font-size: 22px;
+    margin: 24px 0 8px;
+    a{
+      color: #0099e8;
+    }
+  }
+  &__main{
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.item-content{
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  a{
+    display: block;
+    cursor: pointer;
+  }
+  &__photo{
+    width: 220px;
+    height: 220px;
+    position: relative;
+    vertical-align: middle;
+  }
+  &__detail{
+    height: 110px;
+    padding: 16px;
+  }
+}
+
+.item3{
+  margin-right: 0;
+}
+
+.item-photo{
+  width: 100%;
+  margin: auto 0;
+}
+
+.item-name{
+  font-weight: 400;
+  font-size: 16px;
+  height: 3em;
+
+}
+
+.item-box{
+  display: flex;
+  margin-top: 8px;
+  justify-content: space-between;
+  &__price{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  &__like{
+    color: #ccc;
+  }
+}
