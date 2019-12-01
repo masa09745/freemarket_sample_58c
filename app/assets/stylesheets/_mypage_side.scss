@@ -1,0 +1,46 @@
+.mypage-side{
+  float:left;
+  width:280px;
+  margin:0 40px 0 0;
+  color: #333;
+  &--nav__list{
+    margin-bottom: 40px;
+  &__item{
+    border-top: 1px solid #eee;
+    position: relative;
+    display: block;
+    
+    padding: 16px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    &:hover{
+      background-color:#eee;
+      .fa{
+        color:black;
+
+      }
+     }
+     &.active{
+      background-color:#eee;
+      font-weight: 600;
+      .fa{
+        color: black;
+      }
+    }
+    .fa{
+      position:absolute;
+      top:50%;
+      right:16%;
+      transform: translate(0, -50%);
+      color: #ccc;
+    }
+  }
+   
+ } 
+ 
+}
+.mypage-side--nav__head{
+  font-weight: bold; 
+}
