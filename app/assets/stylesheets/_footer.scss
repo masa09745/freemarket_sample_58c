@@ -1,3 +1,7 @@
+*:not(br){
+  line-height: 1;
+}
+
 * {
   box-sizing: border-box;
 } 
@@ -21,12 +25,16 @@
   .smallbox {
     display: inline-block;
     vertical-align: top;
+    word-break: break-all;
+    width: 200px;
+    padding-right: 20px;
   }
 
   .title {
     color: white;
     font-size: 16px;
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    margin-bottom: 20px;
 
     .atitle {
       font-weight: 600;
@@ -43,14 +51,14 @@
     cursor: hand;
 
     .list {
-      padding-top: 16px;
-      word-wrap: break-word;
+      display: block;
+      width: auto;
       opacity: 0.7;
       text-decoration: none;
-    }
-
-    .list:hover{
-      text-decoration: underline;
+      padding-bottom: 20px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .link {
@@ -58,32 +66,28 @@
     }
 
     .fa-twitter {
-      font-size: 20px;
+      font-size: 30px;
       margin-top: 20px;
       margin-right: 20px;
       color: white;
     }
 
     .fa-facebook-square {
-      font-size: 20px;
+      font-size: 30px;
       color: white;
     }
   }
 
-  .smallbox {
-    width: 200px;
-    padding-right: 20px;
-  }
-
   .bottombox {
     margin: 30px auto 20px;
+    position: relative;
   }
 
   .logo {
     color: white;
     position: absolute;
-    bottom: 310px;
-    left: 120px;
+    bottom: 0px;
+    left: 110px;
   }
 
   .corporatemark {
@@ -95,6 +99,7 @@
     text-align: center;
     list-style: none;
     font-size: 12px;
+    padding-bottom: 20px;
 
     .acorporatemark {
       font-weight: 600;
