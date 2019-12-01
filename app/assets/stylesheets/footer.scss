@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+} 
+
+.footer {
+  background-color: rgb(34, 34, 34);
+  padding: 0px 20px 10px;
+
+  .topbox {
+    width: 1020px;
+    margin: 0px auto;
+  }
+
+  .box {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 18px;
+    padding: 0px 40px 0px 0px;
+  }
+
+  .smallbox {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .title {
+    color: white;
+    font-size: 16px;
+    font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+
+    .atitle {
+      font-weight: 600;
+    }
+  }
+
+  .menu {
+    width: auto;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    font-size: 12px;
+    font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    cursor: pointer;
+    cursor: hand;
+
+    .list {
+      padding-top: 16px;
+      word-wrap: break-word;
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    .list:hover{
+      text-decoration: underline;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+
+    .fa-twitter {
+      font-size: 20px;
+      margin-top: 20px;
+      margin-right: 20px;
+      color: white;
+    }
+
+    .fa-facebook-square {
+      font-size: 20px;
+      color: white;
+    }
+  }
+
+  .smallbox {
+    width: 200px;
+    padding-right: 20px;
+  }
+
+  .bottombox {
+    margin: 30px auto 20px;
+  }
+
+  .logo {
+    color: white;
+    position: absolute;
+    bottom: 310px;
+    left: 120px;
+  }
+
+  .corporatemark {
+    color: white;
+    position: relative;
+  }
+
+  .corporatemark {
+    text-align: center;
+    list-style: none;
+    font-size: 12px;
+
+    .acorporatemark {
+      font-weight: 600;
+    }
+  }
+
+}
+
+
+
+
