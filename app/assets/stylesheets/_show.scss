@@ -131,6 +131,34 @@ table{
 .message{
   width: 700px;
   margin: 8px auto;
+  background-color: #fff;
+  &-box{
+    padding:24px;
+  }
+  &-form{
+    padding: 24px;
+    &__content{
+      p{
+        font-size: 14px;
+        background-color: #fff6de;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+.form-text{
+  margin-top: 8px;
+}
+
+form-btn{
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  span{
+    font-size: 14px;
+    vertical-align: middle;
+  }
 }
 
 .another-goods{
@@ -138,6 +166,9 @@ table{
   margin: 24px auto 0;
   display: flex;
   justify-content: space-between;
+  a{
+    color: #0099e8;
+  }
   &__back{
     width: 45%;
   }

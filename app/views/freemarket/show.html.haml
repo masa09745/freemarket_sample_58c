@@ -64,17 +64,12 @@
           %span あんしん・あんぜんへの取り組み
   .message
     .message-box
-      .message-contents
-        .message-contents
-          %a{href:"", class:"user-icon"}
-          .message-inner
-            .message-box__text
-              はじめまして。　これはテストですか？
-        .message-contents
-          %a{href:"", class:"user-icon"}
-          .message-inner
-            .message-box__text
-              コメントありがとうございます。　これはテストです。
+    .message-form
+      %form.message-form__content
+        %p 相手のことを考え丁寧なコメントを心がけましょう。　不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea{type:'text', name:'message', class:'form-text'}
+        %button{type:'submit', class:'form-btn'}
+          %span コメントする
 
   .another-goods
     .another-goods__back
@@ -83,8 +78,8 @@
         テスト戻る
     .another-goods__next
       %a{href:""}
-        =icon('fas', 'chevron-right')
         テスト進む
+        =icon('fas', 'chevron-right')
   .sns-links
     .sns-links__box
       .facebook
