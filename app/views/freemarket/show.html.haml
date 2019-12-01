@@ -150,6 +150,67 @@
               .item-box__like
                 =icon('far', 'heart', class:'icon-like')
                 %span 5
+  .category-items
+    %h2
+      %a{href:""}サンプル商品 その他の出品
+    .category-items__main
+      %section.item-content
+        %a{href:""}
+          .item-content__photo
+            =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
+          .item-content__detail
+            %h3.item-name
+              テストベッド１
+            .item-box
+              .item-box__price
+                ¥1,000
+              .item-box__like
+                =icon('far', 'heart', class:'icon-like')
+                %span 5
+      %section.item-content
+        %a{href:""}
+          .item-content__photo
+            =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
+          .item-content__detail
+            %h3.item-name
+              テストベッド１
+            .item-box
+              .item-box__price
+                ¥1,000
+              .item-box__like
+                =icon('far', 'heart', class:'icon-like')
+                %span 5
+      %section.item-content.item3
+        %a{href:""}
+          .item-content__photo
+            =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
+          .item-content__detail
+            %h3.item-name
+              テストベッド１
+            .item-box
+              .item-box__price
+                ¥1,000
+              .item-box__like
+                =icon('far', 'heart', class:'icon-like')
+                %span 5
+      %section.item-content
+        %a{href:""}
+          .item-content__photo
+            =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
+          .item-content__detail
+            %h3.item-name
+              テストベッド１
+            .item-box
+              .item-box__price
+                ¥1,000
+              .item-box__like
+                =icon('far', 'heart', class:'icon-like')
+                %span 5
+  .bottom-category
+    .bottom-category__class
+      %a{href:""} テストホーム
+      =icon('fas', 'chevron-right')
+      %span テスト商品
 
   = render partial: 'shared/footer'
 
