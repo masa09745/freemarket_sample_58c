@@ -8,8 +8,16 @@
           %form.sell-content__form
             .sell.upload
             .sell.name
-              .form.name
-              .form.info
+              .form-name
+                %label 商品名
+                %span.must 必須
+                .form-name__input
+                %input{class:"input-name", placeholder:"商品名(必須　４０文字まで)"}
+              .form-info
+                %label 商品の説明
+                %span.must 必須
+                .form-info__text
+                %textarea{class:"text-info", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"}
             .sell.detail
               %h3.detail-category 商品詳細
               .sell-form
