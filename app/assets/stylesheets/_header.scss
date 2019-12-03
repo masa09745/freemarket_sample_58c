@@ -64,6 +64,12 @@ header{
     position: relative;
     padding: 0px 10px;
   }
+  &__category:hover{
+    .category-list{
+      display: block;
+    }
+  }
+
   &__brand{
     cursor: pointer;
     height: 44px;
@@ -71,6 +77,62 @@ header{
     padding: 0px 10px;
   }
 }
+.category-list{
+  display: none;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  color: #333;
+  &__parent{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 224px;
+  }
+  &__child{
+    position: absolute;
+    left: 224px;
+    top: 0px;
+    background-color: rgb(255, 255, 255);
+    bottom: 0px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 200px;
+    li{
+      width: 200px;
+      .child-name{
+        display: block;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+}
+
+.list-parent{
+  width: 224px;
+}
+
+.parent-name{
+  display: block;
+  font-size: 14px;
+  line-height: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px 16px;
+}
+
+.parent-name:hover{
+  .category-list__child{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
 .menu{
   display: block;
   font-size: 14px;
