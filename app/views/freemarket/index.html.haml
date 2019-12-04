@@ -6,7 +6,7 @@
           = image_tag 'index_keyvisual.png', class: 'toppage-slider__contents-first--camp-photo', height: '390px'
     %li.toppage-slider__contents-second
       .toppage-slider__contents-second-content
-        = image_tag 'top-banner-main-device.png', class: 'toppage-slider__contents-second-content--device-photo',size: '440x390'
+        = image_tag 'device.png', class: 'toppage-slider__contents-second-content--device-photo',size: '440x390'
         .toppage-slider__contents-second-content-wrapper
           .toppage-slider__contents-second-content-wrapper--large-text
             スマホで かんたん
@@ -22,10 +22,10 @@
             .toppage-slider__contents-second-content-wrapper-space
             = link_to '' do
               = image_tag 'google-play',class: 'toppage-slider__contents-second-content-wrapper--google-logo',size: '170x50'
-    %li.toppage-slider__contents-third
-      .toppage-slider__contents-first-content
-        = link_to '' do
-          = image_tag '', class: 'toppage-slider__contents-first--merpay-photo',height: '390px'
+    -# %li.toppage-slider__contents-third
+    -#   .toppage-slider__contents-first-content
+    -#     = link_to '' do
+    -#       = image_tag '', class: 'toppage-slider__contents-first--merpay-photo',height: '390px'
 
 
 .toppage-main
@@ -78,10 +78,19 @@
           もっと見る
       .toppage-main__item
         アイテム表示
-    .toppage-main__category-name
+    .topage-main__category-name
       .toppage-main__text
         おもちゃ・ホビー・グッズ新着アイテム
         .toppage-main__item-more
           もっと見る
       .toppage-main__item
         アイテム表示
+
+-# 出品ボタン
+.toppage-button
+  .toppage-button__main
+    = link_to('https://www.yahoo.co.jp/', class:"toppage-button__main-link") do
+      .toppage-button__main-up
+        %p 出品
+      .toppage-button__main-bottom
+        %i.fas.fa-camera.fa-3x
