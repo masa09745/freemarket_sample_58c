@@ -67,6 +67,6 @@ body{
       height: 573px;
       width: 1020px;
     }
-    @include card-item();
+    @include card-item();//アイテム表示
 }
 
