@@ -3,10 +3,10 @@
     %li.toppage-slider__contents-first
       .toppage-slider__contents-first-content
         = link_to '' do
-          = image_tag 'index_keyvisual.png', height: '390px', class: 'toppage-slider__contents-first--camp-photo'
+          = image_tag 'index_keyvisual.png', class: 'toppage-slider__contents-first--camp-photo', height: '390px'
     %li.toppage-slider__contents-second
       .toppage-slider__contents-second-content
-        = image_tag 'top-banner-main-device.png',size: '440x390', class: 'toppage-slider__contents-second-content--device-photo'
+        = image_tag 'top-banner-main-device.png', class: 'toppage-slider__contents-second-content--device-photo',size: '440x390'
         .toppage-slider__contents-second-content-wrapper
           .toppage-slider__contents-second-content-wrapper--large-text
             スマホで かんたん
@@ -18,20 +18,14 @@
             購入時も安心な独自システムのアプリです
           .toppage-slider__contents-second-content-wrapper-logos
             = link_to '' do
-              = image_tag '' ,class: 'toppage-slider__contents-second-content-wrapper--app-logo', size: '170x50'
+              = image_tag 'app-store.png' ,class: 'toppage-slider__contents-second-content-wrapper--app-logo', size: '170x50'
             .toppage-slider__contents-second-content-wrapper-space
             = link_to '' do
-              = image_tag '',id: 'toppage-slider__contents-second-content-wrapper--google-logo',size: '170x50'
+              = image_tag 'google-play',class: 'toppage-slider__contents-second-content-wrapper--google-logo',size: '170x50'
     %li.toppage-slider__contents-third
       .toppage-slider__contents-first-content
         = link_to '' do
-          = image_tag '', height: '390px', class: 'toppage-slider__contents-first--merpay-photo'
-  .slide-dots-contents
-    %ul.slick-dots
-      %li.slick-active{ role: 'presentation' }
-        %button#slick-slide-control00
-      %li{ role: 'presentation' }
-        %button#slick-slide-control01
+          = image_tag '', class: 'toppage-slider__contents-first--merpay-photo',height: '390px'
 
 
 .toppage-main
