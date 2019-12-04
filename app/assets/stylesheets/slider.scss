@@ -49,7 +49,7 @@ button{
   width: 100%;
     &-content  {
       width: 100vw;
-      background-image: image-url('index_keyvisual.jpg');
+      background-image: image-url('');
       background-size: 10% auto;
       background-repeat: repeat;
       }
@@ -66,13 +66,13 @@ button{
     z-index: 1;
       &-content {
         align-items: center;
-        background-image: image-url('top-banner-main-device.jpg');
+        background-image: image-url('');
         background-size:  cover;
         position: relative;
         height: 390px;
         &--device-photo {
           position: absolute;
-          right: 500px;
+          right: 200px;
         }
         &-wrapper {
           width: 780px;
@@ -117,7 +117,7 @@ button{
   .fa-chevron-right {
     color: white;
     text-shadow: -1px 0px 8px gray;
-    font-size: 46px; 
+    font-size: 46px;
     position: absolute;
     bottom: 200px;
     right: 60px;
