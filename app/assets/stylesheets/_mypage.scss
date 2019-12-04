@@ -135,6 +135,9 @@
   
       border-bottom: 1px solid #eee;
       position: relative;
+      :hover{
+        background-color:#eee;
+       }
       .tab__content__item--link{
         display: block;
         height: 64px;
