@@ -74,7 +74,7 @@ button{
         height: 390px;
         &--device-photo {
           position: absolute;
-          right: 151px;
+          right: 500px;
         }
         &-wrapper {
           width: 780px;
@@ -89,7 +89,7 @@ button{
             font-weight: 600;
             line-height: 1.4;
             margin-bottom: 16px;
-            // color: $black;
+            color: black;
             }
           &--small-text {
             white-space: normal;
@@ -97,7 +97,7 @@ button{
             font-size: 18px;
             line-height: 1.77777;
             margin-bottom: 24px;
-            // color: $black;
+            color: black;
         }
       }
     }
@@ -106,7 +106,7 @@ button{
 .toppage-slider__wrapper {
   position: relative;
   .fa-chevron-left {
-    // color: $white;
+    color: white;
     text-shadow: -1px 0px 8px gray;
     font-size: 46px;
     position: absolute;
@@ -117,7 +117,7 @@ button{
   }
 
   .fa-chevron-right {
-    // color: $white;
+    color: white;
     text-shadow: -1px 0px 8px gray;
     font-size: 46px; 
     position: absolute;
