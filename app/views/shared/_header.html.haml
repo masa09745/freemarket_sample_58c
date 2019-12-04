@@ -107,6 +107,11 @@
             =icon('fas', 'tags')
             %span ブランドから探す
       .lwr-user
+       -if user_signed_in?
+        .lwr-user__info
+        .lwr-user__todo
+        .lwr-user__mypage
+
         .lwr-user__new
           %a{class:"user-new btn-red"}
             新規会員登録
