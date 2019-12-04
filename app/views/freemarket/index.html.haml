@@ -12,7 +12,7 @@
                 %label 商品名
                 %span.must 必須
                 .form-name__input
-                %input{class:"input-name", placeholder:"商品名(必須　４０文字まで)"}
+                  %input{class:"input-name", placeholder:"商品名(必須　４０文字まで)"}
               .form-info
                 %label 商品の説明
                 %span.must 必須
@@ -21,12 +21,50 @@
             .sell.detail
               %h3.detail-category 商品詳細
               .sell-form
+                .form-pulldown
+                  %label カテゴリ
+                  %span.must 必須
+                  .category-pulldown
+                    %select.pulldown
+                .form-pulldown
+                  %label 商品の状態
+                  %span.must 必須
+                  .condition-pulldown
+                    %select.pulldown
             .sell.shipping
               %h3.shipping-about 配送について
               .sell-form
+                .form-pulldown
+                  %label 配送料の負担
+                  %span.must 必須
+                  .shipping-pulldown
+                    %select.pulldown
+                .form-pulldown
+                  %label 発送元の地域
+                  %span.must 必須
+                  .shipping-pulldown
+                    %select.pulldown
+                .form-pulldown
+                  %label 発送までの日数
+                  %span.must 必須
+                  .shipping-pulldown
+                    %select.pulldown
+
             .sell.price
               %h3.price-limit 販売価格(300~9,999,999)
               .sell-form
+                .sell-box
+                  .sell-box__input
+                    .price-input-box
+                      %label 価格
+                      .price-input
+                        ¥
+                        %input{class:"input-price", placeholder:"例) 300"}
+
+                  .sell-box__tax
+                    %label 販売手数料(10%)
+                  .sell-box__total
+                    %label 販売利益
             .sell.submit-btn
               .sell-text
                 %p 禁止されている出品、行為を必ずご確認ください
