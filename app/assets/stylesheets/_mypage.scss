@@ -24,7 +24,9 @@
     &:hover{
       background-color:#eee;
       .fa{
-        color:black;
+        color:#333;
+        transform: translateX(5px) translateY(-50%);
+        transition: 0.2s;
 
       }
      }
@@ -32,10 +34,13 @@
       background-color:#eee;
       font-weight: 600;
       .fa{
-        color: black;
+        color: #333;
+        
       }
     }
     .fa{
+      font-weight: 400;
+      font-size :20px;
       position:absolute;
       top:50%;
       right:16%;
