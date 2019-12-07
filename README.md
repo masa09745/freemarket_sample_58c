@@ -11,44 +11,32 @@
 
 ### users table
 
-| Column          | Type       | Options                                |
-| --------------- | ---------- | -------------------------------------- |
-| nickname        | string     | null: false                            |
-| email           | string     | null: false, unique: true              |
-| password        | string     | null: false                            |
-| mobile          | integer    | null: false, unique: true, index: true |
-| last_name       | string     | null: false                            |
-| first_name      | string     | null: false                            |
-| last_name_kana  | string     | null: false                            |
-| first_name_kana | string     | null: false                            |
-| birth_year      | string     | null: false                            |
-| birth_month     | string     | null: false                            |
-| birth_day       | string     | null: false                            |
-| postal_code     | integer    | null: true                             |
-| prefecture_id   | references | null: false, foreign_key: true         |
-| city            | string     | null: true                             |
-| address         | string     | null: true                             |
-| building_name   | string     | null: true                             |
-| profile_content | text       | null: true                             |
-| deleted_at      | datetime   | null: true                             |
+| Column          | Type     | Options                                |
+| --------------- | -------- | -------------------------------------- |
+| nickname        | string   | null: false                            |
+| email           | string   | null: false, unique: true              |
+| password        | string   | null: false                            |
+| mobile          | integer  | null: false, unique: true, index: true |
+| last_name       | string   | null: false                            |
+| first_name      | string   | null: false                            |
+| last_name_kana  | string   | null: false                            |
+| first_name_kana | string   | null: false                            |
+| birth_year      | string   | null: false                            |
+| birth_month     | string   | null: false                            |
+| birth_day       | string   | null: false                            |
+| postal_code     | integer  | null: true                             |
+| prefecture      | integer  | null: true                             |
+| city            | string   | null: true                             |
+| address         | string   | null: true                             |
+| building_name   | string   | null: true                             |
+| profile_content | text     | null: true                             |
+| deleted_at      | datetime | null: true                             |
 
 #### Association
 
 - belongs_to :deliver_address
-- belongs_to :prefecture
 - has_many :orders
 - has_many :freemarkets
-
-### prefectures table
-
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| prefecture | string | null: false |
-
-#### Association
-
-- has_many :users
-- has_many :deliver_addresses
 
 ### deliver_addresses table
 
@@ -60,7 +48,7 @@
 | last_name_kana  | string     | null: false                    |
 | first_name_kana | string     | null: false                    |
 | postal_code     | integer    | null: false                    |
-| prefecture      | string     | null: false                    |
+| prefecture      | integer    | null: false                    |
 | city            | string     | null: false                    |
 | street_address  | string     | null: false                    |
 | building_name   | string     | null: true                     |
@@ -69,8 +57,11 @@
 #### Association
 
 - belongs_to :user
-- belongs_to :prefecture
 - belongs_to :order
+
+#### Description
+
+- 都道府県データは"active_hash"という gem 利用前提の設計。id を格納。
 
 ### orders table
 
