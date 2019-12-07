@@ -34,7 +34,7 @@
 
 #### Association
 
-- belongs_to :deliver_addres
+- belongs_to :deliver_address
 - belongs_to :prefecture
 - has_many :orders
 - has_many :freemarkets
@@ -48,9 +48,9 @@
 #### Association
 
 - has_many :users
-- has_many :deliver_address
+- has_many :deliver_addresses
 
-### deliver_address table
+### deliver_addresses table
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -84,7 +84,7 @@
 
 - belongs_to :user
 - belongs_to :freemarket
-- belongs_to :deliver_addres
+- belongs_to :deliver_address
 
 ### freemarkets table
 
