@@ -74,6 +74,8 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
+gem 'carrierwave'
+gem 'fog-aws'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
