@@ -25,7 +25,7 @@
 | birth_month     | string     | null: false                            |
 | birth_day       | string     | null: false                            |
 | postal_code     | integer    | null: true                             |
-| prefectures_id  | references | null: false, foreign_key: true         |
+| prefecture_id   | references | null: false, foreign_key: true         |
 | city            | string     | null: true                             |
 | address         | string     | null: true                             |
 | building_name   | string     | null: true                             |
@@ -54,7 +54,7 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| users_id        | references | null: false, foreign_key: true |
+| user_id         | references | null: false, foreign_key: true |
 | last_name       | string     | null: false                    |
 | first_name      | string     | null: false                    |
 | last_name_kana  | string     | null: false                    |
@@ -76,8 +76,8 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| users_id           | references | null: false, foreign_key: true |
-| freemarkets_id     | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
+| freemarket_id      | references | null: false, foreign_key: true |
 | deliver_address_id | references | null: false, foreign_key: true |
 
 #### Association
@@ -88,20 +88,20 @@
 
 ### freemarkets table
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| users_id       | references | null: false, foreign_key: true |
-| item           | string     | null: false                    |
-| price          | integer    | null: false                    |
-| condition      | string     | null: false                    |
-| ship_charge    | string     | null: false                    |
-| ship_from      | string     | null: false                    |
-| ship_method    | string     | null: false                    |
-| ship_day       | string     | null: false                    |
-| description    | text       | null: false                    |
-| item_images_id | references | null: false, foreign_key: true |
-| categories_id  | references | null: false, foreign_key: true |
-| brands_id      | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user_id       | references | null: false, foreign_key: true |
+| item          | string     | null: false                    |
+| price         | integer    | null: false                    |
+| condition     | string     | null: false                    |
+| ship_charge   | string     | null: false                    |
+| ship_from     | string     | null: false                    |
+| ship_method   | string     | null: false                    |
+| ship_day      | string     | null: false                    |
+| description   | text       | null: false                    |
+| item_image_id | references | null: false, foreign_key: true |
+| category_id   | references | null: false, foreign_key: true |
+| brand_id      | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -114,10 +114,10 @@
 
 ### item_images table
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| image_url      | string     | null: false                    |
-| freemarkets_id | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| image_url     | string     | null: false                    |
+| freemarket_id | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -156,10 +156,10 @@
 
 ### categories_sizes table
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| categories_id | references | null: false, foreign_key: true |
-| sizes_id      | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| category_id | references | null: false, foreign_key: true |
+| size_id     | references | null: false, foreign_key: true |
 
 #### Association
 
