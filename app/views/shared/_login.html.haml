@@ -1,79 +1,35 @@
-
-.user
-  .user__icon
-    =link_to "/" do
-      %figure
-        = image_tag　('icon.png')
-      %h2.bold
-        nickname
-      .mypage-number
-        評価 20 出品数 31
-
-  %section.mypage__content
-    %ul.mypage__content--tabs
-      %li.active.mypage__content--tab
-        %h3
-          お知らせ 
-      %li.mypage__content--tab
-        %h3  
-          やることリスト
-    .tab__content
-      %ul
-        %li
-          =link_to "#",class: 'tab__content__item--link' do
-            %figure
-              =image_tag  ("/")
-            .tab__content__item--body
-              %p
-                通知はありません
-              = fa_icon "angle-right"
-        %li
-          =link_to "#",class: 'tab__content__item--link' do
-            %figure
-              =image_tag  ("/")
-            .tab__content__item--body
-              %p
-                通知はありません
-              = fa_icon "angle-right"      
-        %li
-          =link_to "#",class: 'tab__content__item--link' do
-            %figure
-              =image_tag  ("/")
-            .tab__content__item--body
-              %p
-                通知はありません
-              = fa_icon "angle-right"            
-        %li
-          =link_to "#",class: 'tab__content__item--link' do
-            %figure
-              =image_tag  ("/")
-            .tab__content__item--body
-              %p
-                通知はありません
-              = fa_icon "angle-right"           
-        %li
-          =link_to "#",class: 'tab__content__item--link' do
-            %figure
-              =image_tag  ("/")
-            .tab__content__item--body
-              %p
-                通知はありません
-              = fa_icon "angle-right"                  
-        %li.mypage-go 
-          =link_to "#",class:"mypage-go--list" do
-            一覧を見る 
-    .mypage__buy
-      .mypage__buy__head
-        購入した商品
-      %ul.mypage__buy__tabs
-        %li.active.mypage__buy__tabs--list.active
-          %p
-            取引中
-        %li.mypage__buy__tabs--list
-          %p
-            過去の取引
-      .mypage__buy__foot
-        %ul
-          %li.mypage__buy__foot--not-found
-            取引中の商品がありません  
+.account-page
+  .header
+    = "mercari"
+  
+  .main
+    .main__top
+      ="アカウントをお持ちでない方はこちら"
+      = link_to "新規館員登録" , ''
+    .main__middle
+      .btn-sns.btn-sns__facebook
+        = fa_icon "facebook" , class: "btn-sns--facebook" 
+        = link_to "Facebookで登録"
+      .btn-sns.btn-sns__google
+        = fa_icon  "google" , class: "btn-sns--google"
+        = link_to "Googleで登録" 
+    .main__under.form
+      = form_for [@message] do |f|
+        .form__field      
+          .form__field--input__email
+            = f.email_field :email ,placeholder: "メールアドレス"
+          .form__field--input__password
+            = f.password_field :passwoed ,placeholder:"パスワード"   
+          .form__field--login
+            = f.submit "ログイン"
+          .form__field--foeget
+            = link_to "パスワードお忘れの方" ''
+  .footer
+     %ul.footer__navi
+      %li 
+        = link_to "プライバシーポリシー"  ,''
+      %li
+        = linl_to "メルカリ利用規約" ,''
+      %lI  
+        = link_to "特定商取引に関する表記" ,'' 
       
