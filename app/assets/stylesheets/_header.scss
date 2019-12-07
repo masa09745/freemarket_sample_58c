@@ -8,14 +8,13 @@ header{
 }
 
 .header-inner{
-  width: 700px;
-  height: 92px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 8px 0 0;
 }
 
 .inner-top{
-  width: 700px;
+  max-width: 1020px;
   height: 40px;
   display: flex;
   justify-content: space-between;
@@ -64,6 +63,14 @@ header{
     position: relative;
     padding: 0px 10px;
   }
+  &__category:hover .category-list{
+    display: block;
+  }
+
+  &__category:hover span{
+    color: #0099e8;
+  }
+
   &__brand{
     cursor: pointer;
     height: 44px;
@@ -71,6 +78,85 @@ header{
     padding: 0px 10px;
   }
 }
+.category-list{
+  display: none;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  color: #333;
+  &__parent{
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 200px;
+  }
+}
+
+.list-parent{
+  width: 200px;
+  &__child{
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    background-color: #fff;
+    bottom: 0px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 200px;
+  }
+  .child-name{
+    display: block;
+    padding: 8px 16px;
+    }
+}
+
+.parent-name{
+  display: block;
+  font-size: 14px;
+  line-height: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px 16px;
+}
+.list-parent:hover .list-parent__child{
+  display: block;
+}
+.list-parent:hover .parent-name{
+  background-color: #ea362d;
+  color: #fff;
+}
+.list-child{
+  width: 200px;
+  &__son{
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    background-color: #fff;
+    bottom: 0px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 300px;
+  }
+  .son-name{
+    display: block;
+    padding: 8px 16px;
+    }
+}
+.list-child:hover .list-child__son{
+  display: block;
+}
+
+.list-child:hover .child-name{
+  background-color: #ccc;
+}
+
+.list-son:hover{
+  background-color: #ccc;
+}
+
+
+
+
 .menu{
   display: block;
   font-size: 14px;
@@ -80,7 +166,7 @@ header{
   i{
     max-width: 100%;
     max-height: 100%;
-    color: rgb(234, 53, 45);
+    color: #ea362d;
     height: 12px;
     margin-right: 4px;
   }
@@ -108,11 +194,11 @@ header{
   display: block;
   font-size: 14px;
   padding: 8px 10px;
-  background-color: rgb(234, 53, 45);
-  color: rgb(255, 255, 255);
+  background-color: #ea362d;
+  color: #fff;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(234, 53, 45);
+  border-color: #ea362d;
   border-image: initial;
   border-radius: 4px;
 }
@@ -120,15 +206,14 @@ header{
   display: block;
   font-size: 14px;
   padding: 8px 10px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 149, 238);
+  background-color: #fff;
+  color: #0095ee;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(0, 149, 238);
+  border-color: #0095ee;
   border-image: initial;
   border-radius: 4px;
 }
-
 
 a{
   text-decoration: none;
