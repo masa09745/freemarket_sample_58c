@@ -101,6 +101,7 @@
 | description   | text       | null: false                    |
 | item_image_id | references | null: false, foreign_key: true |
 | category_id   | references | null: false, foreign_key: true |
+| size_id       | references | null: false, foreign_key: true |
 | brand_id      | references | null: false, foreign_key: true |
 
 #### Association
@@ -110,7 +111,7 @@
 - belongs_to :size
 - belongs_to :brand
 - has_many :orders
-- has_many :item_images
+- has_many :item_images, dependent: :destroy
 
 ### item_images table
 
