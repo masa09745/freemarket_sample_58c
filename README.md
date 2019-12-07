@@ -34,8 +34,8 @@
 
 #### Association
 
-- belongs_to :deliver_address
-- belongs_to :prefectures
+- belongs_to :deliver_addres
+- belongs_to :prefecture
 - has_many :orders
 - has_many :freemarkets
 
@@ -68,9 +68,9 @@
 
 #### Association
 
-- belongs_to :users
-- belongs_to :prefectures
-- belongs_to :orders
+- belongs_to :user
+- belongs_to :prefecture
+- belongs_to :order
 
 ### orders table
 
@@ -82,9 +82,9 @@
 
 #### Association
 
-- belongs_to :users
-- belongs_to :freemarkets
-- belongs_to :deliver_address
+- belongs_to :user
+- belongs_to :freemarket
+- belongs_to :deliver_addres
 
 ### freemarkets table
 
@@ -105,10 +105,10 @@
 
 #### Association
 
-- belongs_to :users
-- belongs_to :categories
-- belongs_to :sizes
-- belongs_to :brands
+- belongs_to :user
+- belongs_to :category
+- belongs_to :size
+- belongs_to :brand
 - has_many :orders
 - has_many :item_images
 
@@ -121,7 +121,7 @@
 
 #### Association
 
-- belongs_to :freemarkets
+- belongs_to :freemarket
 
 ### categories table
 
@@ -163,8 +163,8 @@
 
 #### Association
 
-- belongs_to :categories
-- belongs_to :sizes
+- belongs_to :category
+- belongs_to :size
 
 ### brands table
 
