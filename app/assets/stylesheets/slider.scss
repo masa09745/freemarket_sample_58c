@@ -3,8 +3,7 @@ button{
   border: none;
   border-radius: 0;
   outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  cursor: pointer;
   appearance: none;
 }
 .slide-dots{
@@ -13,7 +12,7 @@ button{
     display: inline-block;
     margin: 0 10px;
     button{
-      text-indent: -9999px;
+      text-indent: -9999px; // 文字を消す方法
       position: relative;
       &:before{
         content: '●';
@@ -72,7 +71,7 @@ button{
         height: 390px;
         &--device-photo {
           position: absolute;
-          right: 200px;
+          width: 100%;
         }
         &-wrapper {
           width: 780px;
@@ -101,6 +100,8 @@ button{
     }
   }
 }
+
+//スライド
 .toppage-slider__wrapper {
   position: relative;
   .fa-chevron-left {
