@@ -35,7 +35,12 @@ $(document).on("turbolinks:load", function() {
 });
 
 // ドットの操作
-$('.slide-dots li').on('mouseover', function() {
-  $('.slider').slick('goTo', $(this).index());
-});
+  $('.slide-dots li').on('mouseover', function() {
+    $('.slider').slick('goTo', $(this).index());
+  });
+// ボタンスライド
+  $('.toppage-main__logo').click(function(){
+    alert("あああ")
+  })
+
 });
