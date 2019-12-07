@@ -2,7 +2,7 @@
   .header-inner
     .inner-top
       .inner-top__logo
-        %a{href:"#"}
+        =link_to "#" do
           = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
       %form{action:"/", method:"post", class: "inner-top__form"}
         %input{type:"search", placeholder:"何かお探しですか",class:"search-form"}
@@ -11,105 +11,147 @@
     .inner-lwr
       .lwr-menu
         .lwr-menu__category
-          %a{href:"",class:"menu"}
+          =link_to "",class:"menu" do
             =icon('fas', 'list-ul')
             %span カテゴリーから探す
           .category-list
             %ul.category-list__parent
               %li.list-parent
-                %a{href:"",class:"parent-name"} レディース
+                =link_to "",class:"parent-name" do
+                  レディース
                 %ul.list-parent__child
                   %li.list-child
-                    %a{href:"",class:"child-name"} トップス
+                    =link_to "",class:"child-name" do
+                      トップス
                     %ul.list-child__son
                       %li.list-son
-                        %a{href:"",class:"son-name"} Tシャツ/カットソー(半袖/袖なし)
+                        =link_to "",class:"son-name"do
+                          Tシャツ/カットソー(半袖/袖なし)
                       %li.list-son
-                        %a{href:"",class:"son-name"} Tシャツ/カットソー(七分/長袖)
+                        =link_to "",class:"son-name"do
+                          Tシャツ/カットソー(七分/長袖)
                       %li.list-son
-                        %a{href:"",class:"son-name"} シャツ/ブラウス(半袖/袖なし)
+                        =link_to "",class:"son-name"do
+                          シャツ/ブラウス(半袖/袖なし)
                       %li.list-son
-                        %a{href:"",class:"son-name"} シャツ/ブラウス(七分/長袖)
+                        =link_to "",class:"son-name"do
+                          シャツ/ブラウス(七分/長袖)
                       %li.list-son
-                        %a{href:"",class:"son-name"} ポロシャツ
+                        =link_to "",class:"son-name"do
+                          ポロシャツ
                       %li.list-son
-                        %a{href:"",class:"son-name"} キャミソール
+                        =link_to "",class:"son-name"do
+                          キャミソール
                       %li.list-son
-                        %a{href:"",class:"son-name"} タンクトップ
+                        =link_to "",class:"son-name"do
+                          タンクトップ
                       %li.list-son
-                        %a{href:"",class:"son-name"} ホルターネック
+                        =link_to "",class:"son-name"do
+                          ホルターネック
                       %li.list-son
-                        %a{href:"",class:"son-name"} ニット/セーター
+                        =link_to "",class:"son-name"do
+                          ニット/セーター
                       %li.list-son
-                        %a{href:"",class:"son-name"} チュニック
+                        =link_to "",class:"son-name"do
+                          チュニック
                       %li.list-son
-                        %a{href:"",class:"son-name"} カーディガン/ボレロ
+                        =link_to "",class:"son-name"do
+                          カーディガン/ボレロ
                       %li.list-son
-                        %a{href:"",class:"son-name"} アンサンブル
+                        =link_to "",class:"son-name"do
+                          アンサンブル
                       %li.list-son
-                        %a{href:"",class:"son-name"} ベスト/ジレ
+                        =link_to "",class:"son-name"do
+                          ベスト/ジレ
                       %li.list-son
-                        %a{href:"",class:"son-name"} パーカー
+                        =link_to "",class:"son-name"do
+                          パーカー
                   %li.list-child
-                    %a{href:"",class:"child-name"} ジャケット/アウター
+                    =link_to "",class:"child-name"do
+                      ジャケット/アウター
                   %li.list-child
-                    %a{href:"",class:"child-name"} パンツ
+                    =link_to "",class:"child-name"do
+                      パンツ
                   %li.list-child
-                    %a{href:"",class:"child-name"} スカート
+                    =link_to "",class:"child-name"do
+                      スカート
                   %li.list-child
-                    %a{href:"",class:"child-name"} ワンピース
+                    =link_to "",class:"child-name"do
+                      ワンピース
                   %li.list-child
-                    %a{href:"",class:"child-name"} 靴
+                    =link_to "",class:"child-name"do
+                      靴
                   %li.list-child
-                    %a{href:"",class:"child-name"} ルームウェア/パジャマ
+                    =link_to "",class:"child-name"do
+                      ルームウェア/パジャマ
                   %li.list-child
-                    %a{href:"",class:"child-name"} レッグウェア
+                    =link_to "",class:"child-name"do
+                      レッグウェア
                   %li.list-child
-                    %a{href:"",class:"child-name"} 帽子
+                    =link_to "",class:"child-name"do
+                      帽子
                   %li.list-child
-                    %a{href:"",class:"child-name"} バッグ
+                    =link_to "",class:"child-name"do
+                      バッグ
                   %li.list-child
-                    %a{href:"",class:"child-name"} アクセサリー
+                    =link_to "",class:"child-name"do
+                      アクセサリー
                   %li.list-child
-                    %a{href:"",class:"child-name"} ヘアアクセサリー
+                    =link_to "",class:"child-name"do
+                      ヘアアクセサリー
                   %li.list-child
-                    %a{href:"",class:"child-name"} 小物
+                    =link_to "",class:"child-name"do
+                      小物
                   %li.list-child
-                    %a{href:"",class:"child-name"} 時計
+                    =link_to "",class:"child-name"do
+                      時計
               %li.list-parent
-                %a{href:"",class:"parent-name"} メンズ
+                =link_to "",class:"parent-name" do
+                  メンズ
               %li.list-parent
-                %a{href:"",class:"parent-name"} べビー・キッズ
+                =link_to "",class:"parent-name" do
+                  べビー・キッズ
               %li.list-parent
-                %a{href:"",class:"parent-name"} インテリア・住まい・小物
+                =link_to "",class:"parent-name" do
+                  インテリア・住まい・小物
               %li.list-parent
-                %a{href:"",class:"parent-name"} 本・音楽・ゲーム
+                =link_to "",class:"parent-name" do
+                  本・音楽・ゲーム
               %li.list-parent
-                %a{href:"",class:"parent-name"} おもちゃ・ホビー・グッズ
+                =link_to "",class:"parent-name" do
+                  おもちゃ・ホビー・グッズ
               %li.list-parent
-                %a{href:"",class:"parent-name"} コスメ・香水・美容
+                =link_to "",class:"parent-name" do
+                  コスメ・香水・美容
               %li.list-parent
-                %a{href:"",class:"parent-name"} 家電・スマホ・カメラ
+                =link_to "",class:"parent-name" do
+                  家電・スマホ・カメラ
               %li.list-parent
-                %a{href:"",class:"parent-name"} スポーツ・レジャー
+                =link_to "",class:"parent-name" do
+                  スポーツ・レジャー
               %li.list-parent
-                %a{href:"",class:"parent-name"} ハンドメイド
+                =link_to "",class:"parent-name" do
+                  ハンドメイド
               %li.list-parent
-                %a{href:"",class:"parent-name"} チケット
+                =link_to "",class:"parent-name" do
+                  チケット
               %li.list-parent
-                %a{href:"",class:"parent-name"} 自動車・オートバイ
+                =link_to "",class:"parent-name" do
+                  自動車・オートバイ
               %li.list-parent
-                %a{href:"",class:"parent-name"} その他
+                =link_to "",class:"parent-name" do
+                  その他
               %li.list-parent
-                %a{href:"",class:"parent-name"} カテゴリ一覧
+                =link_to "",class:"parent-name" do
+                  カテゴリ一覧
         .lwr-menu__brand
-          %a{href:"",class:"menu"}
+          =link_to "",class:"menu" do
             =icon('fas', 'tags')
             %span ブランドから探す
       .lwr-user
         .lwr-user__new
-          %a{class:"user-new btn-red"}
+          =link_to "", class:"user-new btn-red" do
             新規会員登録
         .lwr-user__login
-          %a{class:"user-login"}
+          =link_to "", class:"user-login" do
             ログイン
