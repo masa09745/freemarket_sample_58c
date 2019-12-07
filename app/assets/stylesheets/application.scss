@@ -1,6 +1,11 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
+
 @import "./reset";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import "./variable";
+@import './mixins/mixin.scss';
+@import "./freemarket";
+@import './slider';
 @import "./header";
 @import "./show";
 @import "./footer";
@@ -21,3 +26,4 @@ body{
   border-width: 0;
   box-sizing: border-box;
 }
+

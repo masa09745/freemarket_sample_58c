@@ -66,6 +66,7 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rbenv'
@@ -73,11 +74,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
-
+gem "jquery-rails"
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
 gem 'haml-rails'
-
