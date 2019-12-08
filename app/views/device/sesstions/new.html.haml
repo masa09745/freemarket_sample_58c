@@ -1,34 +1,45 @@
 .account-page
-  .header
-    = "mercari"
+  .login-header
+    %h.header-center
+      =link_to '', class: "login-header--link" do
+        = image_tag ("fmarket_logo_red.svg")
+    
   
-  .main
-    .main__top
+  .login-main
+    .login-main__top
       ="アカウントをお持ちでない方はこちら"
       = link_to "新規館員登録" , ''
-    .main__middle
+    .login-main__middle
       .btn-sns.btn-sns__facebook
-        = fa_icon "facebook" , class: "btn-sns--facebook" 
-        = link_to "Facebookで登録"
+        = fa_icon "facebook" , class: "icon--facebook" 
+        = "Facebookでログイン"
       .btn-sns.btn-sns__google
-        = fa_icon  "google" , class: "btn-sns--google"
-        = link_to "Googleで登録" 
-    .main__under.form
-      = form_for [@message] do |f|
-        .form__field      
-          .form__field--input__email
-            = f.email_field :email ,placeholder: "メールアドレス"
-          .form__field--input__password
-            = f.password_field :passwoed ,placeholder:"パスワード"   
-          .form__field--login
-            = f.submit "ログイン"
-          .form__field--foeget
-            = link_to "パスワードお忘れの方" ''
+        = fa_icon  "google" , class: "icon--google"
+        = "Googleで登録"  
+    .login-main__under
+      .form__field      
+        .form__field--input__email
+          %input 
+          %input
+           
+             
+        .form__field--input__password
+
+        .form__field--login.btn-sns
+          =  "ログイン"
+        .form__field--forget
+          =  link_to "パスワードお忘れの方" ''
+          
+      
   .footer
-     %ul.footer__navi
+    %ul.footer__navi
       %li 
-        = link_to "プライバシーポリシー"  ,''
+        = link_to "プライバシーポリシー"  ,'#'
       %li
-        = linl_to "メルカリ利用規約" ,''
-      %LI  
-        = link_to "特定商取引に関する表記" ,'' 
+        = link_to "メルカリ利用規約" ,'#'
+      %lI  
+        = link_to "特定商取引に関する表記" ,'#' 
+    
+    .footer__mercari-logo
+      = image_tag ("logo_gray.svg")
+      
