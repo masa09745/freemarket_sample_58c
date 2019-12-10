@@ -102,6 +102,13 @@
         font-weight: 600;
       }
     }
+    &__tax{
+      display: flex;
+      justify-content: space-between;
+      .input-tax{
+        cursor: default;
+      }
+    }
   }
 
   .price-input-box{
