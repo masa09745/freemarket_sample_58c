@@ -59,10 +59,11 @@
                       %label 価格
                       .price-input
                         ¥
-                        %input{class:"input-price", placeholder:"例) 300"}
+                        %input#jsPrice.input-price{placeholder:"例) 300"}
 
                   .sell-box__tax
                     %label 販売手数料(10%)
+                    %input#jsTax.input-tax{readonly:"readonly"} -
                   .sell-box__total
                     %label 販売利益
             .sell.submit-btn
