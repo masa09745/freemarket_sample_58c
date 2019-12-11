@@ -1,31 +1,4 @@
-.login-header {
-  display: flex;
-  justify-content: center;
-  height: 128px;
-  
-  .header-center{
-    margin: 40px 0 0;
-  }
-  
-  &--link{
-    
-    display: block;
-    margin:auto;
-    width: 185px;
-    height: 49px;
-    line-height: 49px;
-  }
-
-
-  img{
-  vertical-align:middle;
-  width: 185px;
-  height: 49px;
-
-}
-}
-
-.footer{
+.footer-login{
   padding: 40px 0;
 
   &__navi{
