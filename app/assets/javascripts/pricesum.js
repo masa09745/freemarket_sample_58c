@@ -2,18 +2,23 @@ $(function(){
   var minPrice = 300;
   var price = $("#jsPrice");
   var taxoutput = $("#jsTax");
+  var totaloutput = $("#jsTotal");
   var tax = 0.1;
 
-  price.on("change", function() {
-    var str = $(this).val();
-    var num = Number(str.replace(/[^0-9]/g, ''));
-    if(num == 0 || num < minPrice) {
-      num = '';
+  price.on("keyup", function() {
+    var num = $(this).val();
+    $(this).val(num);
+    if(num < minPrice){
+      var nothing = '-';
+      taxoutput.val(nothing);
+      totaloutput.val(nothing);
     }
-		$(this).val(num);
-		if(num <= 300) {
+		if(num >= 300) {
+      var icon = '¥'
 			var sumtax = num * tax;
-			taxoutput.val(sumtax);
+      taxoutput.val(icon + sumtax);
+      var totalprice = num - sumtax;
+      totaloutput.val(icon + totalprice);
 		}
   });
 });

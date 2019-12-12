@@ -166,3 +166,19 @@
         %p 出品
       .toppage-button__main-bottom
         %i.fas.fa-camera.fa-3x
+                  .sell-box__tax
+                    %label 販売手数料(10%)
+                    .price-tax
+                      %input#jsTax.input-tax{readonly:"readonly"}
+                  .sell-box__total
+                    %label 販売利益
+                    .price-total
+                      %input#jsTotal.input-total{readonly:"readonly"}
+
+            .sell.submit-btn
+              .sell-text
+                %p 禁止されている出品、行為を必ずご確認ください
+                %p またブランド品でシリアルナンバー等がある場合はご記載ください。。偽ブランドの販売は犯罪であり処罰される可能性があります。
+                %p また、出品をもちまして加盟店規約に同意したことになります。
+              %button{type:'submit', class:'form-btn'}
+                出品する
