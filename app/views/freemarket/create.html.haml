@@ -63,9 +63,13 @@
 
                   .sell-box__tax
                     %label 販売手数料(10%)
-                    %input#jsTax.input-tax{readonly:"readonly"} -
+                    .price-tax
+                      %input#jsTax.input-tax{readonly:"readonly"}
                   .sell-box__total
                     %label 販売利益
+                    .price-total
+                      %input#jsTotal.input-total{readonly:"readonly"}
+
             .sell.submit-btn
               .sell-text
                 %p 禁止されている出品、行為を必ずご確認ください

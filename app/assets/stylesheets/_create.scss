@@ -102,11 +102,17 @@
         font-weight: 600;
       }
     }
-    &__tax{
+    &__tax,&__total{
       display: flex;
       justify-content: space-between;
-      .input-tax{
+      input{
         cursor: default;
+        text-align: right;
+      }
+    }
+    &__total{
+      input{
+        font-size: 34px;
       }
     }
   }
