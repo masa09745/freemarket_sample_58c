@@ -7,7 +7,16 @@
           %h2 商品の情報を入力
           %form.sell-content__form
             .sell-upload
-              
+              %label 出品画像
+              %span.must 必須
+              %p.info 最大10枚までアップロードできます
+              .sell-upload__image
+                .image-drop
+                  %input{type:"file", class:"image-drop__file"}
+                  %p.text
+                    ドラッグランドドロップ
+                    またはクリックしてファイルをアップロード
+
             .sell.name
               .form-name
                 %label 商品名
