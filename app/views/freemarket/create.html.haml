@@ -60,149 +60,45 @@
                   .shipping-pulldown
                     %select.pulldown
 
-  .toppage-main__category-bottom
-    .toppage-main__category-name
-      .toppage-main__text
-        レディース新着アイテム
-        .toppage-main__item-more
-          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
+            .sell.price
+              %h3.price-limit 販売価格(300~9,999,999)
+              .sell-box
+                .sell-box__input
+                  .price-input-box
+                    %label.input-box__text
+                      価格
+                      %span.must 必須
+                    .input-box__price
+                      ¥
+                      %input#jsPrice.input-price{placeholder:"例) 300"}
 
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-              %span
-                ¥2,400
-              = image_tag 'images.jpeg'
-            .toppage-main__item-name
-              例題
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-    .toppage-main__category-name
-      .toppage-main__text
-        メンズ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
-    .toppage-main__category-name
-      .toppage-main__text
-        家電・スマホ・カメラ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
-    .topage-main__category-name
-      .toppage-main__text
-        おもちゃ・ホビー・グッズ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
-
-  .toppage-main__category-top
-    人気のブランド
-    %ul.toppage-main__list
-      %li.toppage-main__menu
-        .toppage-main__logo
-          シャネル
-        .toppage-main__logo
-          ルイヴィトン
-        .toppage-main__logo
-          シュプリーム
-        .toppage-main__logo
-          ナイキ
-
-  .toppage-main__category-bottom
-    .toppage-main__category-name
-      .toppage-main__text
-        レディース新着アイテム
-        .toppage-main__item-more
-          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
-
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-              %span
-                ¥2,400
-              = image_tag 'images.jpeg'
-            .toppage-main__item-name
-              例題
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-
-            .toppage-main__item-name
-    .toppage-main__category-name
-      .toppage-main__text
-        メンズ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
-    .toppage-main__category-name
-      .toppage-main__text
-        家電・スマホ・カメラ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
-    .topage-main__category-name
-      .toppage-main__text
-        おもちゃ・ホビー・グッズ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
--# 出品ボタン
-.toppage-button
-  .toppage-button__main
-    = link_to('#', class:"toppage-button__main-link") do
-      .toppage-button__main-up
-        %p 出品
-      .toppage-button__main-bottom
-        %i.fas.fa-camera.fa-3x
-                  .sell-box__tax
-                    %label 販売手数料(10%)
-                    .price-tax
-                      %input#jsTax.input-tax{readonly:"readonly"}
-                  .sell-box__total
-                    %label 販売利益
-                    .price-total
-                      %input#jsTotal.input-total{readonly:"readonly"}
+                .sell-box__tax
+                  %label 販売手数料(10%)
+                  .price-tax
+                    %input#jsTax.input-tax{readonly:"readonly"}
+                .sell-box__total
+                  %label 販売利益
+                  .price-total
+                    %input#jsTotal.input-total{readonly:"readonly"}
 
             .sell.submit-btn
-              .sell-text
-                %p 禁止されている出品、行為を必ずご確認ください
-                %p またブランド品でシリアルナンバー等がある場合はご記載ください。。偽ブランドの販売は犯罪であり処罰される可能性があります。
-                %p また、出品をもちまして加盟店規約に同意したことになります。
-              %button{type:'submit', class:'form-btn'}
+              %p.sell-text
+                =link_to "", class:"text-warning" do
+                  禁止されている出品
+                、
+                =link_to "", class:"text-warning" do
+                  行為
+                を必ずご確認ください。
+              %span.sell-text またブランド品でシリアルナンバー等がある場合はご記載ください。
+              =link_to "", class:"text-warning" do
+                偽ブランドの販売
+              %span.sell-text は犯罪であり処罰される可能性があります。
+              %p.sell-text
+                また、出品をもちまして
+                =link_to "", class:"text-warning" do
+                  加盟店規約
+                に同意したことになります。
+              %button{type:'submit', class:'form-btn red-btn'}
                 出品する
+              =link_to "", class:"form-btn gray-btn" do
+                戻る

@@ -87,3 +87,9 @@ gem 'font-awesome-sass', '~> 5.11.2'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
+gem 'haml-rails'
+gem 'devise'
+gem 'font-awesome-sass', '~> 5.11.2'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
