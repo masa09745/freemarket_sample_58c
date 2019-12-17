@@ -5,15 +5,15 @@
       .sell-content
         .sell-content__inner
           %h2 商品の情報を入力
-          %form.sell-content__form
+          %form.sell-content__form{enctype: "multipart/form-data", method: "post"}
             .sell-upload
               %label 出品画像
               %span.must 必須
               %p.info 最大10枚までアップロードできます
               .sell-upload__image
-                .image-drop
-                  %input{type:"file", class:"image-drop__file"}
-                  %p.text
+                #image-drop
+                  %input{type:"file", id:"image-drop__file", multiple: "multiple", style: "display:none"}
+                  %pre
                     ドラッグランドドロップ
                     またはクリックしてファイルをアップロード
 
