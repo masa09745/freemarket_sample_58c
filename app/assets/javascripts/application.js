@@ -16,8 +16,6 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
-//= require jquery
-//= require jquery_ujs
 
 $(document).on("turbolinks:load", function() {
   $('.toppage-slider__wrapper').slick({
