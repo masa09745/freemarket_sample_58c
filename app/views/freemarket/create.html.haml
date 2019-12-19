@@ -1,5 +1,6 @@
 .wrapper
-  %header.header-sell
+  %header
+    =render "devise/shared/header_login"
   %main.sell-contents
     %section.sell-contents__main
       .sell-content
@@ -108,3 +109,6 @@
                 出品する
               =link_to "", class:"form-btn gray-btn" do
                 戻る
+  %footer
+    =render "devise/shared/footer_login"
+    
