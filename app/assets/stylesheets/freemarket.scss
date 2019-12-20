@@ -71,6 +71,7 @@ body {
   @include card-item(); //アイテム表示
 }
 
+// ログアウトボタン
 .logout-container {
   width: 700px;
   background: white;
@@ -156,9 +157,6 @@ body {
     background: #fff;
     line-height: 1.5;
     font-size: 16px;
-    &:focus {
-      border-color: #0099e8;
-    }
   }
   &__select {
     height: 48px;
@@ -191,9 +189,6 @@ body {
       width: 100%;
       cursor: pointer;
       -webkit-appearance: none;
-      &:focus {
-        border-color: #0099e8;
-      }
     }
   }
   &__button {
@@ -205,7 +200,6 @@ body {
     line-height: 48px;
     font-size: 14px;
     border: 1px solid transparent;
-    transition: all ease-out 0.3s;
     cursor: pointer;
     text-align: center;
   }

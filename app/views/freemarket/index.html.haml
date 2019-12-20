@@ -196,9 +196,9 @@
             %p
               -# = current_user.birthday
           .indentification-content__group
-            = f.label '郵便番号', class: 'indentification-content__zipcode'
+            = f.label '郵便番号', class: 'indentification-content__postcode'
             %span.indentification-content__arbitrary 任意
-            = f.text_field :zip_code1, { class: 'indentification-content__default', placeholder: '例）1234567', value: "" }
+            = f.text_field :post_code1, { class: 'indentification-content__default', placeholder: '例）1234567', value: "" }
           .indentification-content__group
             = f.label '都道府県', class: 'indentification-content__prefecture'
             %span.indentification-content__arbitrary 任意
@@ -206,15 +206,15 @@
               %i.fas.fa-chevron-down
               -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: '--', selected: current_user.prefecture_id
             .indentification-content__group
-              = f.label '市区町村', class: 'indentification-content__zipcode'
+              = f.label '市区町村', class: 'indentification-content__postcode'
               %span.indentification-content__arbitrary 任意
               = f.text_field :city, { class: 'indentification-content__default', placeholder: '例）横浜市緑区', value: "" }
             .indentification-content__group
-              = f.label '番地', class: 'indentification-content__zipcode'
+              = f.label '番地', class: 'indentification-content__postcode'
               %span.indentification-content__arbitrary 任意
               = f.text_field :address1, { class: 'indentification-content__default', placeholder: '例）青山1-1-1', value: "" }
             .indentification-content__group
-              = f.label '建物名', class: 'indentification-content__zipcode'
+              = f.label '建物名', class: 'indentification-content__postcode'
               %span.indentification-content__arbitrary 任意
               = f.text_field :address2, { class: 'indentification-content__default', placeholder: '例）柳ビル103', value: "" }
               = f.submit '登録する', { class: 'indentification-content__button' }
