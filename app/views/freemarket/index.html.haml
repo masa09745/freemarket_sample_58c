@@ -170,14 +170,15 @@
 .mypage-main-container
   =render "shared/header"
   %main.mypage-container.cleafix
+    =render "shared/mypage_side"
     .indentification-content
       %section.indentification-content__mypage
-        %h2.indentification-content__head 本人情報の登録
+        %h2.indentification-content__head-top 本人情報の登録
         = form_with model: @user, local: true, class: 'indentification-content__form' do |f|
           %div
-            %p.indentification-content__head
+            %p.indentification-content__info
               お客さまの本人情報をご登録ください。
-            %br
+              %br
               登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
             %p.indentification-content__link
               = link_to '本人確認書類のアップロードについて', " "
@@ -217,8 +218,9 @@
               %span.indentification-content__arbitrary 任意
               = f.text_field :address2, { class: 'indentification-content__default', placeholder: '例）柳ビル103', value: "" }
               = f.submit '登録する', { class: 'indentification-content__button' }
-            %p.indentification-content__textlink{ id: 'textinfo' }
+            %p.indentification-content__link
               = link_to '本人情報の登録について', ''
               %i.fas.fa-chevron-right
-    = render 'shared/sellbutton'
-  = render 'shared/footer'
+      = render 'shared/sellbutton'
+    = render partial: 'shared/footertop'
+  = render partial: 'shared/footer'
