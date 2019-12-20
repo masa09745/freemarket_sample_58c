@@ -96,7 +96,8 @@ body {
 // 本人情報確認ページ
 .indentification-content {
   width: 700px;
-  float: right;
+  margin: 0 auto;
+  // float: right;
   background-color: white;
   &__mypage {
     height: 100%;
