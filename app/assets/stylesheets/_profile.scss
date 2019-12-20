@@ -1,0 +1,79 @@
+.aside {
+	margin: 40px 130px 0;
+	padding: 0 0 40px;
+}
+.profile {
+	background: #fff;
+	width: 700px;
+	font-size: 16px;
+	margin: 0 0 0 320px;
+	&__title {
+		font-size: 24px;
+		height: 50px;
+		padding: 8px 24px;
+		& h1 {
+			font-weight: bold;
+			text-align: center;
+			line-height: 1.4;
+		}
+	}
+	.self {
+		display: flex;
+		background: url('user-bg.jpg');
+		border-style: solid;
+		padding: 72px 16px 24px;
+		text-align: center;
+		&__icon {
+			padding: 0 5px 0 200px;
+			&::before {
+				font-family: 'Font Awesome 5 Free';
+				content: '\f118';
+				font-weight: 400;
+				font-size: 3em;
+				color: gray;
+			}
+		}
+		&__nickname {
+			background: #fff;
+			width: 220px;
+			height: 48px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+			line-height: 1.5;
+			min-height: 1.5em;
+			margin: 0 0 0 8px;
+			padding: 10px 16px 8px;
+			&:focus {
+				border: 1px solid #0099ff;
+				outline: 0;
+			}
+		}
+	}
+	.message-form {
+		padding: 40px 16px;
+		margin: 0;
+		&__profile {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			min-height: 216px;
+			border: 1px solid #ccc;
+			line-height: 1.5;
+			padding: 10px;
+			&:focus {
+				border: 1px solid #0099ff;
+				outline: 0;
+			}
+		}
+		&__update-btn {
+			width: 100%;
+			background: #ea352d;
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+			line-height: 48px;
+			cursor: pointer;
+			margin: 16px 0 0;
+		}
+	}
+}
