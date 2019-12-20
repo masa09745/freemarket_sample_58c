@@ -71,33 +71,6 @@ body {
   @include card-item(); //アイテム表示
 }
 
-// 出品ボタン
-.toppage-button {
-  bottom: 32px;
-  font-size: 22px;
-  height: 160px;
-  right: 32px;
-  width: 160px;
-  margin-left: 80%;
-  position: fixed;
-  &__main {
-    background-color: rgb(234, 53, 45);
-    border-radius: 50%;
-    padding-top: 20px;
-    text-align: center;
-    height: 160px;
-    width: 160px;
-    display: block;
-    .toppage-button__main-link {
-      text-decoration: none;
-      color: white;
-    }
-  }
-  &__main-up {
-    margin: 10px 0 0;
-  }
-}
-
 .logout-container {
   width: 700px;
   background: white;
