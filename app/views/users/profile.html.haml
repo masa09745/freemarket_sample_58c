@@ -1,17 +1,16 @@
-.header
-  =render 'shared/header'
-.aside
-  =render 'shared/mypage_side'
-  .profile
-    .profile__title
-      %h1 プロフィール
-    .self
-      .self__icon
-      %input{type:'text', name:'nickname', class:'self__nickname', placeholder: '例)AYA☆セール中'}
-    .message-form
-      %textarea{name:'profile', class:'message-form__profile', placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
-      %button{type:'submit', class:'message-form__update-btn'}
-        %span 変更する
-.footer
-  = render 'shared/footertop'
-  = render 'shared/footer'
+= render 'shared/header'
+.profile
+  = render 'shared/mypage_side'
+  .content
+    .container
+      .title
+        %h1 プロフィール
+      .self
+        .self__icon
+        %input{type:'text', name:'nickname', class:'self__nickname', placeholder: '例)AYA☆セール中'}
+      .message-form
+        %textarea{name:'profile', class:'message-form__profile', placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
+        %button{type:'submit', class:'message-form__update-btn'}
+          %span 変更する
+= render 'shared/footertop'
+= render 'shared/footer'
