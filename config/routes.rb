@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "freemarket#index"
-  resources :freemarket
+    get 'freemarket/show'
+    get 'freemarket/create'
   scope :mypage do
     get 'users/profile'
     get 'users/card'
