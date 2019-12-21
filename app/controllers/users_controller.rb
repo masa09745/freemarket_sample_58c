@@ -8,6 +8,6 @@ class UsersController < ApplicationController
   def profile
   end
 
-  def show
+  def identification
   end
 end
