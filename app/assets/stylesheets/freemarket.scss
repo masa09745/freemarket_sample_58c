@@ -90,20 +90,5 @@ body {
     color: #fff;
     font-size: 14px;
     cursor: pointer;
-// 出品ボタン
-.toppage-button{
-  bottom: 32px;
-  font-size: 22px;
-  height: 160px;
-  right: 32px;
-  width: 160px;
-  margin-left: 80%;
-  position: fixed;
-  z-index: 2;
-  &__main{
-    background-color: rgb(234, 53, 45);
-    border-radius: 50%;
-    padding-top: 20px;
-    text-align: center;
   }
 }
