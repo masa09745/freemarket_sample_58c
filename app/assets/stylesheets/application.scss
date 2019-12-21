@@ -8,10 +8,15 @@
 @import "./header";
 @import "./show";
 @import "./footer";
-@import "./footertop.scss";
-@import "./sellbutton";
-@import "./mypage";
-body {
+
+
+@import "./footertop";
+@import "./create";
+@import "./header_login";
+@import "./footer_login";
+
+body{
+
   position: relative;
   min-height: 100%;
   background: #f5f5f5;
