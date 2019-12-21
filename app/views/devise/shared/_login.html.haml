@@ -13,13 +13,14 @@
         =icon('fab', 'google',class:"icon--google")
         = "Googleでログイン"
   .login-main__under
-    = form_for @user do |f|
-      .form__field
+    .form__field      
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form__field--input__email
-          = f.email_field :email ,placeholder: "メールアドレス"
+          = f.text_field :email ,placeholder: "メールアドレス"
         .form__field--input__password
-          = f.password_field :passwoed ,placeholder:"パスワード"
-        .form__field--login
-          = f.submit "ログイン"
+          = f.text_field :password ,placeholder:"パスワード"      
+        .login-submit
+          = f.submit 'ログイン' , class:'form__field--login btn-sns'
         .form__field--forget
-          = link_to "パスワードお忘れの方"
+          = link_to "パスワードお忘れの方" ''
+      
