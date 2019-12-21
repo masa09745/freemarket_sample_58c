@@ -1,0 +1,26 @@
+.main
+  .main__upper
+    .main__upper--title
+      %h1 購入内容の確認
+  .main__middle
+    .main__middle--box
+      = image_tag 'index2.jpg', height: '80', width: '80', class: 'image'
+      .main__middle--smallbox
+        %p 商品名
+        %span ¥100（税込み）
+        %span 送料込み
+  .main__lower
+    .main__lower--box
+      .main__lower--box--small
+        .main__lower--box--small-pay
+          .main__lower--box--small-pay-box
+            %h2 支払い金額
+            %span ¥1,200
+          %label
+            %input{type: "checkbox"}
+            ポイントを使用（所持ポイント:P0）
+        .main__lower--box--small-method
+          %h2 支払い方法
+          %span 登録してください
+        .main__lower--box--small-address
+        .main__lower--box--small-button
