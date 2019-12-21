@@ -11,15 +11,13 @@
       = "Googleでログイン"
   .login-main__under
     .form__field      
-      .form__field--input__email
-        %input 
-        %input
-           
-             
-      .form__field--input__password
-
-      .form__field--login.btn-sns
-        =  "ログイン"
-      .form__field--forget
-        =  link_to "パスワードお忘れの方" ''
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form__field--input__email
+          = f.text_field :email ,placeholder: "メールアドレス"
+        .form__field--input__password
+          = f.text_field :password ,placeholder:"パスワード"      
+        .login-submit
+          = f.submit 'ログイン' , class:'form__field--login btn-sns'
+        .form__field--forget
+          = link_to "パスワードお忘れの方" ''
       
