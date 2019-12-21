@@ -1,4 +1,5 @@
-
+%header
+  =render "/shared/header"
 .toppage-slider
   %ul.toppage-slider__wrapper
     %li.toppage-slider__contents-first
@@ -159,11 +160,8 @@
           もっと見る
       .toppage-main__item
         アイテム表示
-
-/ログアウトボタン
-.logout-content
-  .logout-container
-    %form{action: "./mailbox/post.cgi", method: "post",class: "logout-content"}
-      .button
-        %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
-
+  =render "/shared/sellbutton"
+.footertop
+  =render "/shared/footertop"
+.footer
+  =render "/shared/footer"
