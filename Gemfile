@@ -80,7 +80,6 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
 gem 'haml-rails'
-gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
 
