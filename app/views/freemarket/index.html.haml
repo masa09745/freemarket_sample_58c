@@ -1,4 +1,5 @@
-
+%header
+  =render "/shared/header"
 .toppage-slider
   %ul.toppage-slider__wrapper
     %li.toppage-slider__contents-first
@@ -167,3 +168,15 @@
       .button
         %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
 
+-# 出品ボタン
+.toppage-button
+  .toppage-button__main
+    = link_to('#', class:"toppage-button__main-link") do
+      .toppage-button__main-up
+        %p 出品
+      .toppage-button__main-bottom
+        %i.fas.fa-camera.fa-3x
+.footertop
+  =render "/shared/footertop"
+.footer
+  =render "/shared/footer"
