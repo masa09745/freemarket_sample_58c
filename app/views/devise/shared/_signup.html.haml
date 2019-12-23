@@ -6,9 +6,10 @@
       .btn-sns.btn-sns__mail
         %i.fa.fa-envelope.icon--mail
         = "メールアドレスで登録する"
-      .btn-sns.btn-sns__facebook
-        =icon('fab', 'facebook',class:"icon--facebook")
-        = "Facebookで登録する"
+      = link_to user_facebook_omniauth_authorize_path, method: :post do
+        .btn-sns.btn-sns__facebook
+          =icon('fab', 'facebook',class:"icon--facebook")
+          = "Facebookで登録する"
       .btn-sns.btn-sns__google
         =icon('fab', 'google',class:"icon--google")
-        = "Googleで登録する"  
+        = "Googleで登録する"

@@ -1,5 +1,14 @@
-.logout-content
-  .logout-container
-    %form{action: "", method: "post",class: "logout-content"}
-      .button
-        %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
+.header
+  =render "shared/header"
+.nav
+.main
+  =render "shared/mypage_side"
+  .logout-content
+    .logout-container
+      %form{action: "", method: "post",class: "logout-content"}
+        .button
+          =link_to destroy_user_session_path, class: "logout-content__btn",method: :delete do
+            ログアウト
+.footer
+  = render 'shared/footertop'
+  = render 'shared/footer'

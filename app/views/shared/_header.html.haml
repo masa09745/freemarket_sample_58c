@@ -149,9 +149,22 @@
             =icon('fas', 'tags')
             %span ブランドから探す
       .lwr-user
-        .lwr-user__new
-          =link_to new_user_registration_path, class:"user-new btn-red" do
-            新規登録
-        .lwr-user__login
-          =link_to new_user_session_path, class:"user-login" do
-            ログイン
+        - if user_signed_in?
+          .lwr-user__like
+            いいね一覧
+          .lwr-user__notice
+            お知らせ
+          .lwr-user__todo
+            やることリスト
+          .lwr-user__mypage
+            =link_to  users_profile_path do
+              マイページ
+          =link_to destroy_user_session_path, method: :delete do
+            ログアウト
+        - else
+          .lwr-user__new
+            =link_to new_user_registration_path, class:"user-new btn-red" do
+              新規登録
+          .lwr-user__login
+            =link_to new_user_session_path, class:"user-login" do
+              ログイン
