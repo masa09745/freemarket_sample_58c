@@ -151,13 +151,17 @@
       .lwr-user
         - if user_signed_in?
           .lwr-user__like
+            =icon('far', 'heart',class:"icon-header")
             いいね一覧
           .lwr-user__notice
+            =icon('far', 'bell',class:"icon-header")
             お知らせ
           .lwr-user__todo
+            =icon('fas', 'check',class:"icon-header")
             やることリスト
           .lwr-user__mypage
             =link_to  users_profile_path do
+              =icon('fas','user',class:"icon-header")
               マイページ
           =link_to destroy_user_session_path, method: :delete do
             ログアウト

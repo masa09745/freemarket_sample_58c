@@ -192,8 +192,15 @@
   }
   &__like,&__notice,&__todo,&__mypage{
     padding: 0px 14px;
-    ;
+    display: block;
   }
+}
+
+.icon-header{
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
 }
 
 .user-new{
