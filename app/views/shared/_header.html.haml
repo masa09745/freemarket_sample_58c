@@ -151,20 +151,21 @@
       .lwr-user
         - if user_signed_in?
           .lwr-user__like
-            =icon('far', 'heart',class:"icon-header")
-            いいね一覧
+            =link_to"",class:"login-menu" do
+              =icon('far', 'heart',class:"icon-header")
+              %span いいね一覧
           .lwr-user__notice
-            =icon('far', 'bell',class:"icon-header")
-            お知らせ
+            =link_to"",class:"login-menu" do
+              =icon('far', 'bell',class:"icon-header")
+              %span お知らせ
           .lwr-user__todo
-            =icon('fas', 'check',class:"icon-header")
-            やることリスト
+            =link_to"",class:"login-menu" do
+              =icon('fas', 'check',class:"icon-header")
+              %span やることリスト
           .lwr-user__mypage
-            =link_to  users_profile_path do
+            =link_to  users_profile_path,class:"login-menu" do
               =icon('fas','user',class:"icon-header")
-              マイページ
-          =link_to destroy_user_session_path, method: :delete do
-            ログアウト
+              %span マイページ
         - else
           .lwr-user__new
             =link_to new_user_registration_path, class:"user-new btn-red" do
