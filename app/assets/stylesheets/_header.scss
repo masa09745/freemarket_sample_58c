@@ -1,4 +1,4 @@
-header{
+.main-header{
   background-color: #fff;
   height: 100px;
   font-weight: 500;
@@ -65,6 +65,7 @@ header{
   }
   &__category:hover .category-list{
     display: block;
+    z-index: 3;
   }
 
   &__category:hover span{
@@ -152,6 +153,7 @@ header{
 
 .list-son:hover{
   background-color: #ccc;
+  z-index: 100;
 }
 
 

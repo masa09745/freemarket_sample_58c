@@ -161,17 +161,30 @@ table{
 }
 
 .form-btn{
+  display: block;
   width: 100%;
   line-height: 48px;
   margin-top: 8px;
   text-align: center;
-  background-color: #aaa;
-  border: 1px solid #aaa;
-  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
   span{
     font-size: 14px;
     vertical-align: middle;
   }
+}
+
+.gray-btn{
+  background-color: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+}
+
+.comment-send{
+  width: 100%;
+  margin: 8px 0 0;
+  font-size: 0;
+  text-align: center;
 }
 
 .another-goods{
