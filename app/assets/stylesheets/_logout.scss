@@ -7,14 +7,16 @@
   display: flex;
   margin: 40px 40px 0;
 }
+.logout-content-wrpper {
+  padding-top: 40px;
+}
 
 .logout-container {
   width: 700px;
   background: white;
-  // padding: 64px 190px;
+  padding: 64px;
 }
 .logout-content {
-  padding: 40px 0 64px 0;
   .button {
     max-width: 320px;
     margin: 0 auto;
