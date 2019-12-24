@@ -1,5 +1,16 @@
-.logout-content
-  .logout-container
-    %form{action: "", method: "post",class: "logout-content"}
-      .button
-        %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
+= render 'shared/header'
+%section.logout-wrapper
+  .profile-logout
+    = render 'shared/mypage_side'
+  .logout-content
+    .logout-container
+      %form{action: "", method: "post",class: "logout-content"}
+        .button
+          %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
+
+
+  = render "/shared/sellbutton"
+.footertop
+= render "/shared/footertop"
+.footer
+= render "/shared/footer"
