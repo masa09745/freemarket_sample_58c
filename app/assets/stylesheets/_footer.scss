@@ -81,18 +81,7 @@
   .bottombox {
     margin: 30px auto 20px;
     position: relative;
-  }
-
-  .logo {
-    color: white;
-    position: absolute;
-    bottom: 0px;
-    left: 110px;
-  }
-
-  .corporatemark {
-    color: white;
-    position: relative;
+    width: 1020px;
   }
 
   .corporatemark {
@@ -100,6 +89,9 @@
     list-style: none;
     font-size: 12px;
     padding-bottom: 20px;
+    color: white;
+    position: relative;
+    margin: 0 auto;
 
     .acorporatemark {
       font-weight: 600;
