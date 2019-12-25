@@ -94,43 +94,63 @@ position: relative;
 .login-main__under{
 padding: 24px 64px;
 }
+
+
+
 .form__field{
+  
  
+&--input__email{
+
+  
+  input{
+    height: 48px;
+    width: 100%;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+}
+
+
+&--input__password{
+
+margin: 24px 0 0;
+  
+input{
+    height: 48px;
+    width: 100%;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+}
 
 &--login{
   margin:24px 0 0 ;
+  input{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-
+  }
 }
 &--forget{
+
   margin:40px 0 0;
  a{
   color: #0099e8;
   text-decoration: none;
  }
 }
-
-
 }
-
-.form__field--input__email{
-width:330px ;
-
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-
-
-input{
-  
-  
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-   }
- }
