@@ -190,6 +190,17 @@
     text-align: center;
     margin-left: 11px;
   }
+  &__like,&__notice,&__todo,&__mypage{
+    padding: 0px 14px;
+    display: block;
+  }
+}
+
+.icon-header{
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
 }
 
 .user-new{
@@ -220,4 +231,19 @@
 a{
   text-decoration: none;
   color: #333;
+}
+
+.login-menu{
+  display: block;
+  font-size: 14px;
+  line-height: 36px;
+  white-space: nowrap;
+  i{
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    color: rgb(204, 204, 204);
+    margin-right: 10px;
+    width: 19px;
+  }
 }

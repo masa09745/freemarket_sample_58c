@@ -1,7 +1,10 @@
 .main {
-  display: flex;
-  justify-content: center;
-  background-color: #f5f5f5;
+	margin: 24px auto 0;
+	display: flex;
+	justify-content: center;
+	background-color: #f5f5f5;
+	margin: 40px auto 0;
+	width: 1020px;
 }
 
 .mypage-side {
@@ -52,51 +55,51 @@
 }
 
 .user {
-  float: right;
-  width: 700px;
-  height: 2000px;
-  figure {
-    margin: 0 auto;
-  }
-  &__icon {
-    height: 160px;
-    position: relative;
-    padding: 20px;
-    background-image: image-url("mypage_images/user-bg.jpg");
-    background: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?91658059");
-    background-size: cover;
-    text-align: center;
-    a {
-      text-decoration: none;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      transform: translate(0, -50%);
-      color: #333;
-      text-align: center;
-      figure {
-        margin: 0 auto;
-        border-radius: 50%;
-        img {
-          width: 70px;
-          height: 70px;
-          vertical-align: middle;
-          border-radius: 90px;
-        }
-      }
-      h2 {
-        margin: 8px 0 0;
-        font-size: 14px;
-      }
-      .mypage-number {
-        margin: 8px 0 0;
-        font-size: 16px;
-      }
-    }
-  }
-}
+
+	float: right;
+	width: 700px;
+	figure {
+		margin: 0 auto;
+	}
+	&__icon {
+		height: 160px;
+		position: relative;
+		padding: 20px;
+		background-image: image-url('mypage_images/user-bg.jpg');
+		background: url('https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?91658059');
+		background-size: cover;
+		text-align: center;
+		a {
+			text-decoration: none;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			transform: translate(0, -50%);
+			color: #333;
+			text-align: center;
+			figure {
+				margin: 0 auto;
+				border-radius: 50%;
+				img {
+					width: 70px;
+					height: 70px;
+					vertical-align: middle;
+					border-radius: 90px;
+				}
+			}
+			h2 {
+				margin: 8px 0 0;
+				font-size: 14px;
+			}
+			.mypage-number {
+				margin: 8px 0 0;
+				font-size: 16px;
+			}
+		}
+	}
+ 
 
 .mypage__content {
   margin: 0;
@@ -126,67 +129,68 @@
     }
   }
 }
+li:not(.li-go):hover{
+	background-color:#eee;
+	
+}
 
 .tab__content {
-  margin: 0;
-  padding: 0;
-  ul {
-    display: block;
-    background-color: #fff;
-  }
-  li {
-    border-bottom: 1px solid #eee;
-    position: relative;
-    :hover {
-      background-color: #eee;
-    }
-    .tab__content__item--link {
-      display: block;
-      height: 64px;
-      padding: 16px;
-      color: #333;
-      text-decoration: none;
-      figure {
-        float: left;
-        margin: 0;
-        img {
-          height: 48px;
-          width: 48px;
-        }
-      }
-      .tab__content__item--body {
-        height: 60px;
-        margin: 0 40px 0 68px;
-        p {
-          font-size: 16px;
-          color: #333;
-        }
-      }
-      i {
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        right: 16px;
-        transform: translate(0, -50%);
-      }
-    }
+	margin: 0;
+	padding: 0;
+	ul {
+		display: block;
+		background-color: #fff;
+	}
+	li {
+		height:81px;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		
+		.tab__content__item--link {
+			display: block;
+			height: 64px;
+			padding: 16px;
+			color: #333;
+			text-decoration: none;
+			figure {
+				float: left;
+				margin: 0;
+				img {
+					height: 48px;
+					width: 48px;
+				}
+			}
+			.tab__content__item--body {
+				height: 60px;
+				margin: 0 40px 0 68px;
+				p {
+					font-size: 16px;
+					color: #333;
+				}
+			}
+			i {
+				font-size: 20px;
+				position: absolute;
+				top: 50%;
+				right: 16px;
+				transform: translate(0, -50%);
+			}
+		}
 
-    .mypage-go {
-      position: relative;
-      padding: 16px;
-      &--list {
-        text-decoration: none;
-        padding: 16px;
-        display: block;
-        height: 56px;
-        margin: 0 auto;
-        background: #eee;
-        color: #333;
-        line-height: 56px;
-        text-align: center;
-      }
-    }
-  }
+		.mypage-go {
+			padding: 16px;
+			&--list {
+				text-decoration: none;
+				display: block;
+				height: 56px;
+				margin: 0 auto;
+				background: #eee;
+				color: #333;
+				line-height: 56px;
+				text-align: center;
+			}
+		}
+	}
 }
 .mypage__buy {
   margin: 40px 0 0;
@@ -235,4 +239,5 @@
       color: #ccc;
     }
   }
+}
 }
