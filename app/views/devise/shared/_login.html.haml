@@ -9,17 +9,17 @@
     .btn-sns.btn-sns__google
       =icon('fab', 'google',class:"icon--google")
       = "Googleでログイン"
-  .login-main__under
-    .form__field      
-      .form__field--input__email
-        %input 
-        %input
-           
+  .login-main__under     
+    = form_for @user do |f|
+      .form__field      
+        .form__field--input__email
+          = f.email_field :email ,placeholder: "メールアドレス"
+        .form__field--input__password
+          = f.password_field :passwoed ,placeholder:"パスワード"   
+        .form__field--login
+          = f.submit "ログイン"
+        .form__field--forget
+          = link_to "パスワードお忘れの方" ''
              
-      .form__field--input__password
-
-      .form__field--login.btn-sns
-        =  "ログイン"
-      .form__field--forget
-        =  link_to "パスワードお忘れの方" ''
+      
       
