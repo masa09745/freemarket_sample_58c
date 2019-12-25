@@ -1,0 +1,22 @@
+.kaiin-main
+  .kaiin-main__content
+    .kaiin-main__content__top
+      会員情報入力
+    .kaiin-main__content__middle
+      = form_for @users do |f|
+        .kaiin-main__form__nickname
+          %label ニックネーム
+          %span 必須
+            = f.text__field  :nickname ,placeholder:"例）メルカリ太郎"
+         %label メールアドレス
+          %span 必須
+            = f.text__field  :nickname ,placeholder:"PC・携帯どちらでも可"
+         %label パスワード
+          %span 必須
+            = f.text__field  :nickname ,placeholder:"７文字以上の半角英数字"
+         
+        
+        
+           
+      
+
