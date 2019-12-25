@@ -1,26 +1,13 @@
-.header
-  =render "shared/header"
-.main
-  =render "shared/mypage_side"
-  .logout-container
-    .logout-content
-      .logout-content__inner
-        .logout-btn
-          =link_to destroy_user_session_path, class: "logout-content__btn",method: :delete do
-            ログアウト
-.footer
-  = render 'shared/footertop'
-  = render 'shared/footer'
-  
 = render 'shared/header'
 %section.logout-wrapper
   .profile-logout
     = render 'shared/mypage_side'
   .logout-content-wrpper
-    .logout-container
-      %form{action: "", method: "post",class: "logout-content"}
-        .button
-          %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
+    =link_to destroy_user_session_path, class: "logout-content__btn",method: :delete do
+      .logout-container
+        %form{action: "", method: "post",class: "logout-content"}
+          .button
+            %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
 
 
   = render "/shared/sellbutton"
