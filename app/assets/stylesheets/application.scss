@@ -10,6 +10,8 @@
 @import "./profile";
 @import "./show";
 @import "./footer";
+@import "./footertop.scss";
+@import "./ppc";
 @import "./footertop";
 @import "./create";
 @import "./header_login";
@@ -21,7 +23,6 @@
 @import "./logout";
 @import "./login";
 @import "signup";
-
 
 body {
   position: relative;

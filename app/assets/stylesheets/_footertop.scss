@@ -1,12 +1,13 @@
 .picture {
   display: flex;
   position: relative;
+  justify-content: center;
 
   .contents {
     position: absolute;
     display: flex;
     width: 750px;
-    margin-left: 250px;
+    
 
     .leftcontent {
       margin-top: 40px;

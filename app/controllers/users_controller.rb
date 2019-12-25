@@ -10,4 +10,7 @@ class UsersController < ApplicationController
 
   def identification
   end
+
+  def logout
+  end
 end
