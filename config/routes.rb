@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     resources 'users'
   end
   
-  scope :users do
-    get 'sign_in/registrstion',to:'users/registrations#registration'
+  devise_scope :user do
+    get 'sign_in/registrstion'=>'users/registrations#registration'
     post "sign_in/number" => "users/registrations#phone"
     post "sign_in/address" => "users/registrations#address"
     post "sign_in/credit" => "devise/registrations#credit"
