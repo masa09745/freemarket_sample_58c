@@ -42,9 +42,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birth_year: session[:birth_year]
-      birth_month: session[:birth_month]
-      bitrh_dau: session[:birth_day]
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      bitrh_day: session[:birth_day],
     )
     
     @user.address = User.new(
@@ -67,7 +67,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname :email :password :encrypted_password :last_name :first_name :last_name_kana :first_name_kana :birth_year :birth_month :birth_day])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:email ,:password, :encrypted_password, :last_name,:first_name, :last_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day])
   end
 
 
