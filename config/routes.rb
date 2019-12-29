@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'sign_in/registrstion'=>'users/registrations#registration'
     post "sign_in/number" => "users/registrations#phone"
-    post "sign_in/address" => "users/registrations#address"
-    post "sign_in/credit" => "devise/registrations#credit"
+    post "sign_in/address" => "users/registrations#adress"
+    post "sign_in/credit" => "users/registrations#credit"
     post "sign_in/completed" => "users/registrations#create"
     get "sign_in/done" => "users/registrations#done"
   end  
