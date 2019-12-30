@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_120842) do
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "mobile", null: false
+    t.string "mobile", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name_kana", default: "", null: false
@@ -120,6 +120,12 @@ ActiveRecord::Schema.define(version: 2019_12_25_120842) do
     t.string "birth_year", default: "", null: false
     t.string "birth_month", default: "", null: false
     t.string "birth_day", default: "", null: false
+    t.integer "postal_code"
+    t.integer "prefecture"
+    t.string "city"
+    t.string "street_address"
+    t.string "building_name"
+    t.integer "phone"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
