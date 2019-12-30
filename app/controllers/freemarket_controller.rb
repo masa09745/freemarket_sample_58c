@@ -6,5 +6,6 @@ class FreemarketController < ApplicationController
   end
 
   def create
+    @freemarket = Freemarket.New
   end
 end
