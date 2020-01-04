@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -23,6 +24,35 @@
 @import "./logout";
 @import "./login";
 @import "signup";
+=======
+@import './reset';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import './variable';
+@import './mixins/mixin.scss';
+@import './mixins/media';
+@import './freemarket';
+@import './slider';
+@import './header';
+@import './mypage';
+@import './profile';
+@import './card';
+@import './show';
+@import './footer';
+@import './footertop.scss';
+@import './ppc';
+@import './footertop';
+@import './create';
+@import './header_login';
+@import './footer_login';
+@import 'slick-theme';
+@import 'slider';
+@import './sellbutton';
+@import './identification';
+@import './logout';
+@import './login';
+@import 'signup';
+>>>>>>> Stashed changes
 
 body {
   position: relative;
