@@ -2,7 +2,6 @@
 = render 'shared/breadcrumb'
 %main.profile
   .container
-    %nav= render 'shared/mypage_side'
     %article.content
       .title
         %h2 プロフィール
@@ -12,7 +11,9 @@
       .message-form
         %textarea{name:'profile', class:'message-form__profile', placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
         %button{type:'submit', class:'message-form__update-btn'}
-          %span 変更する
-%nav= render '/shared/sellbutton'
+          %span
+            = link_to '変更する','#'
+    %nav= render 'shared/mypage_side'
+%nav= render 'shared/sellbutton'
 %aside= render 'shared/footertop'
 %footer= render 'shared/footer'
