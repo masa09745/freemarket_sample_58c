@@ -97,6 +97,8 @@
       size: 24px;
       weight: bold;
     }
+  }
+}
 
 @mixin form-focus($color: #0099ff) {
   border: 1px solid $color;
