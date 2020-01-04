@@ -1,3 +1,4 @@
+= content_for(:html_title) { 'プロフィール - Fmarket' }
 = render 'shared/header'
 = render 'shared/breadcrumb'
 %main.profile
@@ -5,10 +6,10 @@
     %article.content
       .title
         %h2 プロフィール
-      .self
+      %section.self
         .self__icon
         %input{type:'text', name:'nickname', class:'self__nickname', placeholder: '例)AYA☆セール中'}
-      .message-form
+      %section.message-form
         %textarea{name:'profile', class:'message-form__profile', placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
         %button{type:'submit', class:'message-form__update-btn'}
           %span
