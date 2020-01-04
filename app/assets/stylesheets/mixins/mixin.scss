@@ -97,10 +97,6 @@
       size: 24px;
       weight: bold;
     }
-    text-align: center;
-    line-height: 1.4;
-  }
-}
 
 @mixin form-focus($color: #0099ff) {
   border: 1px solid $color;
@@ -117,9 +113,17 @@
   }
 }
 
-@mixin red-btn($wd: 100%, $fs: 14px, $fw: 0, $lh: 48px, $ocd: 0.95, $och: 1) {
+@mixin red-btn(
+  $wd: 100%,
+  $mg: 16px 0 0,
+  $fs: 14px,
+  $fw: 0,
+  $lh: 48px,
+  $ocd: 0.95,
+  $och: 1
+) {
   display: block;
-  margin: 16px 0 0;
+  margin: $mg;
   width: $wd;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -135,5 +139,42 @@
     opacity: $och;
     transition: all ease-out 0.3s;
     cursor: pointer;
+  }
+}
+
+@mixin linkText($ocd: 0.95, $och: 1) {
+  opacity: $ocd;
+  &:hover {
+    opacity: $och;
+    text-decoration: underline;
+    transition: all ease-out 0.3s;
+    cursor: pointer;
+  }
+}
+
+@mixin linkArrow($side: 'right', $color: #0099e8) {
+  position: relative;
+  @if ($side == 'right') {
+    padding-right: 25px;
+  } @else if ($side == 'left') {
+    padding-left: 25px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 40%;
+    @if ($side == 'right') {
+      right: 10px;
+      font-weight: bold;
+    } @else if ($side == 'left') {
+      left: 10px;
+    }
+    margin-top: -2.5px;
+    border-top: 2px solid $color;
+    border-right: 2px solid $color;
+    transform: rotate(45deg);
   }
 }
