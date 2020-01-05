@@ -32,54 +32,119 @@
       @include m-title;
       border-bottom: 2px solid #f5f5f5;
     }
-    .list {
-      padding: 64px;
-      h3.sub-title {
-        width: 320px;
-        height: 15px;
-        text-align: left;
-        font-weight: bold;
-        margin: 0 auto;
-      }
-      &__reg-card {
+    .list-reg {
+      padding: 40px 40px 64px;
+      &__card {
         width: 340px;
         height: auto;
         margin: 0 auto;
-        &--inum {
-          text-align: right;
+        .sub-title {
+          font-size: 14px;
+          font-weight: bold;
+          padding-right: 5px;
         }
-        &--icon {
-          float: left;
-          background-image: image-url('mc_symbol.svg');
+        &--inum {
+          text-align: left;
+          .form-req {
+            @include bg-icon();
+          }
+          &-no {
+            @include input-form($wd: 340px, $mg: 8px 0 0 0);
+            &:focus {
+              @include form-focus();
+            }
+          }
+          &-icon {
+            figure {
+              margin: 8px 0 0;
+            }
+            img {
+              padding: 0 1px;
+            }
+          }
         }
         &--sed {
-          text-align: right;
+          margin-top: 24px;
+          text-align: left;
+          .p-limit {
+            margin: 0 5px 0;
+          }
+          .form-req {
+            @include bg-icon();
+          }
+          &-limit {
+            @include input-form($wd: 130px, $mg: 8px 0 0 0, $pd: 0 16px);
+            &:focus {
+              @include form-focus();
+            }
+            @include selectArrow();
+          }
+          select::-ms-expand {
+            display: none;
+          }
         }
         &--iscd {
-          text-align: right;
-        }
-        &--q {
-          text-align: right;
-          font-size: 14px;
-          span {
-            @include linkText($ocd: 1, $och: 1, $td: none, $cs: text);
+          margin-top: 24px;
+          text-align: left;
+          .form-q {
+            @include bg-icon(
+              $wd: 15px,
+              $hg: 15px,
+              $br: 15px,
+              $bg: #0099ff,
+              $fs: 10px,
+              $lh: 15px
+            );
+          }
+          .form-req {
+            @include bg-icon();
+          }
+          &-code {
+            @include input-form($wd: 340px, $mg: 8px 0 0 0);
+            &:focus {
+              @include form-focus();
+            }
+          }
+          &-q {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: right;
+            #click-balloon {
+              @include linkText($ocd: 1, $och: 1, $td: none, $cs: text);
+            }
           }
         }
         &--btn {
-          @include red-btn($wd: 340px, $mg: 32px 0 0);
+          margin-top: 32px;
+          padding: 0;
+          a {
+            color: #fff;
+            @include red-btn($wd: 340px, $mg: 0);
+          }
         }
       }
-      &__add-card {
+    }
+    .list-add {
+      padding: 64px;
+      &__card {
         width: 320px;
         height: auto;
-        padding: 24px 0px;
         margin: 0 auto;
+        h3.sub-title {
+          height: 15px;
+          text-align: left;
+          font-weight: bold;
+        }
         &--btn {
-          &::before {
-            padding: 10px;
-            @include fa-icon($icon: '\f09d', $color: #fff, $size: 1em);
+          padding: 24px 0px;
+          a {
+            color: #fff;
+            &::before {
+              padding-right: 15px;
+              @include fa-icon($icon: '\f09d', $color: #fff, $size: 1.1em);
+            }
+            @include red-btn($wd: 320px, $mg: 0, $ocd: 1, $och: 0.8);
           }
-          @include red-btn($wd: 320px, $mg: 0 0 8px, $ocd: 1, $och: 0.8);
         }
       }
       &__border {

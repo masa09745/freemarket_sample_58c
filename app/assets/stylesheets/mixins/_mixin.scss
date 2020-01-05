@@ -97,6 +97,13 @@
       size: 24px;
       weight: bold;
     }
+    @include media('sp') {
+      width: calc(100% - #{map-get($m-margin, side)});
+      font: {
+        size: 18px;
+      }
+      padding: 1.5%;
+    }
     text-align: center;
     line-height: 1.4;
   }
@@ -115,6 +122,25 @@
     weight: $wg;
     size: $size;
   }
+}
+
+@mixin bg-icon(
+  $wd: 30px,
+  $hg: 20px,
+  $br: 2px,
+  $bg: #ea352d,
+  $fs: 12px,
+  $lh: 22px
+) {
+  display: inline-block;
+  width: $wd;
+  height: $hg;
+  border-radius: $br;
+  background-color: $bg;
+  color: #fff;
+  font-size: $fs;
+  text-align: center;
+  line-height: $lh;
 }
 
 @mixin red-btn(
@@ -136,9 +162,6 @@
   text-align: center;
   line-height: $lh;
   opacity: $ocd;
-  a {
-    color: #fff;
-  }
   &:hover {
     opacity: $och;
     transition: all ease-out 0.3s;
@@ -182,10 +205,34 @@
       font-weight: bold;
     } @else if ($side == 'left') {
       left: 10px;
+      font-weight: bold;
     }
     margin-top: -2.5px;
     border-top: 2px solid $color;
     border-right: 2px solid $color;
     transform: rotate(45deg);
   }
+}
+
+@mixin selectArrow($img: 'arrow_icon.svg', $bz: 15px 15px) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: image-url($img);
+  background-repeat: no-repeat;
+  background-size: $bz;
+  background-position: right 10px center;
+}
+
+@mixin input-form($wd, $hg: 48px, $mg: 0 0 0 8px, $pd: 10px 16px 8px) {
+  background: #fff;
+  width: $wd;
+  height: $hg;
+  border: 1px solid #ccc {
+    radius: 4px;
+  }
+  line-height: 1.5;
+  min-height: 1.5;
+  margin: $mg;
+  padding: $pd;
 }

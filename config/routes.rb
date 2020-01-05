@@ -5,9 +5,13 @@ Rails.application.routes.draw do
     get 'freemarket/create'
   scope :mypage do
     get 'users/profile'
+    get 'users/card'
+    get 'users/card/create'
     get 'users/identification'
     get 'users/logout'
     resources :users
+  end
+  scope :mypage do
     get 'cards/create'
     resources :cards
   end
