@@ -146,13 +146,20 @@
   }
 }
 
-@mixin linkText($ocd: 0.95, $och: 1) {
+@mixin linkText(
+  $color: #0099e8,
+  $ocd: 0.95,
+  $och: 1,
+  $td: underline,
+  $cs: pointer
+) {
+  color: $color;
   opacity: $ocd;
   &:hover {
     opacity: $och;
-    text-decoration: underline;
+    text-decoration: $td;
     transition: all ease-out 0.3s;
-    cursor: pointer;
+    cursor: $cs;
   }
 }
 

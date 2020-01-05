@@ -41,9 +41,37 @@
         font-weight: bold;
         margin: 0 auto;
       }
+      &__reg-card {
+        width: 340px;
+        height: auto;
+        margin: 0 auto;
+        &--inum {
+          text-align: right;
+        }
+        &--icon {
+          float: left;
+          background-image: image-url('mc_symbol.svg');
+        }
+        &--sed {
+          text-align: right;
+        }
+        &--iscd {
+          text-align: right;
+        }
+        &--q {
+          text-align: right;
+          font-size: 14px;
+          span {
+            @include linkText($ocd: 1, $och: 1, $td: none, $cs: text);
+          }
+        }
+        &--btn {
+          @include red-btn($wd: 340px, $mg: 32px 0 0);
+        }
+      }
       &__add-card {
         width: 320px;
-        height: 100px;
+        height: auto;
         padding: 24px 0px;
         margin: 0 auto;
         &--btn {
