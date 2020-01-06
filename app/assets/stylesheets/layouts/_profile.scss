@@ -43,16 +43,7 @@
         }
       }
       &__nickname {
-        background: #fff;
-        width: 220px;
-        height: 48px;
-        border: 1px solid #ccc {
-          radius: 4px;
-        }
-        line-height: 1.5;
-        min-height: 1.5em;
-        margin: 0 0 0 8px;
-        padding: 10px 16px 8px;
+        @include input-form($wd: 220px);
         &:focus {
           @include form-focus();
         }
@@ -74,7 +65,12 @@
         }
       }
       &__update-btn {
-        @include red-btn();
+        width: 100%;
+        padding: 0;
+        a {
+          color: #fff;
+          @include red-btn();
+        }
       }
     }
   }
