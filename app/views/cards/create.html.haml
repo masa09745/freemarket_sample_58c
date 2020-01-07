@@ -68,6 +68,11 @@
                 #click-balloon
                   %span.form-q ?
                   カード裏面の番号とは？
+                .balloon
+                  %span
+                    カードの裏面をご参照ください。
+                  %br
+                  = image_tag 'c-card_bk.png', alt: '', width: '180'
             %button{type:'submit', class:'list-reg__card--btn'}
               %span= link_to '追加する','#'
     %nav= render 'shared/mypage_side'

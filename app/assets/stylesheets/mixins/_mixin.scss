@@ -236,3 +236,42 @@
   margin: $mg;
   padding: $pd;
 }
+
+@mixin balloon() {
+  position: absolute;
+  display: none;
+  top: 28.5%;
+  left: 49.2%;
+  width: 345px;
+  z-index: 1;
+  padding: 15px;
+  border-radius: 5px;
+  background: #e4e3e3;
+  box-sizing: border-box;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 300px;
+    border-style: solid;
+    border-width: 0 10px 15px 10px;
+    border-color: transparent transparent #e4e3e3 transparent;
+  }
+  @include media('tb') {
+    width: calc(
+      100% - #{map-get($m-width, side)} - #{map-get($m-margin, side)}
+    );
+    width: 345px;
+    top: 28.5%;
+    left: 48.5%;
+  }
+  @include media('sp') {
+    width: calc(100% - #{map-get($m-margin, side)});
+    width: 345px;
+    top: 21.5%;
+    left: 15%;
+  }
+}

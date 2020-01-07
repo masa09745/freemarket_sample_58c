@@ -108,9 +108,16 @@
           &-q {
             font-size: 14px;
             margin-top: 5px;
-            text-align: right;
             #click-balloon {
+              text-align: right;
               @include linkText($ocd: 1, $och: 1, $td: none, $cs: text);
+            }
+            .balloon {
+              text-align: center;
+              img {
+                padding-top: 10px;
+              }
+              @include balloon();
             }
           }
         }
