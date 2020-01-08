@@ -100,5 +100,31 @@
   }
 }
 
+.actions{
+  margin: 24px 0 0;
+}
 
+.btn-red{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
 
+.text-right{
+  display:block;
+  text-align: right;
+  color: #0099e8;
+}
+
+.text-gray{
+  color: #888;
+}

@@ -10,14 +10,16 @@
           %span 必須
           = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner", required: ""
         .signup-form__group
-          %label パスワード
+          %label メールアドレス
           %span 必須
-          = f.password_field :password, autocomplete: "new-password", placeholder: "pc・携帯どちらでも可", class: "signup-form__group-inner", required: ""
+          = f.email_field :email, autocomplete: "new-password", placeholder: "pc・携帯どちらでも可", class: "signup-form__group-inner", required: ""
         .signup-form__group
           %label{:for => ""} パスワード(確認)
           %span 必須
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "７文字以上の半角英数字", class: "signup-form__group-inner", required: ""
-          %p※ 英字と数字の両方を含めて設定してください。
+          = f.password_field :password, autocomplete: "new-password", placeholder: "７文字以上の半角英数字", class: "signup-form__group-inner", required: ""
+          %p.text-gray
+            ※ 英字と数字の両方を含めて設定してください。
+            ＝ test 
           .signup-form__group
           %h3 本人確認
           %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -38,8 +40,13 @@
           %span 必須
           .birthday-form
             != sprintf(f.date_select(:birthday, prefix:'birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-          %p※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          %p.text-gray
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .signup-form
+        .signup-form__group
+          %p
+            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
         .actions
-          = f.submit "次へ進む"
-        
+          = f.submit "次へ進む" ,class: "btn-red"
+        .signup-form__group
+          = link_to "本人情報の登録について>", "/", class: "text-right"

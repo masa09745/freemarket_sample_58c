@@ -1,9 +1,10 @@
 .main-container__inner
   = form_for(:session, url: sign_in_credit_path , html: { id:"form", method: :post}) do |f|
-    .signup-form__group
-      %label 郵便番号
-      %span 必須
-      = f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner", pattern: "[0-9]{7}", required: ""
     .signup-form
-      .actions
-        = f.submit "次へ進む"
+      .signup-form__group
+        %label 郵便番号
+        %span 必須
+        = f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner", pattern: "[0-9]{7}", required: ""
+      .signup-form
+        .actions
+          = f.submit "次へ進む" ,class: "btn-red"
