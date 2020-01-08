@@ -7,7 +7,6 @@
     position: absolute;
     display: flex;
     width: 750px;
-    
 
     .leftcontent {
       margin-top: 40px;
@@ -32,7 +31,7 @@
 
       .left {
         margin-right: 20px;
-        }
+      }
 
       .center {
         margin-right: 10px;
@@ -45,10 +44,9 @@
       .right:hover {
         opacity: 0.7;
       }
-
     }
-
-
-
+  }
+  @include media('sp') {
+    display: none;
   }
 }

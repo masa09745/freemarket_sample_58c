@@ -72,9 +72,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem "omniauth-rails_csrf_protection"
-  gem 'omniauth-google-oauth2'
-  gem 'omniauth-facebook'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end
@@ -87,3 +84,7 @@ gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jquery-turbolinks'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'ancestry'
