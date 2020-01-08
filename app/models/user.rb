@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   devise :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
-  validates :nickname, presence: true, length: { maximum: 6 }
-
+  has_many :sns_credentials, dependent: :destroy
 
 
   def self.find_oauth(auth)
