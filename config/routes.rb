@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: "freemarket#index"
+  root to: "freemarkets#index"
     get 'freemarket/show'
     get 'freemarket/create'
   scope :mypage do
