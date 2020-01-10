@@ -1,4 +1,4 @@
-class FreemarketController < ApplicationController
+class FreemarketsController < ApplicationController
   def index
   end
 

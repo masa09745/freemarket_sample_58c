@@ -2,7 +2,7 @@
   .header-inner
     .inner-top
       .inner-top__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
       %form{action:"/", method:"post", class: "inner-top__form"}
         %input{type:"search", placeholder:"何かお探しですか",class:"search-form"}
