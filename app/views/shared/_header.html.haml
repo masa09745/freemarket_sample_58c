@@ -11,7 +11,7 @@
     .inner-lwr
       .lwr-menu
         .lwr-menu__category
-          =link_to "",class:"menu" do
+          =link_to categories_path ,class:"menu" do
             =icon('fas', 'list-ul')
             %span カテゴリーから探す
           .category-list
@@ -142,7 +142,7 @@
                 =link_to "",class:"parent-name" do
                   その他
               %li.list-parent
-                =link_to "",class:"parent-name" do
+                =link_to categories_path ,class:"parent-name" do
                   カテゴリ一覧
         .lwr-menu__brand
           =link_to "",class:"menu" do

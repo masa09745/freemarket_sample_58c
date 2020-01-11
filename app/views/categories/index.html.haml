@@ -1,0 +1,9 @@
+%header
+  =render "/shared/header"
+.category-main
+  %h2 カテゴリー一覧
+  .category-parent
+    - @parents.each do |parent|
+      =link_to "", class:"category-parent__list" do
+        =parent.category_name
+  .category-list-box
