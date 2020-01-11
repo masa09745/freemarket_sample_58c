@@ -34,9 +34,6 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
-  create_table "categorie_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "size_id", null: false
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.string "ancestry"
