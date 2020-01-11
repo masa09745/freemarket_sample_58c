@@ -5,5 +5,6 @@ class AddNewToFreemarkets < ActiveRecord::Migration[5.2]
     add_reference :freemarkets, :category, null: false, foreign_key: true
     add_reference :freemarkets, :size, null: false, foreign_key: true
     add_reference :freemarkets, :brand, null: false, foreign_key: true
+
   end
 end
