@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "freemarket#index"
     get 'freemarket/show'
     get 'freemarket/create'
+    get 'freemarket/delete'
   scope :mypage do
     get 'users/profile'
     get 'users/card'
