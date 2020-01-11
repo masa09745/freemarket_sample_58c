@@ -39,7 +39,9 @@
           %label{:for => ""} 生年月日
           %span 必須
           .birthday-form
-            != sprintf(f.date_select(:birthday, prefix:'birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+            = f.text_field :birth_year, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
+            = f.text_field :birth_month, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
+            = f.text_field :birth_day, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
           %p.text-gray
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .signup-form

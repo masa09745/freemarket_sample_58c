@@ -1,10 +1,22 @@
 .main-container__inner
-  = form_for(:session, url: sign_in_credit_path , html: { id:"form", method: :post}) do |f|
+  = form_for(:session, url: sign_in_credit_path, html: { id:"form", method: :post}) do |f|
     .signup-form
       .signup-form__group
         %label 郵便番号
         %span 必須
-        = f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner", pattern: "[0-9]{7}", required: ""
+        = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner", pattern: "[0-9]{7}", required: ""
+      .signup-form__group
+        %label 都道府県
+        %span 必須
+        = f.text_field :prefecture , autofocus: true, autocomplete: "", placeholder: "例)東京都", class: "signup-form__group-inner",  pattern:"[ぁ-んァ-ン一-龥]+", required: ""
+      .signup-form__group
+        %label 市町村名
+        %span 必須
+        = f.text_field :city, autofocus: true, autocomplete: "", placeholder: "例)横浜市緑区", class: "signup-form__group-inner",  pattern:"[ぁ-んァ-ン一-龥]+", required: ""
+      .signup-form__group
+        %label 番地
+        %span 必須
+        = f.text_field :adress, autofocus: true, autocomplete: "", placeholder: "例)青山1-1", class: "signup-form__group-inner",  pattern:"[ぁ-んァ-ン一-龥]+", required: ""
       .signup-form
         .actions
           = f.submit "次へ進む" ,class: "btn-red"
