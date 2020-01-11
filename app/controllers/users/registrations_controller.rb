@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_permitted_parameters
+  # before_action :configure_permitted_parameters
   
   def registration
+    @user = User.new
   end
 
 
@@ -17,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_year] = params[:session][:birth_year]
     session[:birth_month] = params[:session][:birth_month]
     session[:date_of_day] = params[:session][:date_of_day]
-    
+    @user = User.new
   end
     
   def credit
@@ -25,8 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:prefecture] = params[:session][:prefecture]
     session[:city] = params[:session][:city]
     session[:address] = params[:session][:address]
-    session[:building_name] = params[:session][:building_name]
-  
+    @user = User.new
   end
   
   def phone
@@ -44,31 +44,34 @@ class Users::RegistrationsController < Devise::RegistrationsController
       first_name_kana: session[:first_name_kana],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      bitrh_day: session[:birth_day],
-    )
-    
-    @user.address = User.new(
-      zip_code: session[:zip_code],
+      birth_day: session[:birth_day],
+      postal_code: session[:postal_code],
       prefecture: session[:prefecture],
       city: session[:city],
-      address: session[:address],
+      address: session[:address]
     )
-  
    
-    @user.save
-    @user.address.save
-  
-  end
 
+    if 
+      session[:id] = @user.id
+      redirect_to  sign_in_done_path
+    else
+      redirect_to action: 'registration'
+    end
+    
+  end
 
   def done
-  end  
-
-  private
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:email ,:password, :encrypted_password, :last_name,:first_name, :last_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day])
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
+
+
+
+  # private
+
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:email ,:password, :encrypted_password, :last_name,:first_name, :last_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day])
+  # end
 
 
 

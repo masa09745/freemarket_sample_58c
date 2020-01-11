@@ -1,1 +1,5 @@
-カード
+.main-container__inner
+  = form_for(:session, url: sign_in_completed_path , html: { id:"form", method: :post}) do |f|
+    .signup-form
+      .actions
+        = f.submit "次へ進む" ,class: "btn-red"
