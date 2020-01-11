@@ -9,8 +9,9 @@
       .list-add
         %section.list-add__card
           %h3.sub-title クレジットカード一覧
-          %button{type:'submit', class:'list-add__card--btn'}
-            %span= link_to 'クレジットカードを追加する','../cards/create'
+          .list-add__card--btn
+            = link_to cards_create_path do
+              %span クレジットカードを追加する
         .list-add__border
         .list-add__payment-link
           %span=link_to '支払い方法について','#'

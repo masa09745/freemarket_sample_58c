@@ -2,7 +2,7 @@
   .mypage-side--nav
     %ul.mypage-side--nav__list
       %li
-        =link_to "#", class: "mypage-side--nav__list__item active"  do
+        =link_to users_path ,class: "mypage-side--nav__list__item active" do
           マイページ
           %i.fa.fa-angle-right
       %li
@@ -18,7 +18,7 @@
           いいね！一覧
           %i.fa.fa-angle-right
       %li
-        =link_to "#" , class: "mypage-side--nav__list__item" do
+        =link_to freemarket_create_path ,class: "mypage-side--nav__list__item" do
           出品する
           %i.fa.fa-angle-right
       %li
@@ -72,7 +72,7 @@
       設定
     %ul.mypage-side--nav__list
       %li
-        =link_to "../users/profile"  ,class: "mypage-side--nav__list__item" do
+        =link_to users_profile_path ,class: "mypage-side--nav__list__item" do
           プロフィール
           %i.fa.fa-angle-right
       %li
@@ -80,7 +80,7 @@
           発送元・お届け先住所変更
           %i.fa.fa-angle-right
       %li
-        =link_to "../users/card"  ,class: "mypage-side--nav__list__item" do
+        =link_to users_card_path ,class: "mypage-side--nav__list__item" do
           支払い方法
           %i.fa.fa-angle-right
       %li
