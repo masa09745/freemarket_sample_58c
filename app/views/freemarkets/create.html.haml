@@ -14,6 +14,8 @@
                 %p.info 最大10枚までアップロードできます
                 .sell-upload__image
                   #image-drop
+                    -# = f.fields_for :image_url, {type: 'file', id: 'file', multiple: 'multiple', style: 'display:none'} do |i|
+                    -#   = i.file_field
                     %input{type:"file", id:"file", multiple: "multiple", style: "display:none"}
 
                     %pre
@@ -30,7 +32,7 @@
                   %label 商品の説明
                   %span.must 必須
                   .form-info__text
-                  %textarea{class:"text-info", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"}
+                  = f.text_area :description, class:"text-info", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"
               .sell.detail
                 %h3.detail-category 商品詳細
                 .sell-form
@@ -45,7 +47,7 @@
                     %span.must 必須
                     .condition-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      %select.pulldown
+                      = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "pulldown"}
               .sell.shipping
                 %h3.shipping-about 配送について
                 .sell-form
@@ -78,7 +80,7 @@
                         %span.must 必須
                       .input-box__price
                         ¥
-                        %input#jsPrice.input-price{placeholder:"例) 300"}
+                        = f.text_field :price, placeholder: "例) 300", class: "input-price", id: "jsPrice"
 
                   .sell-box__tax
                     %label 販売手数料(10%)

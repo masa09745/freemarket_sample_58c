@@ -30,15 +30,17 @@ end
   end
 
   def create
-    a = Freemarket.new(params[:item])
-    Freemarket.create(item: a)
-    binding.pry
-    redirect_to root_path
+    @freemarket = Freemarket.create(freemarket_paramas)
+    if @freemarket.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   private
   def freemarket_paramas
-    params.permit(:item)
+    params.require(:freemarket).permit(:item, :description, :price, :condition)
   end
 
 end
