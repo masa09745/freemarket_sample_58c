@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'users/profile'
     get 'users/card'
     get 'users/card/create'
-    get 'users/identification'
+    get 'users/show'
     get 'users/logout'
     resources :users
   end
