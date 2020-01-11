@@ -7,3 +7,15 @@
       =link_to "", class:"category-parent__list" do
         =parent.category_name
   .category-list-box
+    .category-parent-title
+      %h3 レディース
+    .category-list-box__content
+      - @parents.each do |parent|
+        - parent.children.each do |child|
+          .child
+            .child-name
+              =child.category_name
+            .grandchild
+              - child.children.each do |grandchild|
+                =link_to"", class:"grandchild__list" do
+                  =grandchild.category_name
