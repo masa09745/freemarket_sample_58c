@@ -46,42 +46,17 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-
+        - @freemarkets.each do |freemarket|
           .toppage-main__content
-            = link_to '詳細' , {controller: :freemarket, action: :show}
+            -# = link_to '詳細' , {controller: :freemarket, action: :show}
             .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
               %span
-                ¥2,400
-              = image_tag ''
+                = freemarket.price
+                -# = link_to
             .toppage-main__item-name
-              例題
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
+              = freemarket.item
+
     .toppage-main__category-name
       .toppage-main__text
         メンズ新着アイテム
