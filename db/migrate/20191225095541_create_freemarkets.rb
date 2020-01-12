@@ -5,7 +5,7 @@ class CreateFreemarkets < ActiveRecord::Migration[5.2]
       t.integer :price, null: false
       t.string :condition, null: false
       t.string :ship_charge, null: false
-      t.string :ship_from, null: false
+      t.integer :ship_from, null: false, default: 0
       t.string :ship_method, null: false
       t.string :ship_day, null: false
       t.text :description, null: false

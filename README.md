@@ -86,7 +86,7 @@
 | price         | integer    | null: false                    |
 | condition     | string     | null: false                    |
 | ship_charge   | string     | null: false                    |
-| ship_from     | string     | null: false                    |
+| ship_from     | integer    | null: false, default: 0        |
 | ship_method   | string     | null: false                    |
 | ship_day      | string     | null: false                    |
 | description   | text       | null: false                    |
