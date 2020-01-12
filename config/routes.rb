@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: { 
     sessions: "users/sessions",
     registrations: "users/registrations",
@@ -21,6 +20,7 @@ Rails.application.routes.draw do
     get 'cards/create'
     resources :cards
   end
+
   
   devise_scope :user do
     get 'sign_in/registrstion'=>'users/registrations#registration'
