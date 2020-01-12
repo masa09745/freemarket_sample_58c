@@ -2,7 +2,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_permitted_parameters
   
   def registration
-    @user = User.new
   end
 
 
@@ -18,7 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_year] = params[:session][:birth_year]
     session[:birth_month] = params[:session][:birth_month]
     session[:date_of_day] = params[:session][:date_of_day]
-    @user = User.new
   end
     
   def credit
@@ -26,7 +24,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:prefecture] = params[:session][:prefecture]
     session[:city] = params[:session][:city]
     session[:address] = params[:session][:address]
-    @user = User.new
   end
   
   def phone
@@ -50,10 +47,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       city: session[:city],
       address: session[:address]
     )
+
+    @user.save
    
 
-    if 
-      session[:id] = @user.id
+     
+    if @user.save
       redirect_to  sign_in_done_path
     else
       redirect_to action: 'registration'
@@ -62,7 +61,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 
