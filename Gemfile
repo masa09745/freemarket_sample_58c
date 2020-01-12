@@ -97,3 +97,4 @@ gem 'pry-rails'
 gem 'gretel'
 gem 'payjp'
 
+gem 'active_hash'

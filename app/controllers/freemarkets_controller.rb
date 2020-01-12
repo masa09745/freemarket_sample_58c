@@ -40,7 +40,7 @@ end
 
   private
   def freemarket_paramas
-    params.require(:freemarket).permit(:item, :description, :price, :condition)
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day)
   end
 
 end
