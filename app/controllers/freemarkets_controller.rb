@@ -27,6 +27,7 @@ class FreemarketsController < ApplicationController
 
 end
     @freemarket = Freemarket.new
+    @freemarket.item_images.build
   end
 
   def create
@@ -40,7 +41,7 @@ end
 
   private
   def freemarket_paramas
-    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day)
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, {item_images_attributes: [:image_url]})
   end
 
 end

@@ -14,9 +14,8 @@
                 %p.info 最大10枚までアップロードできます
                 .sell-upload__image
                   #image-drop
-                    -# = f.fields_for :image_url, {type: 'file', id: 'file', multiple: 'multiple', style: 'display:none'} do |i|
-                    -#   = i.file_field
-                    %input{type:"file", id:"file", multiple: "multiple", style: "display:none"}
+                    = f.fields_for :item_images do |i|
+                      = i.file_field :image_url, {style: "display:none", id: "file", multiple: true}
 
                     %pre
                       ドラッグランドドロップ

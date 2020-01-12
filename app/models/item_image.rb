@@ -1,3 +1,3 @@
 class ItemImage < ApplicationRecord
-  belongs_to :freemarket
+  belongs_to :freemarket, optional: true
 end
