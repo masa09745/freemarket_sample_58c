@@ -1,5 +1,5 @@
 .main-container__inner
-  = form_for(:session, url: sign_in_credit_path, html: { id:"form", method: :post}) do |f|
+  = form_for(:session, url: sign_in_credit_path, html: { id:"form", method: :get}) do |f|
     .signup-form
       .signup-form__group
         %label 郵便番号

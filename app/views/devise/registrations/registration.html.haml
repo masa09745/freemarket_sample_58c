@@ -3,7 +3,7 @@
     %h2
       会員情報を入力
   .redistration-main__form
-    = form_for(:session, url: sign_in_address_path , html: { id:"form", method: :post}) do |f|
+    = form_for(:session, url: sign_in_address_path , html: { id:"form", method: :get}) do |f|
       .signup-form
         .signup-form__group
           %label ニックネーム
