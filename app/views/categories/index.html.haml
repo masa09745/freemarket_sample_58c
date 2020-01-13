@@ -10,12 +10,35 @@
     .category-parent-title
       %h3 レディース
     .category-list-box__content
-      - @parents.each do |parent|
-        - parent.children.each do |child|
-          .child
-            .child-name
-              =child.category_name
-            .grandchild
-              - child.children.each do |grandchild|
-                =link_to"", class:"grandchild__list" do
-                  =grandchild.category_name
+      - @ladys.each do |lady|
+        .child
+          .child-name
+            =lady.category_name
+          .grandchild
+            - lady.children.each do |grandchild|
+              =link_to '', class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 メンズ
+    .category-list-box__content
+      - @mens.each do |men|
+        .child
+          .child-name
+            =men.category_name
+          .grandchild
+            - men.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 ベビー・キッズ
+    .category-list-box__content
+      - @kids.each do |kid|
+        .child
+          .child-name
+            =kid.category_name
+          .grandchild
+            - kid.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
