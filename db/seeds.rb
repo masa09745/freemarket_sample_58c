@@ -244,7 +244,6 @@ book_cds.children.create([{category_name:"すべて"},{category_name:"邦楽"},{
 book_dvds.children.create([{category_name:"すべて"},{category_name:"外国映画"},{category_name:"日本映画"},{category_name:"アニメ"},{category_name:"TVドラマ"},{category_name:"ミュージック"},{category_name:"お笑い/バラエティ"},{category_name:"スポーツ/フィットネス"},{category_name:"キッズ/ファミリー"},{category_name:"その他"}])
 book_record.children.create([{category_name:"すべて"},{category_name:"邦楽"},{category_name:"洋楽"},{category_name:"その他"}])
 book_games.children.create([{category_name:"すべて"},{category_name:"家庭用ゲーム本体"},{category_name:"家庭用ゲームソフト"},{category_name:"携帯用ゲーム本体"},{category_name:"携帯用ゲームソフト"},{category_name:"PCゲーム"},{category_name:"その他"}])
-
 hobby_toy.children.create([{category_name:"すべて"},{category_name:"キャラクターグッズ"},{category_name:"ぬいぐるみ"},{category_name:"小物/アクセサリー"},{category_name:"模型/プラモデル"},{category_name:"ミニカー"},{category_name:"トイラジコン"},{category_name:"プラモデル"},{category_name:"ホビーラジコン"},{category_name:"鉄道模型"},{category_name:"その他"}])
 hobby_talent.children.create([{category_name:"すべて"},{category_name:"アイドル"},{category_name:"ミュージシャン"},{category_name:"タレント/お笑い芸人"},{category_name:"スポーツ選手"},{category_name:"その他"}])
 hobby_comic.children.create([{category_name:"すべて"},{category_name:"ストラップ"},{category_name:"キーホルダー"},{category_name:"バッジ"},{category_name:"カード"},{category_name:"クリアファイル"},{category_name:"ポスター"},{category_name:"タオル"},{category_name:"その他"}])
