@@ -42,6 +42,42 @@
             - kid.children.each do |grandchild|
               =link_to"", class:"grandchild__list" do
                 =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 インテリア・住まい・小物
+    .category-list-box__content
+      - @lifes.each do |life|
+        .child
+          .child-name
+            =life.category_name
+          .grandchild
+            - life.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 本・音楽・ゲーム
+    .category-list-box__content
+      - @books.each do |book|
+        .child
+          .child-name
+            =book.category_name
+          .grandchild
+            - book.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 おもちゃ・ホビー・グッズ
+    .category-list-box__content
+      - @hobbies.each do |hobby|
+        .child
+          .child-name
+            =hobby.category_name
+          .grandchild
+            - hobby.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
 .footertop
   =render "/shared/footertop"
 .footer
