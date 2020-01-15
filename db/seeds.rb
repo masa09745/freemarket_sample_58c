@@ -12,6 +12,7 @@ ticket = Category.create(category_name:"チケット")
 car = Category.create(category_name:"自動車・オートバイ")
 other = Category.create(category_name:"その他")
 
+
 lady_tops = lady.children.create(category_name:"トップス")
 lady_jacket = lady.children.create(category_name:"ジャケット/アウター")
 lady_pants = lady.children.create(category_name:"パンツ")
