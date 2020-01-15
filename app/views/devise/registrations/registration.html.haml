@@ -27,21 +27,24 @@
           %label{:for => ""} お名前(全角)
           %span 必須
           .name-form
-            = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "例) 山田", class: "signup-form__group-inner", pattern:"[ぁ-んァ-ン一-龥]+", required: ""
-            = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例) 彩", class: "signup-form__group-inner", pattern:"[ぁ-んァ-ン一-龥]+", required: ""
+            = f.text_field :user_last_name, autofocus: true, autocomplete: "last_name", placeholder: "例) 山田", class: "signup-form__group-inner", pattern:"[ぁ-んァ-ン一-龥]+", required: ""
+            = f.text_field :user_first_name, autofocus: true, autocomplete: "first_name", placeholder: "例) 彩", class: "signup-form__group-inner", pattern:"[ぁ-んァ-ン一-龥]+", required: ""
         .signup-form__group
           %label{:for => ""} お名前カナ(全角)
           %span 必須
           .name-form
-            = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例) ヤマダ", class: "signup-form__group-inner",pattern:"([ァ-ン]|ー)+",  required: ""
-            = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例) アヤ", class: "signup-form__group-inner", pattern:"([ァ-ン]|ー)+", required: ""
+            = f.text_field :user_last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例) ヤマダ", class: "signup-form__group-inner",pattern:"([ァ-ン]|ー)+",  required: ""
+            = f.text_field :user_first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例) アヤ", class: "signup-form__group-inner", pattern:"([ァ-ン]|ー)+", required: ""
         .signup-form__group
           %label{:for => ""} 生年月日
           %span 必須
           .birthday-form
-            = f.text_field :birth_year, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
-            = f.text_field :birth_month, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
-            = f.text_field :birth_day, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner"
+            = f.select :birth_year, [["2000", "2000"], ["1999", "1999"], ["1998", "1998"], ["1997", "1997"]], {prompt: "---"}, class: "select-default select-text-default"
+            %span 年
+            = f.select :birth_month, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]],  {prompt: "---"}, class: "select-default select-text-default"
+            %span 月
+            = f.select :birth_day, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"], ["18", "18"], ["19", "19"], ["20", "20"], ["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]], {prompt: "---"}, class: "select-default select-text-default"
+            %span 日
           %p.text-gray
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .signup-form

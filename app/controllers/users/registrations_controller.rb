@@ -9,16 +9,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:nickname] = params[:session][:nickname]
     session[:email] = params[:session][:email]
     session[:password] = params[:session][:password]
-    session[:last_name] = params[:session][:last_name]
-    session[:first_name] = params[:session][:first_name]
-    session[:last_name_kana] = params[:session][:last_name_kana]
-    session[:first_name_kana] = params[:session][:first_name_kana]
+    session[:user_last_name] = params[:session][:user_last_name]
+    session[:user_first_name] = params[:session][:user_first_name]
+    session[:user_last_name_kana] = params[:session][:user_last_name_kana]
+    session[:user_first_name_kana] = params[:session][:user_first_name_kana]
     session[:birth_year] = params[:session][:birth_year]
     session[:birth_month] = params[:session][:birth_month]
     session[:birth_day] = params[:session][:birth_day]
   end
     
   def credit
+    session[:last_name] = params[:session][:last_name]
+    session[:first_name] = params[:session][:first_name]
+    session[:last_name_kana] = params[:session][:last_name_kana]
+    session[:first_name_kana] = params[:session][:first_name_kana]
     session[:postal_code] = params[:session][:postal_code]
     session[:prefecture] = params[:session][:prefecture]
     session[:city] = params[:session][:city]
@@ -33,13 +37,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
       nickname: session[:nickname],
       email: session[:email],
       password: session[:password],
+      user_last_name: session[:user_last_name],
+      user_first_name: session[:user_first_name],
+      user_last_name_kana: session[:user_last_name_kana],
+      user_first_name_kana: session[:user_first_name_kana],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      birth_day: session[:birth_day],
+      
+    )
+    @user.deliver_address = @user.build_deliver_address(
       last_name: session[:last_name],
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birth_year: session[:birth_year],
-      birth_month: session[:birth_month],
-      birth_day: session[:birth_day],
       postal_code: session[:postal_code],
       prefecture: session[:prefecture],
       city: session[:city],
@@ -47,7 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
 
     @user.save
-   
+    @user.deliver_address.save
+    
 
      
     if @user.save

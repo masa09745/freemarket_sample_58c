@@ -10,9 +10,9 @@
       .signup-form__group
         %label{:for => ""} お名前カナ(全角)
         %span 必須
-        .name-form
-          = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例) ヤマダ", class: "signup-form__group-inner",pattern:"([ァ-ン]|ー)+",  required: ""
-          = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例) アヤ", class: "signup-form__group-inner", pattern:"([ァ-ン]|ー)+", required: ""
+      .name-form
+        = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例) ヤマダ", class: "signup-form__group-inner",pattern:"([ァ-ン]|ー)+",  required: ""
+        = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例) アヤ", class: "signup-form__group-inner", pattern:"([ァ-ン]|ー)+", required: ""
       .signup-form__group
         %label 郵便番号
         %span 必須
