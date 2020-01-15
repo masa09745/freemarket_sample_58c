@@ -97,13 +97,28 @@ hobby_fineart = hobby.children.create(category_name:"美術品")
 hobby_art = hobby.children.create(category_name:"アート用品")
 hobby_other = hobby.children.create(category_name:"その他")
 
+cosme_base = cosme.children.create(category_name:"ベースメイク")
+cosme_make = cosme.children.create(category_name:"メイクアップ")
+cosme_nail = cosme.children.create(category_name:"ネイル")
+cosme_fragrance = cosme.children.create(category_name:"香水")
+cosme_skincare = cosme.children.create(category_name:"スキンケア/基礎化粧品")
+cosme_haircare = cosme.children.create(category_name:"ヘアケア")
+cosme_bodycare = cosme.children.create(category_name:"ボディケア")
+cosme_oralcare = cosme.children.create(category_name:"オーラルケア")
+cosme_relaxation = cosme.children.create(category_name:"リラクゼーション")
+cosme_diet = cosme.children.create(category_name:"ダイエット")
+cosme_other = cosme.children.create(category_name:"その他")
 
-
-
-
-
-
-
+camera_phone = camera.children.create(category_name:"スマートフォン/携帯電話")
+camera_phoneaccessory = camera.children.create(category_name:"スマホアクセサリー")
+camera_pc = camera.children.create(category_name:"PC/タブレット")
+camera_cameras = camera.children.create(category_name:"カメラ")
+camera_tv = camera.children.create(category_name:"TV/映像機器")
+camera_audio = camera.children.create(category_name:"オーディオ機器")
+camera_health = camera.children.create(category_name:"美容/健康")
+camera_aircondition = camera.children.create(category_name:"冷暖房/空調")
+camera_homeelectronics = camera.children.create(category_name:"生活家電")
+camera_other = camera.children.create(category_name:"その他")
 
 
 
@@ -142,13 +157,12 @@ men_legwear.children.create([{category_name:"すべて"},{category_name:"ソッ�
 men_underwear.children.create([{category_name:"すべて"},{category_name:"トランクス"},{category_name:"ボクサーパンツ"},{category_name:"その他"}])
 men_other.children.create([{category_name:"すべて"}])
 
-
 kid_girl_baby.children.create([{category_name:"すべて"},{category_name:"トップス"},{category_name:"アウター"},{category_name:"パンツ"},{category_name:"スカート"},{category_name:"ワンピース"},{category_name:"ベビードレス"},{category_name:"おくるみ"},{category_name:"下着/肌着"},{category_name:"パジャマ"},{category_name:"ロンパース"},{category_name:"その他"}])
 kid_boy_baby.children.create([{category_name:"すべて"},{category_name:"トップス"},{category_name:"アウター"},{category_name:"パンツ"},{category_name:"おくるみ"},{category_name:"下着/肌着"},{category_name:"パジャマ"},{category_name:"ロンパース"},{category_name:"その他"},])
 kid_unisex_baby.children.create([{category_name:"すべて"},{category_name:"トップス"},{category_name:"アウター"},{category_name:"パンツ"},{category_name:"おくるみ"},{category_name:"下着/肌着"},{category_name:"パジャマ"},{category_name:"ロンパース"},{category_name:"その他"},])
 kid_girl.children.create([{category_name:"すべて"},{category_name:"ジャケット/上着"},{category_name:"トップス(Tシャツ/カットソー)"},{category_name:"トップス(トレーナー)"},{category_name:"トップス(チュニック)"},{category_name:"トップス(タンクトップ)"},{category_name:"トップス(その他)"},{category_name:"スカート"},{category_name:"パンツ"},{category_name:"ワンピース"},{category_name:"セットアップ"},{category_name:"パジャマ"},{category_name:"フォーマル/ドレス"},{category_name:"和服"},{category_name:"浴衣"},{category_name:"甚平"},{category_name:"水着"},{category_name:"その他"}])
 kid_boy.children.create([{category_name:"すべて"},{category_name:"ジャケット/上着"},{category_name:"トップス(Tシャツ/カットソー)"},{category_name:"トップス(トレーナー)"},{category_name:"トップス(その他)"},{category_name:"パンツ"},{category_name:"セットアップ"},{category_name:"パジャマ"},{category_name:"フォーマル/ドレス"},{category_name:"和服"},{category_name:"浴衣"},{category_name:"甚平"},{category_name:"水着"},{category_name:"その他"}])
-kid_boy.children.create([{category_name:"すべて"},{category_name:"ジャケット/上着"},{category_name:"トップス(Tシャツ/カットソー)"},{category_name:"トップス(トレーナー)"},{category_name:"トップス(その他)"},{category_name:"ボトムス"},{category_name:"パジャマ"},{category_name:"その他"}])
+kid_unisex.children.create([{category_name:"すべて"},{category_name:"コート"},{category_name:"ジャケット/上着"},{category_name:"トップス(Tシャツ/カットソー)"},{category_name:"トップス(トレーナー)"},{category_name:"トップス(その他)"},{category_name:"ボトムス"},{category_name:"パジャマ"},{category_name:"その他"}])
 kid_shoes.children.create([{category_name:"すべて"},{category_name:"スニーカー"},{category_name:"サンダル"},{category_name:"ブーツ"},{category_name:"長靴"},{category_name:"その他"}])
 kid_goods.children.create([{category_name:"すべて"},{category_name:"靴下/スパッツ"},{category_name:"帽子"},{category_name:"エプロン"},{category_name:"サスペンダー"},{category_name:"タイツ"},{category_name:"ハンカチ"},{category_name:"バンダナ"},{category_name:"ベルト"},{category_name:"マフラー"},{category_name:"傘"},{category_name:"手袋"},{category_name:"スタイ"},{category_name:"バッグ"},{category_name:"その他"}])
 kid_toilet.children.create([{category_name:"すべて"},{category_name:"おむつ用品"},{category_name:"おまる/補助便座"},{category_name:"トレーニングパンツ"},{category_name:"ベビーバス"},{category_name:"お風呂用品"},{category_name:"その他"}])
@@ -173,7 +187,6 @@ life_goods.children.create([{category_name:"すべて"},{category_name:"ごみ�
 life_season.children.create([{category_name:"すべて"},{category_name:"正月"},{category_name:"成人式"},{category_name:"バレンタインデー"},{category_name:"ひな祭り"},{category_name:"子どもの日"},{category_name:"母の日"},{category_name:"父の日"},{category_name:"サマーギフト/お中元"},{category_name:"夏/夏休み"},{category_name:"ハロウィン"},{category_name:"敬老の日"},{category_name:"七五三"},{category_name:"お歳暮"},{category_name:"クリスマス"},{category_name:"冬一般"},{category_name:"その他"}])
 life_other.children.create([{category_name:"すべて"}])
 
-
 book_books.children.create([{category_name:"すべて"},{category_name:"文学/小説"},{category_name:"人文/社会"},{category_name:"ノンフィクション/教養"},{category_name:"地図/旅行ガイド"},{category_name:"ビジネス/経済"},{category_name:"健康/医学"},{category_name:"コンピュータ/IT"},{category_name:"趣味/スポーツ/実用"},{category_name:"住まい/暮らし/子育て"},{category_name:"アート/エンタメ"},{category_name:"洋書"},{category_name:"絵本"},{category_name:"参考書"},{category_name:"その他"}])
 book_comic.children.create([{category_name:"すべて"},{category_name:"全巻セット"},{category_name:"少年漫画"},{category_name:"少女漫画"},{category_name:"青年漫画"},{category_name:"女性漫画"},{category_name:"同人誌"},{category_name:"その他"}])
 book_magazine.children.create([{category_name:"すべて"},{category_name:"アート/エンタメ/ホビー"},{category_name:"ファッション"},{category_name:"ニュース/総合"},{category_name:"趣味/スポーツ"},{category_name:"その他"}])
@@ -181,6 +194,7 @@ book_cds.children.create([{category_name:"すべて"},{category_name:"邦楽"},{
 book_dvds.children.create([{category_name:"すべて"},{category_name:"外国映画"},{category_name:"日本映画"},{category_name:"アニメ"},{category_name:"TVドラマ"},{category_name:"ミュージック"},{category_name:"お笑い/バラエティ"},{category_name:"スポーツ/フィットネス"},{category_name:"キッズ/ファミリー"},{category_name:"その他"}])
 book_record.children.create([{category_name:"すべて"},{category_name:"邦楽"},{category_name:"洋楽"},{category_name:"その他"}])
 book_games.children.create([{category_name:"すべて"},{category_name:"家庭用ゲーム本体"},{category_name:"家庭用ゲームソフト"},{category_name:"携帯用ゲーム本体"},{category_name:"携帯用ゲームソフト"},{category_name:"PCゲーム"},{category_name:"その他"}])
+
 hobby_toy.children.create([{category_name:"すべて"},{category_name:"キャラクターグッズ"},{category_name:"ぬいぐるみ"},{category_name:"小物/アクセサリー"},{category_name:"模型/プラモデル"},{category_name:"ミニカー"},{category_name:"トイラジコン"},{category_name:"プラモデル"},{category_name:"ホビーラジコン"},{category_name:"鉄道模型"},{category_name:"その他"}])
 hobby_talent.children.create([{category_name:"すべて"},{category_name:"アイドル"},{category_name:"ミュージシャン"},{category_name:"タレント/お笑い芸人"},{category_name:"スポーツ選手"},{category_name:"その他"}])
 hobby_comic.children.create([{category_name:"すべて"},{category_name:"ストラップ"},{category_name:"キーホルダー"},{category_name:"バッジ"},{category_name:"カード"},{category_name:"クリアファイル"},{category_name:"ポスター"},{category_name:"タオル"},{category_name:"その他"}])
@@ -193,63 +207,25 @@ hobby_fineart.children.create([{category_name:"すべて"},{category_name:"陶�
 hobby_art.children.create([{category_name:"すべて"},{category_name:"画材"},{category_name:"額縁"},{category_name:"その他"}])
 hobby_other.children.create([{category_name:"すべて"},{category_name:"トランプ/UNO"},{category_name:"カルタ/百人一首"},{category_name:"ダーツ"},{category_name:"ビリヤード"},{category_name:"麻雀"},{category_name:"パズル/ジグソーパズル"},{category_name:"囲碁/将棋"},{category_name:"オセロ/チェス"},{category_name:"人生ゲーム"},{category_name:"野球/サッカーゲーム"},{category_name:"スポーツ"},{category_name:"三輪車/乗り物"},{category_name:"ヨーヨー"},{category_name:"模型製作用品"},{category_name:"鉄道"},{category_name:"航空機"},{category_name:"アマチュア無線"},{category_name:"パチンコ/パチスロ"},{category_name:"その他"}])
 
+cosme_base.children.create([{category_name:"すべて"},{category_name:"ファンデーション"},{category_name:"化粧下地"},{category_name:"コントロールカラー"},{category_name:"BBクリーム"},{category_name:"CCクリーム"},{category_name:"コンシーラー"},{category_name:"フェイスパウダー"},{category_name:"トライアルセット/サンプル"},{category_name:"その他"}])
+cosme_make.children.create([{category_name:"すべて"},{category_name:"アイシャドウ"},{category_name:"口紅"},{category_name:"リップグロス"},{category_name:"リップライナー"},{category_name:"チーク"},{category_name:"ファイスカラー"},{category_name:"マスカラ"},{category_name:"アイライナー"},{category_name:"つけまつげ"},{category_name:"アイブロウペンシル"},{category_name:"パウダーアイブロウ"},{category_name:"眉マスカラ"},{category_name:"トライアルセット/サンプル"},{category_name:"メイク道具/化粧小物"},{category_name:"美顔用品/美顔ローラー"},{category_name:"その他"}])
+cosme_fragrance.children.create([{category_name:"すべて"},{category_name:"香水(女性用)"},{category_name:"香水(男性用)"},{category_name:"ユニセックス"},{category_name:"ボディミスト"},{category_name:"その他"}])
+cosme_skincare.children.create([{category_name:"すべて"},{category_name:"化粧水/ローション"},{category_name:"乳液/ミルク"},{category_name:"美容液"},{category_name:"フェイスクリーム"},{category_name:"洗顔料"},{category_name:"クレンジング/メイク落とし"},{category_name:"パック/フェイスマスク"},{category_name:"ジェル/ゲル"},{category_name:"ブースター/導入液"},{category_name:"アイケア"},{category_name:"リップケア"},{category_name:"トライアルセット/サンプル"},{category_name:"洗顔グッズ"},{category_name:"その他"}])
+cosme_haircare.children.create([{category_name:"すべて"},{category_name:"シャンプー"},{category_name:"トリートメント"},{category_name:"コンディショナー"},{category_name:"リンス"},{category_name:"スタイリング剤"},{category_name:"カラーリング剤"},{category_name:"ブラシ"},{category_name:"その他"}])
+cosme_bodycare.children.create([{category_name:"すべて"},{category_name:"オイル/クリーム"},{category_name:"ハンドクリーム"},{category_name:"ローション"},{category_name:"日焼け止め/サンオイル"},{category_name:"ボディソープ"},{category_name:"入浴剤"},{category_name:"制汗/デオドラント"},{category_name:"フットケア"},{category_name:"その他"}])
+cosme_oralcare.children.create([{category_name:"すべて"},{category_name:"口臭防止/エチケット用品"},{category_name:"歯ブラシ"},{category_name:"その他"}])
+cosme_relaxation.children.create([{category_name:"すべて"},{category_name:"エッセンシャルオイル"},{category_name:"芳香器"},{category_name:"お香/香炉"},{category_name:"キャンドル"},{category_name:"リラクゼーショングッズ"},{category_name:"その他"}])
+cosme_diet.children.create([{category_name:"すべて"},{category_name:"ダイエット食品"},{category_name:"エクササイズ用品"},{category_name:"体重計"},{category_name:"体脂肪計"},{category_name:"その他"}])
+cosme_other.children.create([{category_name:"すべて"},{category_name:"健康用品"},{category_name:"看護/介護用品"},{category_name:"救急/衛生用品"},{category_name:"その他"}])
 
+camera_phone.children.create([{category_name:"すべて"},{category_name:"スマートフォン本体"},{category_name:"バッテリー/充電器"},{category_name:"携帯電話本体"},{category_name:"PHS本体"},{category_name:"その他"}])
+camera_phoneaccessory.children.create([{category_name:"すべて"},{category_name:"Android用ケース"},{category_name:"iPhone用ケース"},{category_name:"カバー"},{category_name:"イヤホンジャック"},{category_name:"ストラップ"},{category_name:"フィルム"},{category_name:"自撮り棒"},{category_name:"その他"}])
+camera_pc.children.create([{category_name:"すべて"},{category_name:"タブレット"},{category_name:"ノートPC"},{category_name:"デスクトップ型PC"},{category_name:"ディスプレイ"},{category_name:"電子ブックリーダー"},{category_name:"PC周辺機器"},{category_name:"PCパーツ"},{category_name:"その他"}])
+camera_cameras.children.create([{category_name:"すべて"},{category_name:"デジタルカメラ"},{category_name:"ビデオカメラ"},{category_name:"レンズ(単焦点)"},{category_name:"レンズ(ズーム)"},{category_name:"フィルムカメラ"},{category_name:"防犯カメラ"},{category_name:"その他"}])
+camera_tv.children.create([{category_name:"すべて"},{category_name:"テレビ"},{category_name:"プロジェクター"},{category_name:"ブルーレイレコーダー"},{category_name:"DVDレコーダー"},{category_name:"ブルーレイプレーヤー"},{category_name:"DVDプレーヤー"},{category_name:"映像用ケーブル"},{category_name:"その他"}])
+camera_audio.children.create([{category_name:"すべて"},{category_name:"ポータブルプレーヤー"},{category_name:"イヤフォン"},{category_name:"ヘッドフォン"},{category_name:"アンプ"},{category_name:"スピーカー"},{category_name:"ケーブル/シールド"},{category_name:"ラジオ"},{category_name:"その他"}])
+camera_health.children.create([{category_name:"すべて"},{category_name:"ヘアドライヤー"},{category_name:"ヘアアイロン"},{category_name:"美容機器"},{category_name:"電気シェーバー"},{category_name:"電動歯ブラシ"},{category_name:"その他"}])
+camera_aircondition.children.create([{category_name:"すべて"},{category_name:"エアコン"},{category_name:"空気清浄器"},{category_name:"加湿器"},{category_name:"扇風機"},{category_name:"除湿機"},{category_name:"ファンヒーター"},{category_name:"電気ヒーター"},{category_name:"オイルヒーター"},{category_name:"ストーブ"},{category_name:"ホットカーペット"},{category_name:"こたつ"},{category_name:"電気毛布"},{category_name:"その他"}])
+camera_homeelectronics.children.create([{category_name:"すべて"},{category_name:"洗濯機"},{category_name:"炊飯器"},{category_name:"電子レンジ/オーブン"},{category_name:"調理機器"},{category_name:"エスプレッソマシン"},{category_name:"コーヒーメーカー"},{category_name:"衣類乾燥機"},{category_name:"その他"}])
+camera_other.children.create([{category_name:"すべて"},{category_name:"その他"}])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-すべて
-
-トランプ/UNO
-
-カルタ/百人一首
-
-ダーツ
-
-ビリヤード
-
-麻雀
-
-パズル/ジグソーパズル
-
-囲碁/将棋
-
-オセロ/チェス
-
-人生ゲーム
-
-野球/サッカーゲーム
-
-スポーツ
-
-三輪車/乗り物
-
-ヨーヨー
-
-模型製作用品
-
-鉄道
-
-航空機
-
-アマチュア無線
-
-パチンコ/パチスロ
-
-その他
