@@ -16,7 +16,7 @@
             =lady.category_name
           .grandchild
             - lady.children.each do |grandchild|
-              =link_to '', class:"grandchild__list" do
+              =link_to category_path(grandchild), class:"grandchild__list" do
                 =grandchild.category_name
   .category-list-box
     .category-parent-title
