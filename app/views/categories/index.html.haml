@@ -78,6 +78,90 @@
             - hobby.children.each do |grandchild|
               =link_to"", class:"grandchild__list" do
                 =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 コスメ・香水・美容
+    .category-list-box__content
+      - @cosmes.each do |cosme|
+        .child
+          .child-name
+            =cosme.category_name
+          .grandchild
+            - cosme.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 家電・スマホ・カメラ
+    .category-list-box__content
+      - @cameras.each do |camera|
+        .child
+          .child-name
+            =camera.category_name
+          .grandchild
+            - camera.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 スポーツ・レジャー
+    .category-list-box__content
+      - @sports.each do |sports|
+        .child
+          .child-name
+            =sports.category_name
+          .grandchild
+            - sports.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 ハンドメイド
+    .category-list-box__content
+      - @handmades.each do |handmade|
+        .child
+          .child-name
+            =handmade.category_name
+          .grandchild
+            - handmade.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 チケット
+    .category-list-box__content
+      - @tickets.each do |ticket|
+        .child
+          .child-name
+            =ticket.category_name
+          .grandchild
+            - ticket.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 自動車・オートバイ
+    .category-list-box__content
+      - @cars.each do |car|
+        .child
+          .child-name
+            =car.category_name
+          .grandchild
+            - car.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
+  .category-list-box
+    .category-parent-title
+      %h3 その他
+    .category-list-box__content
+      - @others.each do |other|
+        .child
+          .child-name
+            =other.category_name
+          .grandchild
+            - other.children.each do |grandchild|
+              =link_to"", class:"grandchild__list" do
+                =grandchild.category_name
 .footertop
   =render "/shared/footertop"
 .footer
