@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
-  root to: "freemarket#index"
-    get 'freemarket/show'
-    get 'freemarket/create'
-    get 'freemarket/delete'
+
+  root to: "freemarkets#index"
+  resources :freemarkets
+
   scope :mypage do
-    get 'users/profile'
-    get 'users/card'
-    get 'users/card/create'
-    get 'users/show'
-    get 'users/logout'
-    resources :users
+    resources :users do
+      collection do
+        get 'profile', to: 'users#profile'
+        get 'logout', to: 'users#logout'
+      end
+    end
   end
+  
   scope :mypage do
-    get 'cards/create'
-    resources :cards
+    resources :cards, only: [:show, :new] do
+      collection do
+        post 'show', to: 'cards#show'
+        post 'pay', to: 'cards#pay'
+        post 'delete', to: 'cards#delete'
+      end
+    end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
