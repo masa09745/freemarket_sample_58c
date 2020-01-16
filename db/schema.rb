@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_120842) do
+ActiveRecord::Schema.define(version: 2020_01_07_082855) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categorie_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,21 +61,21 @@ ActiveRecord::Schema.define(version: 2019_12_25_120842) do
   end
 
   create_table "freemarkets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "item", null: false
-    t.integer "price", null: false
-    t.string "condition", null: false
-    t.string "ship_charge", null: false
-    t.string "ship_from", null: false
-    t.string "ship_method", null: false
-    t.string "ship_day", null: false
-    t.text "description", null: false
+    t.string "item", default: ""
+    t.integer "price"
+    t.string "condition", default: ""
+    t.string "ship_charge", default: ""
+    t.string "ship_from", default: ""
+    t.string "ship_method", default: ""
+    t.string "ship_day", default: ""
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.bigint "item_image_id", null: false
-    t.bigint "category_id", null: false
-    t.bigint "size_id", null: false
-    t.bigint "brand_id", null: false
+    t.bigint "user_id"
+    t.bigint "item_image_id"
+    t.bigint "category_id"
+    t.bigint "size_id"
+    t.bigint "brand_id"
     t.index ["brand_id"], name: "index_freemarkets_on_brand_id"
     t.index ["category_id"], name: "index_freemarkets_on_category_id"
     t.index ["item_image_id"], name: "index_freemarkets_on_item_image_id"
@@ -75,10 +84,10 @@ ActiveRecord::Schema.define(version: 2019_12_25_120842) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image_url", null: false
+    t.string "image_url", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "freemarket_id", null: false
+    t.bigint "freemarket_id"
     t.index ["freemarket_id"], name: "index_item_images_on_freemarket_id"
   end
 
@@ -136,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_120842) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
   add_foreign_key "categorie_sizes", "categories"
   add_foreign_key "categorie_sizes", "sizes"
   add_foreign_key "deliver_addresses", "users"
