@@ -94,6 +94,10 @@
     }
     .logo {
       filter: invert(100%);
+      a:hover {
+        opacity: 0.7;
+        transition: all ease-out 0.3s;
+      }
     }
     .corporatemark {
       width: calc(1020px - 745px);

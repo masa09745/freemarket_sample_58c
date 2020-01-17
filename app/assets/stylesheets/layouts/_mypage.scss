@@ -5,6 +5,10 @@
   background-color: #f5f5f5;
   margin: map-get($m-margin, headerTop) auto 0;
   width: 1020px;
+  @include media('tb') {
+    width: 100%;
+    display: block;
+  }
 }
 
 .mypage-side {
@@ -13,11 +17,13 @@
   margin-right: map-get($m-margin, side);
   color: #333;
   z-index: 1;
-  @include media('sp') {
-    width: calc(100% - #{map-get($m-margin, side)});
-    margin: 0 auto;
+  @include media('tb') {
+    width: map-get($m-width, contents);
     margin-top: map-get($m-margin, side);
-    float: none;
+  }
+  @include media('sp') {
+    width: 100%;
+    margin-top: map-get($m-margin, side);
   }
   &--nav__list {
     margin-bottom: 40px;
@@ -25,7 +31,6 @@
       border-top: 1px solid #eee;
       position: relative;
       display: block;
-
       padding: 16px;
       background-color: #fff;
       font-size: 14px;
@@ -49,7 +54,7 @@
       .fa {
         position: absolute;
         top: 50%;
-        right: 16%;
+        right: 5%;
         transform: translate(0, -50%);
         color: #ccc;
       }
@@ -57,7 +62,9 @@
   }
 }
 .mypage-side--nav__head {
+  font-size: 16px;
   font-weight: bold;
+  padding-bottom: 5px;
 }
 
 .user {
@@ -98,7 +105,7 @@
         font-size: 14px;
       }
       .mypage-number {
-        margin: 8px 0 0;
+        margin: 15px 0 0;
         font-size: 16px;
       }
     }
@@ -106,7 +113,9 @@
 
   .mypage__content {
     margin: 0;
-    background: #fff;
+    @include media('tb') {
+      width: map-get($m-width, contents);
+    }
     .mypage__content--tabs {
       border: 0;
       background-color: #eee;
@@ -123,7 +132,6 @@
           background-color: #fff;
           border-top: 2px solid #ea352d;
         }
-
         h3 {
           font-size: 16px;
           line-height: 72px;
@@ -147,7 +155,6 @@
       height: 81px;
       border-bottom: 1px solid #eee;
       position: relative;
-
       .tab__content__item--link {
         display: block;
         height: 64px;
@@ -180,7 +187,7 @@
       }
 
       .mypage-go {
-        padding: 16px;
+        padding: 10px;
         &--list {
           text-decoration: none;
           display: block;
@@ -197,7 +204,7 @@
   .mypage__buy {
     margin: 40px 0 0;
     background: #fff;
-
+    font-weight: bold;
     &__head {
       padding: 0 16px;
       background: #fafafa;
@@ -207,7 +214,6 @@
     &__tabs {
       background: #eee;
       display: flex;
-
       li {
         background: #eee;
         width: 50%;
@@ -230,12 +236,16 @@
     &__foot {
       margin: 0;
       padding: 0;
-      &--not-found {
-        padding: 160px 0 60px;
-        background: url(/jp/assets/img/common/common/logo-gray-icon.svg?7989621);
+      &--not-img {
+        padding: 160px 0 0;
+        background-image: image-url('logo_red.svg');
+        opacity: 0.1;
         background-repeat: no-repeat;
         background-position: center 40px;
         background-size: 78px 85px;
+      }
+      &--not-found {
+        padding: 10px 0 60px;
         text-align: center;
         font-size: 16px;
         color: #ccc;

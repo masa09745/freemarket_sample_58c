@@ -1,9 +1,8 @@
 .card {
   display: flex;
-  margin: map-get($m-margin, headerTop) auto 0;
   .container {
     display: flex;
-    margin: 0 auto;
+    margin: map-get($m-margin, headerTop) auto 0;
     overflow: hidden;
     @include media('tb') {
       width: 100%;
@@ -17,15 +16,10 @@
       margin-bottom: auto;
       order: 1;
       @include media('tb') {
-        width: calc(
-          100% - #{map-get($m-width, side)} - #{map-get($m-margin, side)}
-        );
-        margin: 0 auto;
+        width: map-get($m-width, contents);
       }
       @include media('sp') {
-        width: calc(100% - #{map-get($m-margin, side)});
-        margin: 0 auto;
-        float: none;
+        width: 100%;
       }
     }
     .title {
