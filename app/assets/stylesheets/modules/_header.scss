@@ -147,9 +147,9 @@
   background-color: #ea362d;
   color: #fff;
 }
-.list-child {
-  width: 200px;
-  &__son {
+.list-child{
+  width: 250px;
+  &__son{
     display: none;
     position: absolute;
     left: 200px;
@@ -157,7 +157,7 @@
     background-color: #fff;
     bottom: 0px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    width: 300px;
+    width: 250px;
   }
   .son-name {
     display: block;
