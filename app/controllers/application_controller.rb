@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def set_category
-  @parents = Category.all.order("id ASC").limit(13)
-  end
-
   private
+
+  def set_category
+    @parents = Category.all.order("id ASC").limit(13)
+  end
 
   def production?
     Rails.env.production?
