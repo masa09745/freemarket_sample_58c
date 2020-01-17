@@ -46,12 +46,21 @@
       }
     &__content{
       padding: 24px 30px 10px 30px;
-      .child-name{
-        padding-top: 15px;
-        padding-bottom: 5px;
-        font-weight: bold;
+      &__parent{
+        display: block;
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 8px;
+        margin-bottom: 8px;
       }
-      .child{
+
+      &__children{
+        .child-name{
+          padding-top: 15px;
+          padding-bottom: 5px;
+          font-weight: bold;
+        }
         .grandchild{
           padding-left: 20px;
           padding-right: 20px;
