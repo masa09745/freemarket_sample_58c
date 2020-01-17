@@ -1,24 +1,12 @@
 .list__card--logobtn
-  - brand_logo = @card_info.brand
   .logo
-    - if brand_logo == 'Visa'
-      = image_tag 'visa_logo.svg', alt: 'VISA', size:'60x30'
-    - elsif brand_logo == 'MasterCard'
-      = image_tag 'mc_logo.svg', alt: 'Mastercard', size:'45x35'
-    - elsif brand_logo == 'JCB'
-      = image_tag 'jcb_logo.svg', alt: 'JCB', size:'45x35'
-    - elsif brand_logo == 'American Express'
-      = image_tag 'ae_logo.svg', alt: 'AMERICAN EXPRESS', size:'35x35'
-    - elsif brand_logo == 'Diners Club'
-      = image_tag 'dc_logo.png', alt: 'Diners Club', size:'45x35'
-    - elsif brand_logo == 'Discover'
-      = image_tag 'dis_logo.png', alt: 'DISCOVER', size:'45x35'
+    = render 'logo'
   .btn
     = form_tag(delete_cards_path, method: :post, id: 'charge-form') do
       = text_field_tag 'card_id', '', type: 'hidden'
       = submit_tag '削除する', id: 'token_delete', class: 'delete-btn'
 .list__card--number
-  = "************ " + @card_info.last4
+  = "************" + @card_info.last4
 .list__card--date
   - exp_month = @card_info.exp_month.to_s
   - exp_year = @card_info.exp_year.to_s.slice(2,3)
