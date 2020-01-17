@@ -22,7 +22,7 @@
               - child.children.each do |grandchild|
                 =link_to category_path(grandchild), class:"grandchild__list" do
                   =grandchild.category_name
-
+  =render "/shared/sellbutton"
 .footertop
   =render "/shared/footertop"
 .footer
