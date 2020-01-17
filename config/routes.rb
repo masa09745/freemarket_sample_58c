@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
 
   root to: "freemarkets#index"
-  resources :freemarkets
+  
+  resources :freemarkets do
+    collection do
+      get 'buy', to: 'freemarkets#buy'
+      get 'item', to: 'freemarkets#item'
+    end
+  end
 
   scope :mypage do
     resources :users do
@@ -19,6 +25,7 @@ Rails.application.routes.draw do
         post 'show', to: 'cards#show'
         post 'pay', to: 'cards#pay'
         post 'delete', to: 'cards#delete'
+        post 'buy', to: 'cards#buy'
       end
     end
   end
