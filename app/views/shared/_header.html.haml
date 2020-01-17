@@ -26,7 +26,7 @@
                         =link_to category_path(child),class:"child-name" do
                           =child.category_name
                         %ul.list-child__son
-                          - child.children.each do |grandchild|
+                          - child.children.first(15).each do |grandchild|
                             %li.list-son
                               =link_to category_path(grandchild),class:"son-name"do
                                 =grandchild.category_name
