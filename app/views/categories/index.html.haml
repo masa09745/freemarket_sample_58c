@@ -14,8 +14,10 @@
         %h3
           =parent.category_name
       .category-list-box__content
+        =link_to category_path(parent), class: "category-list-box__content__parent" do
+          すべて
         - parent.children.each do |child|
-          .child
+          .category-list-box__content__children
             .child-name
               =child.category_name
             .grandchild
