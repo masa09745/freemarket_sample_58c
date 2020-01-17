@@ -2,7 +2,7 @@
   .header-inner
     .inner-top
       .inner-top__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "fmarket_logo_red.svg", alt: 'logo', height: '36', width: '134', class: 'header-inner__top__logo'
       %form{action:"/", method:"post", class: "inner-top__form"}
         %input{type:"search", placeholder:"何かお探しですか",class:"search-form"}
@@ -16,134 +16,20 @@
             %span カテゴリーから探す
           .category-list
             %ul.category-list__parent
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  レディース
-                %ul.list-parent__child
-                  %li.list-child
-                    =link_to "",class:"child-name" do
-                      トップス
-                    %ul.list-child__son
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          Tシャツ/カットソー(半袖/袖なし)
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          Tシャツ/カットソー(七分/長袖)
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          シャツ/ブラウス(半袖/袖なし)
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          シャツ/ブラウス(七分/長袖)
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          ポロシャツ
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          キャミソール
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          タンクトップ
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          ホルターネック
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          ニット/セーター
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          チュニック
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          カーディガン/ボレロ
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          アンサンブル
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          ベスト/ジレ
-                      %li.list-son
-                        =link_to "",class:"son-name"do
-                          パーカー
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      ジャケット/アウター
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      パンツ
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      スカート
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      ワンピース
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      靴
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      ルームウェア/パジャマ
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      レッグウェア
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      帽子
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      バッグ
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      アクセサリー
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      ヘアアクセサリー
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      小物
-                  %li.list-child
-                    =link_to "",class:"child-name"do
-                      時計
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  メンズ
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  べビー・キッズ
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  インテリア・住まい・小物
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  本・音楽・ゲーム
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  おもちゃ・ホビー・グッズ
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  コスメ・香水・美容
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  家電・スマホ・カメラ
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  スポーツ・レジャー
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  ハンドメイド
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  チケット
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  自動車・オートバイ
-              %li.list-parent
-                =link_to "",class:"parent-name" do
-                  その他
-              %li.list-parent
-                =link_to categories_path ,class:"parent-name" do
-                  カテゴリ一覧
+              - @parents.each do |parent|
+                %li.list-parent
+                  =link_to "",class:"parent-name" do
+                    =parent.category_name
+                  %ul.list-parent__child
+                    - parent.children.each do |child|
+                      %li.list-child
+                        =link_to "",class:"child-name" do
+                          =child.category_name
+                        %ul.list-child__son
+                          - child.children.each do |grandchild|
+                            %li.list-son
+                              =link_to category_path(grandchild),class:"son-name"do
+                                =grandchild.category_name
         .lwr-menu__brand
           =link_to "",class:"menu" do
             =icon('fas', 'tags')

@@ -5,4 +5,6 @@ class Freemarket < ApplicationRecord
   belongs_to :brand
   has_many :orders
   has_many :item_images, dependent: :destroy
+
+  @parents = Category.all.order("id ASC").limit(13)
 end
