@@ -98,3 +98,4 @@ gem 'gretel'
 gem 'payjp'
 
 gem 'active_hash'
+gem 'mini_magick'

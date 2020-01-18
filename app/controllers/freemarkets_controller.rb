@@ -31,7 +31,8 @@ end
   end
 
   def create
-    @freemarket = Freemarket.create(freemarket_paramas)
+    # binding.pry
+    @freemarket = Freemarket.create(freemarket_params)
     if @freemarket.save
       redirect_to root_path
     else
@@ -40,8 +41,8 @@ end
   end
 
   private
-  def freemarket_paramas
-    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, {item_images_attributes: [:image_url]})
+  def freemarket_params
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url])
   end
 
 end

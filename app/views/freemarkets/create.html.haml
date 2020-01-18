@@ -13,14 +13,19 @@
                 %span.must 必須
                 %p.info 最大10枚までアップロードできます
                 .sell-upload__image
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :image_url, {type: 'file', id: "image-file", style: "display:none"}
                   #image-drop
-                    = f.fields_for :item_images do |i|
-                      = i.file_field :image_url, {style: "display:none", id: "file", multiple: true}
-
                     %pre
-                      ドラッグランドドロップ
+                      ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
-
+                -# .sell-upload__image
+                -#   #image-drop
+                -#     = f.fields_for :item_images do |i|
+                -#       = i.file_field :image_url, {style: "display:none", id: "file"}
+                -#     %pre
+                -#       ドラッグアンドドロップ
+                -#       またはクリックしてファイルをアップロード
               .sell.name
                 .form-name
                   %label 商品名

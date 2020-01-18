@@ -68,21 +68,22 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
   end
 
   create_table "freemarkets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "item", default: ""
-    t.integer "price"
-    t.string "condition", default: ""
-    t.string "ship_charge", default: ""
-    t.integer "ship_from", default: 0
-    t.string "ship_method", default: ""
-    t.string "ship_day", default: ""
-    t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.bigint "user_id"
-    t.bigint "item_image_id"
-    t.bigint "category_id"
-    t.bigint "size_id"
-    t.bigint "brand_id"
+    t.string "item", null: false
+    t.integer "price", null: false
+    t.string "condition", null: false
+    t.string "ship_charge", null: false
+    t.integer "ship_from", default: 0, null: false
+    t.string "ship_method", null: false
+    t.string "ship_day", null: false
+    t.text "description", null: false
+    t.integer "status", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_image_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "size_id", null: false
+    t.bigint "brand_id", null: false
     t.index ["brand_id"], name: "index_freemarkets_on_brand_id"
     t.index ["category_id"], name: "index_freemarkets_on_category_id"
     t.index ["item_image_id"], name: "index_freemarkets_on_item_image_id"
