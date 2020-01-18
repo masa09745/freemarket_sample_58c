@@ -31,7 +31,6 @@ end
   end
 
   def create
-    # binding.pry
     @freemarket = Freemarket.create(freemarket_params)
     if @freemarket.save
       redirect_to root_path
