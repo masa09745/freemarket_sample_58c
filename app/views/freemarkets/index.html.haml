@@ -48,13 +48,12 @@
         .toppage-main__contents
 
           .toppage-main__content
-            = link_to '詳細' , {controller: :freemarket, action: :show}
             .toppage-main__image
-              %span
-                ¥2,400
-              = image_tag ''
+              = link_to item_freemarkets_path, class:"item" do
+                %span ¥20,000
+                =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
             .toppage-main__item-name
-              例題
+              ベッド
           .toppage-main__content
             = link_to '', 'http://google.co.jp'
             .toppage-main__image
