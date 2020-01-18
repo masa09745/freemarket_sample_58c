@@ -3,9 +3,6 @@ class FreemarketsController < ApplicationController
     @freemarkets = Freemarket.limit(10).order('created_at ASC')
   end
 
-  def index
-  end
-
   def show
   end
 
