@@ -7,7 +7,8 @@ class FreemarketsController < ApplicationController
   end
 
   def new
-
+    @freemarket = Freemarket.new
+    @freemarket.item_images.build
   end
 
   def edit
@@ -23,11 +24,6 @@ class FreemarketsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
     end
-  end
-
-end
-    @freemarket = Freemarket.new
-    @freemarket.item_images.build
   end
 
   def create
