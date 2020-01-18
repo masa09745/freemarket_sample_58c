@@ -9,7 +9,11 @@ $(document).on("turbolinks:load", function() {
 
       $.each(e.target.files, function(i, file) {
 
-        var counter = i + 1;
+        var countA = $('.sell-upload__image').children().length;
+
+        console.log(countA);
+
+        console.log($('.sell-upload__image').children());
 
         var fileReader = new FileReader();
 
@@ -35,7 +39,7 @@ $(document).on("turbolinks:load", function() {
         };
 
         var input_area = $('.sell-upload__image');
-        var new_input = $(`<input id="image-file" type="file" style="display:none" name="freemarket[item_images_attributes][${counter}][image_url]">`);
+        var new_input = $(`<input id="image-file" type="file" style="display:none" name="freemarket[item_images_attributes][${countA}][image_url]">`);
         input_area.prepend(new_input);
 
       });
