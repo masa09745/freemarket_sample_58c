@@ -47,62 +47,67 @@
       .toppage-main__item
         .toppage-main__contents
 
+        - @freemarkets.each do |freemarket|
           .toppage-main__content
-            = link_to '詳細' , {controller: :freemarket, action: :show}
+
             .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
               %span
-                ¥2,400
-              = image_tag ''
+                = freemarket.price
             .toppage-main__item-name
-              例題
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
+              = freemarket.item
+
     .toppage-main__category-name
       .toppage-main__text
         メンズ新着アイテム
         .toppage-main__item-more
-          もっと見る
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
-        アイテム表示
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
+            .toppage-main__item-name
+              = freemarket.item
+              
     .toppage-main__category-name
       .toppage-main__text
         家電・スマホ・カメラ新着アイテム
         .toppage-main__item-more
-          もっと見る
+
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
-        アイテム表示
-    .topage-main__category-name
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
+            .toppage-main__item-name
+              = freemarket.item
+
+    .toppage-main__category-name
       .toppage-main__text
         おもちゃ・ホビー・グッズ新着アイテム
         .toppage-main__item-more
-          もっと見る
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
-        アイテム表示
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
+            .toppage-main__item-name
+              = freemarket.item
 
   .toppage-main__category-top
     人気のブランド
@@ -120,46 +125,72 @@
   .toppage-main__category-bottom
     .toppage-main__category-name
       .toppage-main__text
-        レディース新着アイテム
+        シャネル新着アイテム
         .toppage-main__item-more
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-
+        - @freemarkets.each do |freemarket|
           .toppage-main__content
-            = link_to '', 'http://google.co.jp'
+
             .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
               %span
-                ¥2,400
-              = image_tag ''
+                = freemarket.price
             .toppage-main__item-name
-              例題
-          .toppage-main__content
-            = link_to '', 'http://google.co.jp'
-            .toppage-main__image
+              = freemarket.item
 
+    .toppage-main__category-name
+      .toppage-main__text
+        ルイヴィトン新着アイテム
+        .toppage-main__item-more
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
+      .toppage-main__item
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
             .toppage-main__item-name
+              = freemarket.item
+
     .toppage-main__category-name
       .toppage-main__text
-        メンズ新着アイテム
+        シュプリーム新着アイテム
         .toppage-main__item-more
-          もっと見る
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
-        アイテム表示
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
+            .toppage-main__item-name
+              = freemarket.item
+
     .toppage-main__category-name
       .toppage-main__text
-        家電・スマホ・カメラ新着アイテム
+        ナイキ新着アイテム
         .toppage-main__item-more
-          もっと見る
+          = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
-        アイテム表示
-    .topage-main__category-name
-      .toppage-main__text
-        おもちゃ・ホビー・グッズ新着アイテム
-        .toppage-main__item-more
-          もっと見る
-      .toppage-main__item
-        アイテム表示
+        .toppage-main__contents
+        - @freemarkets.each do |freemarket|
+          .toppage-main__content
+
+            .toppage-main__image
+              = image_tag freemarket.item_images[0].image_url
+              %span
+                = freemarket.price
+            .toppage-main__item-name
+              = freemarket.item
+
   =render "/shared/sellbutton"
 .footertop
   =render "/shared/footertop"

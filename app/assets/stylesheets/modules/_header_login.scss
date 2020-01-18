@@ -13,6 +13,9 @@
     width: 185px;
     height: 49px;
     line-height: 49px;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   img {
@@ -43,7 +46,6 @@
   }
   &__mercari-logo {
     display: block;
-    margin: auto;
     margin: 40px auto 0;
     width: 80px;
     height: 65px;
