@@ -19,7 +19,7 @@
                     %pre
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
-                .sell-upload__image
+                .sell-upload__image2
                   #image-drop2
                     = f.fields_for :item_images do |i|
                       = i.file_field :image_url, {type: 'file', id: "image-file", style: "display:none"}

@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 $(document).on('turbolinks:load', function() {
-  $('#image-drop').on('click',function () {
-    $('#image-file2').trigger("click");
+  $('#image-drop2').on('click',function () {
+    $('#image-file').trigger("click");
   });
 });
