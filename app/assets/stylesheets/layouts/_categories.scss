@@ -84,3 +84,60 @@
     }
   }
 }
+
+.category-main-box{
+  max-width: 1020px;
+  margin: 24px auto 0;
+  padding-bottom: 40px;
+  display: block;
+
+  &__content{
+    width: 100%;
+    ul{
+      display: flex;
+      li{
+        margin: 16px 16px 0 0;
+        a{
+        color: #0099e8;
+        text-decoration: none;
+        }
+      }
+    }
+    &__inner{
+      h1{
+      font-size: 22px;
+      margin: 24px 0 8px;
+      line-height: 1.4;
+      font-weight: bold;
+      }
+      &__items{
+        width: auto;
+        display: flex;
+      }
+    }
+  }
+
+  .item-list-box{
+    width: 188px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    a{
+      display: block;
+      color: #333;
+    }
+    &__image{
+      width: 100%;
+      height: auto;
+      position: relative;
+      .item-photo{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+      }
+    }
+    &__text{
+      height: 58px;
+      padding: 8px 12px;
+    }
+  }
+}
