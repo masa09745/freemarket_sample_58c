@@ -6,7 +6,7 @@
   %h2 カテゴリー一覧
   .category-parent
     - @parents.each do |parent|
-      =link_to "", class:"category-parent__list" do
+      =link_to category_path(parent), class:"category-parent__list" do
         =parent.category_name
   - @parents.each do |parent|
     .category-list-box
