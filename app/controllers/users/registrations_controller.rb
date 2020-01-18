@@ -1,6 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
   def registration
+    @user = User.new
+    session[:user] = @user
   end
 
 

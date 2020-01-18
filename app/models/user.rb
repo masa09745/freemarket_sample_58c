@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
 
   has_one :deliver_address
+
   
 
   has_many :cards
