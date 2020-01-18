@@ -11,3 +11,8 @@ crumb :categories do
   link 'カテゴリー一覧', categories_path
   parent :root
 end
+
+crumb :category do |category|
+  link category.category_name, category
+  parent :categories
+end
