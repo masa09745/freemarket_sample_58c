@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 2020_01_07_082855) do
     t.string "ship_method", default: ""
     t.string "ship_day", default: ""
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.bigint "user_id"
     t.bigint "item_image_id"
     t.bigint "category_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2020_01_07_082855) do
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_url", default: ""
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.bigint "freemarket_id"
     t.index ["freemarket_id"], name: "index_item_images_on_freemarket_id"
   end
@@ -121,27 +121,25 @@ ActiveRecord::Schema.define(version: 2020_01_07_082855) do
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "mobile", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.string "first_name", default: "", null: false
-    t.string "last_name_kana", default: "", null: false
-    t.string "first_name_kana", default: "", null: false
-    t.string "birth_year", default: "", null: false
-    t.string "birth_month", default: "", null: false
-    t.string "birth_day", default: "", null: false
-    t.integer "postal_code"
-    t.integer "prefecture"
-    t.string "city"
-    t.string "street_address"
-    t.string "building_name"
-    t.integer "phone"
+    t.string "user_last_name", null: false
+    t.string "user_first_name", null: false
+    t.string "user_last_name_kana", null: false
+    t.string "user_first_name_kana", null: false
+    t.string "birth_year", null: false
+    t.string "birth_month", null: false
+    t.string "birth_day", null: false
+    t.string "user_postal_code"
+    t.string "user_prefecture"
+    t.string "user_city"
+    t.string "user_street_address"
+    t.string "user_building_name"
+    t.integer "user_phone"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["mobile"], name: "index_users_on_mobile"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
