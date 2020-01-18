@@ -19,13 +19,13 @@
                     %pre
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
-                -# .sell-upload__image
-                -#   #image-drop
-                -#     = f.fields_for :item_images do |i|
-                -#       = i.file_field :image_url, {style: "display:none", id: "file"}
-                -#     %pre
-                -#       ドラッグアンドドロップ
-                -#       またはクリックしてファイルをアップロード
+                .sell-upload__image
+                  #image-drop2
+                    = f.fields_for :item_images do |i|
+                      = i.file_field :image_url, {type: 'file', id: "image-file", style: "display:none"}
+                    %pre
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
               .sell.name
                 .form-name
                   %label 商品名
