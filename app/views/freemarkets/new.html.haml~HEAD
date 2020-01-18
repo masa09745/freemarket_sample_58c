@@ -1,0 +1,113 @@
+.wrapper
+  %header
+    =render "devise/shared/header_login"
+  %main.sell-contents
+    %section.sell-contents__main
+      .sell-content
+        .sell-content__inner
+          %h2 商品の情報を入力
+          %form.sell-content__form{enctype: "multipart/form-data", method: "post"}
+            .sell-upload
+              %label 出品画像
+              %span.must 必須
+              %p.info 最大10枚までアップロードできます
+              .sell-upload__image
+                #image-drop
+                  %input{type:"file", id:"file", multiple: "multiple", style: "display:none"}
+
+                  %pre
+                    ドラッグランドドロップ
+                    またはクリックしてファイルをアップロード
+
+            .sell.name
+              .form-name
+                %label 商品名
+                %span.must 必須
+                .form-name__input
+                  %input{class:"input-name", placeholder:"商品名(必須　４０文字まで)"}
+              .form-info
+                %label 商品の説明
+                %span.must 必須
+                .form-info__text
+                %textarea{class:"text-info", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"}
+            .sell.detail
+              %h3.detail-category 商品詳細
+              .sell-form
+                .form-pulldown
+                  %label カテゴリ
+                  %span.must 必須
+                  .category-pulldown
+                    =icon('fas', 'chevron-down',class:"down-icon")
+                    %select.pulldown
+                .form-pulldown
+                  %label 商品の状態
+                  %span.must 必須
+                  .condition-pulldown
+                    =icon('fas', 'chevron-down',class:"down-icon")
+                    %select.pulldown
+            .sell.shipping
+              %h3.shipping-about 配送について
+              .sell-form
+                .form-pulldown
+                  %label 配送料の負担
+                  %span.must 必須
+                  .shipping-pulldown
+                    =icon('fas', 'chevron-down',class:"down-icon")
+                    %select.pulldown
+                .form-pulldown
+                  %label 発送元の地域
+                  %span.must 必須
+                  .shipping-pulldown
+                    =icon('fas', 'chevron-down',class:"down-icon")
+                    %select.pulldown
+                .form-pulldown
+                  %label 発送までの日数
+                  %span.must 必須
+                  .shipping-pulldown
+                    =icon('fas', 'chevron-down',class:"down-icon")
+                    %select.pulldown
+
+            .sell.price
+              %h3.price-limit 販売価格(300~9,999,999)
+              .sell-box
+                .sell-box__input
+                  .price-input-box
+                    %label.input-box__text
+                      価格
+                      %span.must 必須
+                    .input-box__price
+                      ¥
+                      %input#jsPrice.input-price{placeholder:"例) 300"}
+
+                .sell-box__tax
+                  %label 販売手数料(10%)
+                  .price-tax
+                    %input#jsTax.input-tax{readonly:"readonly"}
+                .sell-box__total
+                  %label 販売利益
+                  .price-total
+                    %input#jsTotal.input-total{readonly:"readonly"}
+
+            .sell.submit-btn
+              %p.sell-text
+                =link_to "", class:"text-warning" do
+                  禁止されている出品
+                、
+                =link_to "", class:"text-warning" do
+                  行為
+                を必ずご確認ください。
+              %span.sell-text またブランド品でシリアルナンバー等がある場合はご記載ください。
+              =link_to "", class:"text-warning" do
+                偽ブランドの販売
+              %span.sell-text は犯罪であり処罰される可能性があります。
+              %p.sell-text
+                また、出品をもちまして
+                =link_to "", class:"text-warning" do
+                  加盟店規約
+                に同意したことになります。
+              %button{type:'submit', class:'form-btn red-btn'}
+                出品する
+              =link_to "", class:"form-btn gray-btn" do
+                戻る
+  %footer
+    =render "devise/shared/footer_login"
