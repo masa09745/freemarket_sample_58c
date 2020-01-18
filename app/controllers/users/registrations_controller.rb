@@ -1,5 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_permitted_parameters
   
   def registration
   end
@@ -75,11 +74,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
 
-  # private
-
-  # def configure_permitted_parameters
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:email ,:password, :encrypted_password, :last_name,:first_name, :last_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day])
-  # end
 
 
 

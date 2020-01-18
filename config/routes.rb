@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   
   devise_scope :user do
     get 'sign_in/registrstion'=>'users/registrations#registration'
-    # get "sign_in/number" => "users/registrations#phone"
     get "sign_in/address" => "users/registrations#adress"
     get "sign_in/credit" => "users/registrations#credit"
     get "sign_in/completed" => "users/registrations#create"

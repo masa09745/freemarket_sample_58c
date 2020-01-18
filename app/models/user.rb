@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
   has_many :sns_credentials, dependent: :destroy
   has_one :deliver_address
-  # accepts_nested_attributes_for :deliver_address
+  
 
 
 
