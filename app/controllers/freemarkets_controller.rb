@@ -27,7 +27,7 @@ class FreemarketsController < ApplicationController
   end
 
   def create
-    @freemarket = Freemarket.create(freemarket_params)
+    @freemarket = Freemarket.new(freemarket_params)
     if @freemarket.save
       redirect_to root_path
     else
