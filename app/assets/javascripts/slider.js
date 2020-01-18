@@ -19,9 +19,4 @@ $(document).on('turbolinks:load',function() {
   $('.slide-dots li').on('mouseover', function() {
     $('.slider').slick('goTo', $(this).index());
   });
-// ボタンスライド
-  $('.toppage-main__logo').click(function(){
-    alert("あああ")
-  })
-
 });

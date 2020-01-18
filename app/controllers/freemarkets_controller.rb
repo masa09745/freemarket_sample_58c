@@ -1,4 +1,7 @@
 class FreemarketsController < ApplicationController
+  def index
+    @freemarkets = Freemarket.limit(10).order('created_at ASC')
+  end
 
   def index
   end
@@ -7,6 +10,7 @@ class FreemarketsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
