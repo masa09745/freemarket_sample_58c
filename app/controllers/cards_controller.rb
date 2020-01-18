@@ -1,8 +1,9 @@
 class CardsController < ApplicationController
+  before_action :set_card
+
   require "payjp"
 
   def show
-    @card = Card.find_by(user_id: current_user.id)
     if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -38,27 +39,31 @@ class CardsController < ApplicationController
   end
 
   def delete
-    card = Card.find_by(user_id: current_user.id)
-    if card.present?
+    if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
       redirect_to action: 'show'
       flash[:notice] = 'クレジットカードの削除が完了しました'
   end
 
   def buy
-    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
     amount: 20000,
-    customer: card.customer_id,
+    customer: @card.customer_id,
     currency: 'jpy',
   )
   redirect_to users_path
   flash[:notice] = '購入が完了しました'
+  end
+
+  private
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
   end
 
 end
