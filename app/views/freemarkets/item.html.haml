@@ -2,11 +2,12 @@
   =render "shared/header"
 
   %section.content-main
-    %h1.goods-name サンプル商品
+    %h1.goods-name 新品未使用!! ベッド一式!
     %p.goods-info
       この商品はtestさんが出品した商品になります
     .goods-main
       .goods-photo
+        =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
         .goods-photo__main
       %table.goods-data
         %tr
@@ -37,12 +38,12 @@
           %th 発送日の目安
           %td 1〜2日
     .price-box
-      %span.price-box__cash ¥1,800
+      %span.price-box__cash ¥20,000
       %span.price-box__tax (税込)
       %span.price-box_shipping 送料込み
 
-    %a.buy-btn
-      購入画面に進む
+    = link_to buy_freemarkets_path ,class: 'buy-btn' do
+      %span 購入画面に進む
     .goods-detail
       %p.goods-detail_comment
         これはテスト商品です。

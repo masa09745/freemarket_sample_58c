@@ -1,7 +1,15 @@
+.indentification{
+  display: flex;
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
+}
+
+
 .indentification-content {
   width: 700px;
   margin: 0 auto;
-  // float: right;
+
   background-color: white;
   &__mypage {
     height: 100%;

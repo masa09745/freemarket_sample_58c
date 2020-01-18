@@ -14,16 +14,16 @@
 | Column          | Type     | Options                                |
 | --------------- | -------- | -------------------------------------- |
 | nickname        | string   | null: false                            |
-| email           | string   | null: false, unique: true              |
+| email           | string   | null: false, unique: true, index: true |
 | password        | string   | null: false                            |
-| mobile          | integer  | null: false, unique: true, index: true |
+| mobile          | string   | null: true                             |
 | last_name       | string   | null: false                            |
 | first_name      | string   | null: false                            |
 | last_name_kana  | string   | null: false                            |
 | first_name_kana | string   | null: false                            |
-| birth_year      | string   | null: false                            |
-| birth_month     | string   | null: false                            |
-| birth_day       | string   | null: false                            |
+| birth_year      | integer  | null: false                            |
+| birth_month     | integer  | null: false                            |
+| birth_day       | integer  | null: false                            |
 | postal_code     | integer  | null: true                             |
 | prefecture      | integer  | null: true                             |
 | city            | string   | null: true                             |
@@ -37,6 +37,7 @@
 - belongs_to :deliver_address
 - has_many :orders
 - has_many :freemarkets
+- has_many :cards
 
 ### deliver_addresses table
 
@@ -52,7 +53,7 @@
 | city            | string     | null: false                    |
 | street_address  | string     | null: false                    |
 | building_name   | string     | null: true                     |
-| phone           | integer    | null: true                     |
+| phone           | string     | null: true                     |
 
 #### Association
 
@@ -79,21 +80,20 @@
 
 ### freemarkets table
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user_id       | references | null: false, foreign_key: true |
-| item          | string     | null: false                    |
-| price         | integer    | null: false                    |
-| condition     | string     | null: false                    |
-| ship_charge   | string     | null: false                    |
-| ship_from     | string     | null: false                    |
-| ship_method   | string     | null: false                    |
-| ship_day      | string     | null: false                    |
-| description   | text       | null: false                    |
-| item_image_id | references | null: false, foreign_key: true |
-| category_id   | references | null: false, foreign_key: true |
-| size_id       | references | null: false, foreign_key: true |
-| brand_id      | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user_id     | references | null: false, foreign_key: true |
+| item        | string     | null: false                    |
+| price       | integer    | null: false                    |
+| condition   | string     | null: false                    |
+| ship_charge | string     | null: false                    |
+| ship_from   | string     | null: false                    |
+| ship_method | string     | null: false                    |
+| ship_day    | string     | null: false                    |
+| description | text       | null: false                    |
+| category_id | references | null: false, foreign_key: true |
+| size_id     | references | null: false, foreign_key: true |
+| brand_id    | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -170,13 +170,20 @@
 
 ### cards table
 
-- 実装段階で検討。
-- users テーブルのカラム（token）とする可能性有。
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user_id     | references | null: false, foreign_key: true |
+| customer_id | string     | null: false                    |
+| card_id     | string     | null: false                    |
+
+#### Association
+
+- belongs_to :user
 
 ### show_catalogs table
 
 - 実装段階で検討。出品状況の情報。
-- freemarkets テーブルのカラムとする可能性有。
+- oders テーブルのカラムとする可能性有。
 
 ### reviews table
 

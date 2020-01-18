@@ -107,8 +107,17 @@
 }
 
 @mixin form-focus($color: #0099ff) {
-  border: 1px solid $color;
-  outline: 0;
+  &:focus {
+    border: 1px solid $color;
+    outline: 0;
+  }
+}
+
+@mixin error-text($color: #ea352d) {
+  font-size: 14px;
+  color: $color;
+  text-align: right;
+  line-height: 20px;
 }
 
 @mixin fa-icon($icon, $color, $wg: 400, $size: 3em) {
