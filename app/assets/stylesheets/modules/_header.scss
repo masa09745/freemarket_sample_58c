@@ -10,15 +10,14 @@
 .header-inner {
   max-width: 1020px;
   margin: 0 auto;
+  padding-top: 8px;
 }
 
 .inner-top {
   width: 100%;
   max-width: 1020px;
-  height: 40px;
   display: flex;
   justify-content: space-between;
-  padding-top: 8px;
   @include media('tb') {
     width: map-get($m-width, contents);
     padding-top: 0;
@@ -63,9 +62,10 @@
 }
 
 .inner-lwr {
+  height: 44px;
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 8px;
   @include media('tb') {
     width: map-get($m-width, contents);
   }
@@ -200,6 +200,7 @@
 
 .lwr-user {
   display: flex;
+  height: 44px;
   &__new {
     text-align: center;
   }
@@ -240,18 +241,19 @@
   height: 32px;
 }
 
-.user-new {
+.user-new{
+  background-color: rgb(234, 53, 45);
+  color: rgb(255, 255, 255);
   display: block;
   font-size: 14px;
-  padding: 8px 10px;
-  background-color: #ea362d;
-  color: #fff;
   border-width: 1px;
   border-style: solid;
-  border-color: #ea362d;
+  border-color: rgb(234, 53, 45);
   border-image: initial;
   border-radius: 4px;
+  padding: 8px 10px;
 }
+
 .user-login {
   display: block;
   font-size: 14px;
