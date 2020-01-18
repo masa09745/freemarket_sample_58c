@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     passwords: "users/passwords",
     omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: "freemarket#index"
+  root to: "freemarkets#index"
    
   
   resources :freemarkets do
