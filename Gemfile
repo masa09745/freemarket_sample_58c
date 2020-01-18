@@ -75,6 +75,10 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem "omniauth-rails_csrf_protection"
+  gem 'omniauth-google-oauth2'
+  gem 'omniauth-facebook'
+  gem 'pry-rails'
 end
 
 gem "jquery-rails"
@@ -93,3 +97,5 @@ gem 'pry-rails'
 gem 'gretel'
 gem 'payjp'
 
+gem 'active_hash'
+gem 'mini_magick'

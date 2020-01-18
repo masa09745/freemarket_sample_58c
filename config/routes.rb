@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     get "sign_in/done" => "users/registrations#done"
   end  
 
+  resources 'freemarkets'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 

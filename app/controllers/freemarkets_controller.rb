@@ -7,10 +7,8 @@ class FreemarketsController < ApplicationController
   end
 
   def new
-
-  end
-
-  def create
+    @freemarket = Freemarket.new
+    @freemarket.item_images.build
   end
 
   def edit
@@ -26,6 +24,20 @@ class FreemarketsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
     end
+  end
+
+  def create
+    @freemarket = Freemarket.new(freemarket_params)
+    if @freemarket.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
+
+  private
+  def freemarket_params
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url])
   end
 
 end

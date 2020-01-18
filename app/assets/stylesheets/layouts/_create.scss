@@ -42,7 +42,9 @@
     &__image{
       width: 620px;
       margin: 16px auto 0;
+      display: flex;
       #image-drop{
+        width: 100%;
         position: relative;
         min-height: 162px;
         background: #f5f5f5;
@@ -60,6 +62,7 @@
           line-height: 1.5;
           align-items: center;
           display: block;
+          word-break: break-all;
         }
       }
     }
