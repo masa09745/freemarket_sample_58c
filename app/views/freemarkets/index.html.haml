@@ -67,13 +67,12 @@
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
             .toppage-main__content
-
-            .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
-              %span
-                = freemarket.price
-            .toppage-main__item-name
-              = freemarket.item
+              .toppage-main__image
+                = image_tag freemarket.item_images[0].image_url
+                %span
+                  = freemarket.price
+              .toppage-main__item-name
+                = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
