@@ -1,4 +1,4 @@
-.main {
+.ppc-main {
   &__upper {
     &--title {
       width: 700px;
@@ -16,22 +16,24 @@
     }
   }
   &__middle {
+    width: 700px;
+    height: auto;
+    background-color: white;
+    margin: 0 auto;
     &--box {
-      width: 700px;
-      height: 150px;
-      margin: 0 auto;
-      background-color: white;
+      width: 350px;
+      min-height: 145px;
       border-bottom: 1px solid #f5f5f5;
+      margin: 0 auto;
       padding: 32px 16px;
       display: flex;
-    }
-    .image {
-      margin-left: 200px;
+      justify-content: space-between;
     }
     &--smallbox {
       margin-left: 20px;
       p {
         padding-bottom: 15px;
+        line-height: 20px;
       }
       span {
         font-weight: 600;
@@ -41,14 +43,13 @@
   &__lower {
     &--box {
       width: 700px;
-      height: 550px;
+      height: auto;
       margin: 0 auto;
       background-color: white;
       border-bottom: 1px solid #f5f5f5;
       padding: 32px 16px;
       &--small {
         width: 350px;
-        height: 470px;
         margin: 0 auto;
         &-pay {
           width: 350px;
@@ -61,11 +62,12 @@
             h2 {
               font-weight: 600;
               font-size: 18px;
+              padding: 8px 0;
             }
             span {
               font-weight: 600;
               font-size: 30px;
-              padding-left: 165px;
+              padding-left: 150px;
             }
           }
           label {
@@ -74,53 +76,79 @@
         }
         &-method {
           width: 350px;
-          height: 100px;
+          height: auto;
+          min-height: 100px;
           margin: 0 auto;
+          padding: 25px 0 10px 0;
           border-bottom: 1px solid #f5f5f5;
           h2 {
             font-weight: 600;
             font-size: 14px;
-            padding-top: 15px;
+            margin-bottom: 10px;
           }
-          &-box {
-            margin-top: 8px;
-            color:#0099E8;
+          &-title {
+            display: flex;
+            justify-content: space-between;
+            span {
+              font-weight: 400;
+              font-size: 14px;
+            }
+          }
+          &-text {
+            margin-bottom: 25px;
+            line-height: 20px;
+          }
+          a {
+            color: #0099e8;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          figure {
+            margin: 5px 0;
           }
         }
         &-address {
           width: 350px;
-          height: 100px;
-          margin: 20px auto;
+          height: auto;
+          min-height: 150px;
+          margin: 0 auto;
           border-bottom: 1px solid #f5f5f5;
           &-title {
             display: flex;
+            justify-content: space-between;
+            padding: 25px 0 10px 0;
             h3 {
               font-weight: 600;
               font-size: 14px;
             }
             span {
-              padding-left: 250px;
               font-weight: 400;
               font-size: 14px;
-              color: #0099E8;
+              color: #0099e8;
             }
           }
           &-text {
-            P {
-              padding-top: 10px;
+            margin-bottom: 25px;
+            p {
+              line-height: 20px;
             }
           }
         }
         &-button {
           width: 350px;
-          height: 100px;
-          margin: 50px auto;
-          input {
+          margin: 30px auto 10px;
+          #no_submit {
             width: 100%;
             height: 50px;
-            background-color: #888888;
+            background-color: #888;
             color: white;
             font-weight: 600;
+            cursor: not-allowed;
+          }
+          #pay_submit {
+            @include red-btn($fw: 600);
+            color: white;
           }
         }
       }
