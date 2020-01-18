@@ -16,3 +16,4 @@ crumb :category do |category|
   link category.category_name, category
   parent :categories
 end
+
