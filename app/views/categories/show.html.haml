@@ -1,0 +1,44 @@
+- breadcrumb :category, @category
+
+%header
+  =render "/shared/header"
+  =render 'shared/breadcrumb'
+.category-main-box
+  .category-main-box__content
+    %ul.category-main-box__content__children
+      - @children.first(9).each do |child|
+        %li.children-list-menu
+          =link_to category_path(child) do
+            =child.category_name
+    .category-main-box__content__inner
+      %h1.category-parent-name
+        = "#{@parent.category_name} の商品一覧"
+      .category-main-box__content__inner__items
+        %section.item-list-box
+          = link_to "" do
+            %figure.item-list-box__image
+              =image_tag "bed.jpg", class:"item-photo"
+            .item-list-box__text
+        %section.item-list-box
+          = link_to "" do
+            %figure.item-list-box__image
+              =image_tag "bed.jpg", class:"item-photo"
+            .item-list-box__text
+        %section.item-list-box
+          = link_to "" do
+            %figure.item-list-box__image
+              =image_tag "bed.jpg", class:"item-photo"
+            .item-list-box__text
+        %section.item-list-box
+          = link_to "" do
+            %figure.item-list-box__image
+              =image_tag "bed.jpg", class:"item-photo"
+            .item-list-box__text
+
+
+
+  =render "/shared/sellbutton"
+.footertop
+  =render "/shared/footertop"
+.footer
+  =render "/shared/footer"
