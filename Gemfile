@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -74,6 +75,10 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem "omniauth-rails_csrf_protection"
+  gem 'omniauth-google-oauth2'
+  gem 'omniauth-facebook'
+  gem 'pry-rails'
 end
 
 gem "jquery-rails"
@@ -88,4 +93,9 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'ancestry'
+gem 'pry-rails'
 gem 'gretel'
+gem 'payjp'
+
+gem 'active_hash'
+gem 'mini_magick'

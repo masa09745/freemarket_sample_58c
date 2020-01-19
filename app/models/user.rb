@@ -6,6 +6,11 @@ class User < ApplicationRecord
   devise :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
   has_many :sns_credentials, dependent: :destroy
 
+  has_one :deliver_address
+  
+
+  has_many :cards
+
 
   def self.find_oauth(auth)
     uid = auth.uid

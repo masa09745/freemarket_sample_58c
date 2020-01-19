@@ -24,6 +24,9 @@
 @import 'layouts/identification';
 @import 'layouts/profile';
 @import 'layouts/card';
+@import "modules/registration";
+@import 'layouts/item_new';
+
 
 body {
   position: relative;
@@ -41,4 +44,15 @@ body {
   border-style: solid;
   border-width: 0;
   box-sizing: border-box;
+}
+
+.notifications {
+  color: white;
+  text-align: center;
+  .notice {
+    background-color: #6dc3e6;
+  }
+  .alert {
+    background-color: #ddac53;
+  }
 }

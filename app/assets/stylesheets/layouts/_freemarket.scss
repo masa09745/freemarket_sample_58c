@@ -64,6 +64,9 @@ body {
   &__item {
     height: 573px;
     width: 1020px;
+    .toppage-main__content{
+      margin-bottom:20px;
+    }
   }
   @include card-item(); //アイテム表示
 }
