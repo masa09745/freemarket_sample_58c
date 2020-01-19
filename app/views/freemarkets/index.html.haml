@@ -52,7 +52,7 @@
               .toppage-main__content
 
                 .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url
+                  = image_tag freemarket.item_images[0].image_url.url
                   %span
                     = freemarket.price
                 .toppage-main__item-name
@@ -68,7 +68,7 @@
           - @freemarkets.each do |freemarket|
             .toppage-main__content
               .toppage-main__image
-                = image_tag freemarket.item_images[0].image_url
+                = image_tag freemarket.item_images[0].image_url.url
                 %span
                   = freemarket.price
               .toppage-main__item-name
@@ -86,7 +86,11 @@
           .toppage-main__content
 
             .toppage-main__image
+<<<<<<< Updated upstream
               = image_tag freemarket.item_images[1].image_url
+=======
+              = image_tag freemarket.item_images[0].image_url.url
+>>>>>>> Stashed changes
               %span
                 = freemarket.price
             .toppage-main__item-name
@@ -103,7 +107,7 @@
           .toppage-main__content
 
             .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
+              = image_tag freemarket.item_images[0].image_url.url
               %span
                 = freemarket.price
             .toppage-main__item-name
@@ -134,7 +138,7 @@
           .toppage-main__content
 
             .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
+              = image_tag freemarket.item_images[0].image_url.url
               %span
                 = freemarket.price
             .toppage-main__item-name
@@ -151,7 +155,7 @@
           .toppage-main__content
 
             .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
+              = image_tag freemarket.item_images[0].image_url.url
               %span
                 = freemarket.price
             .toppage-main__item-name
@@ -168,7 +172,7 @@
           .toppage-main__content
 
             .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
+              = image_tag freemarket.item_images[0].image_url.url
               %span
                 = freemarket.price
             .toppage-main__item-name
@@ -185,7 +189,7 @@
           .toppage-main__content
 
             .toppage-main__image
-              = image_tag freemarket.item_images[0].image_url
+              = image_tag freemarket.item_images[0].image_url.url
               %span
                 = freemarket.price
             .toppage-main__item-name
