@@ -104,6 +104,10 @@
 - has_many :orders
 - has_many :item_images, dependent: :destroy
 
+#### Description
+
+- statusは取引状況。出品中は「1」、売却済みは「2」
+
 ### item_images table
 
 | Column        | Type       | Options                        |
