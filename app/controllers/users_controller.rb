@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   end
 
@@ -6,9 +8,6 @@ class UsersController < ApplicationController
   end
 
   def profile
-  end
-
-  def identification
   end
 
   def logout

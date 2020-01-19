@@ -1,10 +1,13 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_card
 
   require "payjp"
 
   def show
-    if @card.present?
+    if User.find_by(id: current_user.id).blank?
+      redirect_to new_user_registration_path
+    elsif @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
@@ -13,7 +16,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: 'show' if card.exists?
+    redirect_to action: 'show' if card.present?
   end
 
   def pay

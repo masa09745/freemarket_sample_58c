@@ -1,4 +1,6 @@
 class FreemarketsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :buy]
+
   def index
     @freemarkets = Freemarket.limit(10).order('created_at ASC')
   end
@@ -7,8 +9,13 @@ class FreemarketsController < ApplicationController
   end
 
   def new
-    @freemarket = Freemarket.new
-    @freemarket.item_images.build
+    user = User.find_by(id: current_user.id)
+    if user.present?
+      @freemarket = Freemarket.new
+      @freemarket.item_images.build
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   def edit
