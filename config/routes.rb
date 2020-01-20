@@ -41,8 +41,8 @@ Rails.application.routes.draw do
     get 'sign_in/registrstion'=>'users/registrations#registration'
     get "sign_in/address" => "users/registrations#adress"
     get "sign_in/credit" => "users/registrations#credit"
-    get "sign_in/completed" => "users/registrations#create"
-    get "sign_in/done" => "users/registrations#done"
+    post "sign_in/complete" => "users/registrations#complete"
+    # get "sign_in/done" => "users/registrations#done"
   end  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,5 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
+  require "payjp"
+
+
   def registration
     @user = User.new
     session[:user] = @user
@@ -48,11 +51,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def phone
   end  
 
-  def create
+  def complete
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
 
+    if params[:payjp_token].present?
+      @customer = Payjp::Customer.create(
+        description: 'Fmarket',
+        email: session[:user][:email],
+        card: params[:payjp_token],
+      )
+    
+    else
+      render :credit
+      return
+    end
+      
 
     @user = User.new(session[:user])
     @user.build_deliver_address(session[:deliver_address])
+    @user.cards.build(
+      user_id:        @user.id,
+      customer_id:    @customer.id,
+      card_id:        @customer.default_card,
+    )
     
     # @user = User.new(
     #   nickname: session[:nickname],
@@ -81,10 +102,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # @user.save
     # @user.deliver_address.save
     
-     binding.pry
+    #  binding.pry
      
     if @user.save
-      redirect_to  sign_in_done_path
+      user = @user
+      session.clear
+      session[:id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
     else
       redirect_to action: 'registration'
     end

@@ -69,6 +69,23 @@
    }
    
   }
+  
+  &__btn{
+  display: block;
+  margin:0 auto;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  text-align: center;
+  text-decoration:none;
+  background: #ea352d;
+  a {
+    color: #fff;
+
+  }
+ }
 }
 
    
@@ -109,9 +126,9 @@
 
 .actions{
   margin: 24px 0 0;
-}
 
-.btn-red{
+
+.regi-btn-red{
   display: block;
   width: 100%;
   line-height: 48px;
@@ -125,7 +142,7 @@
   border: 1px solid #ea352d;
   color: #fff;
 }
-
+}
 .text-right{
   display:block;
   text-align: right;
