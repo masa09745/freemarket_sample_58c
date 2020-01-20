@@ -6,8 +6,8 @@
       .sell-content
         .sell-content__inner
           %h2 商品の情報を入力
-          = form_for @freemarket do |f|
-            %form.sell-content__form{enctype: "multipart/form-data", method: "post"}
+          .sell-content__form
+            = form_for @freemarket do |f|
               .sell-upload
                 %label 出品画像
                 %span.must 必須
@@ -31,7 +31,7 @@
                   %label 商品名
                   %span.must 必須
                   .form-name__input
-                    %input{class:"input-name", placeholder:"商品名(必須　４０文字まで)"}
+                    = f.text_field :item, placeholder: '商品名(必須　４０文字まで)', class: 'input-name'
                 .form-info
                   %label 商品の説明
                   %span.must 必須
@@ -112,10 +112,8 @@
                   =link_to "", class:"text-warning" do
                     加盟店規約
                   に同意したことになります。
-                %button{type:'submit', class:'form-btn red-btn'}
-                  出品する
+                = f.submit '出品する', class: 'form-btn red-btn'
                 =link_to :back, class:"form-btn gray-btn" do
                   もどる
   %footer
-    =render "devise/shared/footer_login"
-    
+  =render "devise/shared/footer_login"
