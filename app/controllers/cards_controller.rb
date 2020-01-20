@@ -5,9 +5,7 @@ class CardsController < ApplicationController
   require "payjp"
 
   def show
-    if User.find_by(id: current_user.id).blank?
-      redirect_to new_user_registration_path
-    elsif @card.present?
+    if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
