@@ -13,6 +13,6 @@ crumb :categories do
 end
 
 crumb :category do |category|
-  link category.category_name, category
+  link category.category_name, category_path(category)
   parent :categories
 end
