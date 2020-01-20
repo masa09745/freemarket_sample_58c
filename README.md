@@ -34,10 +34,10 @@
 
 #### Association
 
-- belongs_to :deliver_address
+- has_one :deliver_address
+- has_one :cards
 - has_many :orders
 - has_many :freemarkets
-- has_many :cards
 
 ### deliver_addresses table
 
@@ -87,10 +87,10 @@
 | price       | integer    | null: false                    |
 | condition   | string     | null: false                    |
 | ship_charge | string     | null: false                    |
-| ship_from   | string     | null: false                    |
-| ship_method | string     | null: false                    |
+| ship_from   | string     | null: false, default: 0        |
 | ship_day    | string     | null: false                    |
 | description | text       | null: false                    |
+| status      | integer    | null: false, default: 1        |
 | category_id | references | null: false, foreign_key: true |
 | size_id     | references | null: false, foreign_key: true |
 | brand_id    | references | null: false, foreign_key: true |
@@ -103,6 +103,10 @@
 - belongs_to :brand
 - has_many :orders
 - has_many :item_images, dependent: :destroy
+
+#### Description
+
+- statusは取引状況。出品中は「1」、売却済みは「2」
 
 ### item_images table
 
@@ -179,11 +183,6 @@
 #### Association
 
 - belongs_to :user
-
-### show_catalogs table
-
-- 実装段階で検討。出品状況の情報。
-- oders テーブルのカラムとする可能性有。
 
 ### reviews table
 
