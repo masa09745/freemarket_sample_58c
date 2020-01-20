@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name         , null: false, default: ""
       t.string :last_name_kana     , null: false, default: ""
       t.string :first_name_kana    , null: false, default: ""
-      t.date   :birthday          , null: false, default: ""
+      t.integer :birthday , null: false
       t.string :user_postal_code       , null: true
       t.string :user_prefecture         , null: true
       t.string :user_city               , null: true
