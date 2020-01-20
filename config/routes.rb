@@ -42,7 +42,6 @@ Rails.application.routes.draw do
     get "sign_in/address" => "users/registrations#adress"
     get "sign_in/credit" => "users/registrations#credit"
     post "sign_in/complete" => "users/registrations#complete"
-    # get "sign_in/done" => "users/registrations#done"
   end  
 
   resources 'freemarkets'

@@ -60,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
     
 
-     
+    
     if @user.save
       user = @user
       session.clear
@@ -72,8 +72,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
   end
 
-  def done
-  end
+
   
 private
 
