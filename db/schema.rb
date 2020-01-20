@@ -51,10 +51,6 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
   end
 
   create_table "deliver_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
     t.integer "postal_code", null: false
     t.integer "prefecture", null: false
     t.string "city", null: false
@@ -129,13 +125,11 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "user_last_name", null: false
-    t.string "user_first_name", null: false
-    t.string "user_last_name_kana", null: false
-    t.string "user_first_name_kana", null: false
-    t.string "birth_year", null: false
-    t.string "birth_month", null: false
-    t.string "birth_day", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birthday", null: false
     t.string "user_postal_code"
     t.string "user_prefecture"
     t.string "user_city"
