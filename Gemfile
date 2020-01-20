@@ -36,12 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-end
-
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -62,29 +56,32 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production do
-  gem 'unicorn', '5.4.1'
-end
-
-
 group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'rspec-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem "omniauth-rails_csrf_protection"
   gem 'omniauth-google-oauth2'
   gem 'omniauth-facebook'
-  gem 'pry-rails'
+end
+
+group :production do
+  gem 'unicorn', '5.4.1'
 end
 
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
 gem 'haml-rails'
@@ -93,9 +90,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'ancestry'
-gem 'pry-rails'
 gem 'gretel'
 gem 'payjp'
-
 gem 'active_hash'
 gem 'mini_magick'
