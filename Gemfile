@@ -6,7 +6,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
@@ -86,13 +86,8 @@ gem 'font-awesome-sass', '~> 5.11.2'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jquery-turbolinks'
-gem "omniauth-rails_csrf_protection"
-gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
 gem 'ancestry'
 gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem 'mini_magick'
-
-gem 'ancestry'
