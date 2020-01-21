@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_11_121717) do
+ActiveRecord::Schema.define(version: 2020_01_19_121323) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -34,16 +34,14 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
-  create_table "categorie_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "size_id", null: false
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_categorie_sizes_on_category_id"
-    t.index ["size_id"], name: "index_categorie_sizes_on_size_id"
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "category_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.string "ancestry"
     t.datetime "created_at", null: false
@@ -129,7 +127,7 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
     t.string "first_name", default: "", null: false
     t.string "last_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
-    t.integer "birthday", null: false
+    t.string "birthday", default: "", null: false
     t.string "user_postal_code"
     t.string "user_prefecture"
     t.string "user_city"
@@ -146,8 +144,6 @@ ActiveRecord::Schema.define(version: 2020_01_11_121717) do
   end
 
   add_foreign_key "cards", "users"
-  add_foreign_key "categorie_sizes", "categories"
-  add_foreign_key "categorie_sizes", "sizes"
   add_foreign_key "deliver_addresses", "users"
   add_foreign_key "freemarkets", "brands"
   add_foreign_key "freemarkets", "categories"
