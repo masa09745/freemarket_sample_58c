@@ -1,6 +1,15 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   require "payjp"
 
+  def sns
+      @user = User.new(
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password],
+        password_confirmation: session[:password],
+        )
+  end
+
   def registration
     @user = User.new
     session[:user] = @user

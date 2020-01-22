@@ -42,7 +42,13 @@ Rails.application.routes.draw do
     get "sign_up/address" => "users/registrations#adress"
     get "sign_up/credit" => "users/registrations#credit"
     post "sign_up/complete" => "users/registrations#complete"
-  end  
+  end
+
+  devise_scope :user do
+    get 'sign_up/sns'=>'users/registrations#sns'
+  end
+
+
 
   resources 'freemarkets'
 
