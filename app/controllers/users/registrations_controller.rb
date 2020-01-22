@@ -1,5 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  
   require "payjp"
 
   def registration
@@ -11,28 +10,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def adress
     params[:user][:birthday] = date_create
     session[:user] = user_params
-
-
     @user = User.new
     @user.build_deliver_address 
-
     session[:deliver_address] = @user.deliver_address
-    
   end
-    
-  def credit
 
+  def credit
     session[:user]["last_name"]        =   user_params[:last_name]
     session[:user]["first_name"]       =   user_params[:first_name]
     session[:user]["last_name_kana"]   =   user_params[:last_name_kana]
     session[:user]["first_name_kana"]  =   user_params[:first_name_kana]
-    
     session[:deliver_address] = user_params[:deliver_address_attributes]
-    
   end
-  
+
   def phone
-  end  
+  end
 
   def complete
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
@@ -43,12 +35,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         email: session[:user][:email],
         card: params[:payjp_token],
       )
-    
     else
       render :credit
       return
     end
-      
 
     @user = User.new(session[:user])
     @user.build_deliver_address(session[:deliver_address])
@@ -57,9 +47,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       customer_id:    @customer.id,
       card_id:        @customer.default_card,
     )
-    
 
-    
     if @user.save
       user = @user
       session.clear
@@ -68,11 +56,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       redirect_to action: 'registration'
     end
-    
+
   end
 
 
-  
+
 private
 
 def user_params
@@ -94,7 +82,6 @@ def user_params
     ]
   )
 end
-
 
 def date_create
   date = params[:birthday]

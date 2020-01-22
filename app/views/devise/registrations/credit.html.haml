@@ -6,7 +6,7 @@
         %h2 クレジットカード情報入力
       .list-add
         .list-add__card
-          = form_tag(sign_in_complete_path, method: :post, id: 'charge-form', name: 'inputForm', class: 'list-add__card__form') do
+          = form_tag(sign_up_complete_path, method: :post, id: 'charge-form', name: 'inputForm', class: 'list-add__card__form') do
             %span.payment-errors
             .list-add__card--inum
               %label.sub-title カード番号

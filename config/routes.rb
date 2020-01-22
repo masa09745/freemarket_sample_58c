@@ -38,10 +38,10 @@ Rails.application.routes.draw do
 
   
   devise_scope :user do
-    get 'sign_in/registrstion'=>'users/registrations#registration'
-    get "sign_in/address" => "users/registrations#adress"
-    get "sign_in/credit" => "users/registrations#credit"
-    post "sign_in/complete" => "users/registrations#complete"
+    get 'sign_up/registrstion'=>'users/registrations#registration'
+    get "sign_up/address" => "users/registrations#adress"
+    get "sign_up/credit" => "users/registrations#credit"
+    post "sign_up/complete" => "users/registrations#complete"
   end  
 
   resources 'freemarkets'

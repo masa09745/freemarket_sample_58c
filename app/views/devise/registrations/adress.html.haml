@@ -1,7 +1,7 @@
 =render 'regi_header_3'
 .redistration-main
   .redistration-main__form
-    = form_with model:@user ,url: sign_in_credit_path, html:{ id:"form", method: :get},local: true  do |f|
+    = form_with model:@user ,url: sign_up_credit_path, html:{ id:"form", method: :get},local: true  do |f|
       .signup-form
         .signup-form__group
           %label お名前(全角)
