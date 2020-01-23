@@ -58,6 +58,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "omniauth-rails_csrf_protection"
+  gem 'omniauth-google-oauth2'
+  gem 'omniauth-facebook'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'rspec-rails'
@@ -67,9 +70,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'factory_bot_rails'
-  gem "omniauth-rails_csrf_protection"
-  gem 'omniauth-google-oauth2'
-  gem 'omniauth-facebook'
 end
 
 group :production do

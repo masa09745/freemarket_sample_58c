@@ -2,12 +2,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   require "payjp"
 
   def sns
-      @user = User.new(
-        nickname: session[:nickname],
-        email: session[:email],
-        password: session[:password],
-        password_confirmation: session[:password],
-        )
+    #sns認証を使った場合は情報利用してインスタンスを作成.
+    #viewで条件分岐などを利用してパスワードフォームを表示させない
+    @user = if session[:password_confirmation]
+              User.new(
+                nickname: session[:nickname],
+                email: session[:email],
+                password_confirmation: session[:password_confirmation]
+              )
+            else
+              User.new
+            end
   end
 
   def registration
