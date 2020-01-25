@@ -17,7 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :user_city               , null: true
       t.string :user_street_address     , null: true
       t.string :user_building_name      , null: true
-      t.stirng :user_phone             , null: true
+      t.string :user_phone             , null: true
 
 
 
