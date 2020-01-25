@@ -67,20 +67,17 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
     t.string "condition", null: false
     t.string "ship_charge", null: false
     t.integer "ship_from", default: 0, null: false
-    t.string "ship_method", null: false
     t.string "ship_day", null: false
     t.text "description", null: false
     t.integer "status", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.bigint "item_image_id", null: false
     t.bigint "category_id", null: false
     t.bigint "size_id", null: false
     t.bigint "brand_id", null: false
     t.index ["brand_id"], name: "index_freemarkets_on_brand_id"
     t.index ["category_id"], name: "index_freemarkets_on_category_id"
-    t.index ["item_image_id"], name: "index_freemarkets_on_item_image_id"
     t.index ["size_id"], name: "index_freemarkets_on_size_id"
     t.index ["user_id"], name: "index_freemarkets_on_user_id"
   end
@@ -147,7 +144,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
   add_foreign_key "deliver_addresses", "users"
   add_foreign_key "freemarkets", "brands"
   add_foreign_key "freemarkets", "categories"
-  add_foreign_key "freemarkets", "item_images"
   add_foreign_key "freemarkets", "sizes"
   add_foreign_key "freemarkets", "users"
   add_foreign_key "item_images", "freemarkets"

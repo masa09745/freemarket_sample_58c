@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       collection do
         get 'profile', to: 'users#profile'
         get 'logout', to: 'users#logout'
+        get 'list', to: 'users#list'
+        get 'inprogress', to:'user#inpurogress'
+        get 'complete', to:'user#complete'
       end
     end
   end

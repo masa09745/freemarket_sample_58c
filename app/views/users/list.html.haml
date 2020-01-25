@@ -1,0 +1,24 @@
+.header
+  = render "shared/header"
+  = render 'shared/breadcrumb'
+%main.list-wrapper
+  .list-side
+    = render 'shared/mypage_side'
+  %section.list-contents
+    %h2.list-contents__index
+      出品した商品
+    %ul.list-contents__tabs
+      %li.active
+        %h3
+          =link_to "" do
+            出品中
+      %li
+        %h3
+          =link_to "" do
+            取引中
+      %li
+        %h3
+          =link_to "" do
+            売却済み
+    .list-contents__inner
+      

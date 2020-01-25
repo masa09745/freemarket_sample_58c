@@ -1,0 +1,41 @@
+.list-wrapper{
+  margin: 40px auto 0;
+  width: 1020px;
+  padding-bottom: 40px;
+  display: flex;
+  .list-contents{
+    width: 700px;
+    &__index{
+      padding: 0 16px;
+      background-color: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: 600;
+    }
+    &__tabs{
+      border: 0;
+      background-color: #eee;
+      font-size: 0;
+      .active{
+        border-top: 2px solid #ea352d;
+        background-color: #fafafa;
+      }
+      li{
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        h3{
+          font-size: 22px;
+        }
+      }
+      a{
+        position: relative;
+        display: block;
+        color: #333;
+        font-size: 16px;
+        line-height: 72px;
+      }
+    }
+  }
+}
