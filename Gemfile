@@ -67,9 +67,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'factory_bot_rails'
-  gem "omniauth-rails_csrf_protection"
-  gem 'omniauth-google-oauth2'
-  gem 'omniauth-facebook'
 end
 
 group :production do
@@ -91,3 +88,6 @@ gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem 'mini_magick'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
