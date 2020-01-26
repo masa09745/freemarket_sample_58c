@@ -1,7 +1,7 @@
 =render 'regi_header_3'
 .redistration-main
   .redistration-main__form
-    = form_with model:@user ,url: sign_in_credit_path, html:{ id:"form", method: :get},local: true  do |f|
+    = form_with model:@user ,url: sign_in_credit_path, builder: WithErrorFormBuilder,method: :get,local: true do |f|
       .signup-form
         .signup-form__group
           %label お名前(全角)
@@ -15,15 +15,15 @@
         .name-form
           = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例) ヤマダ", class: "signup-form__group-inner", pattern:"([ァ-ン]|ー)+",value:"#{session[:user]["last_name_kana"]}"
           = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例) アヤ", class: "signup-form__group-inner",  pattern:"([ァ-ン]|ー)+",value:"#{session[:user]["first_name_kana"]}"
-        = f.fields_for :deliver_address do |fields|    
+        = f.fields_for :deliver_address do |fields|   
           .signup-form__group
             %label 郵便番号
             %span 必須
-            = fields.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner", pattern: "[0-9]{7}",value:"#{session[:deliver_address]["postal_code"]}"
+            = fields.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "例) 1234567(7桁)", class: "signup-form__group-inner",value:"#{session[:deliver_address]["postal_code"]}"
           .signup-form__group
             %label 都道府県
             %span 必須
-            = fields.text_field :prefecture , autofocus: true, autocomplete: "", placeholder: "例)東京都", class: "signup-form__group-inner",  pattern:"[ぁ-んァ-ン一-龥]+",  value:"#{session[:deliver_address]["prefecture"]}"
+            = fields.collection_select :prefecture_id, Prefecture.all , :id, :name, {prompt: "--",selected: session[:deliver_address]["prefecture_id"]}
           .signup-form__group  
             %label 市町村名
             %span 必須

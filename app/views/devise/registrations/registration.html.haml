@@ -4,7 +4,12 @@
     %h2
       会員情報を入力
   .redistration-main__form
-    = form_with model:@user, url: sign_in_address_path , html: { id:"form", method: :get} ,local: true do |f|
+    = form_with model:@user, url: sign_in_phone_path ,builder: WithErrorFormBuilder, method: :get,local: true  do|f|
+      .error-messages.none-top-margin
+      - if @messages != nil
+        .error-messages.text-center
+          %p
+            = @messages
       .signup-form
         .signup-form__group
           %label ニックネーム

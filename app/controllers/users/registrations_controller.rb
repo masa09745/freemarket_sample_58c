@@ -6,18 +6,34 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def registration
     @user = User.new
     session[:user] = @user
+
+    
   end
-
-
-  def adress
+  
+  def phone
     params[:user][:birthday] = date_create
     session[:user] = user_params
 
+    @user = User.new(user_params)
+    if @user.valid?(:profile)
+      
+    else
+      render :registration
+      return
+    end
+  end  
+
+
+  def adress
+
+    # session[:user][:user_phone]  = user_params[:user_phone]
 
     @user = User.new
-    @user.build_deliver_address 
-
+    @user.build_deliver_address
+    
     session[:deliver_address] = @user.deliver_address
+
+    
     
   end
     
@@ -27,14 +43,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:user]["first_name"]       =   user_params[:first_name]
     session[:user]["last_name_kana"]   =   user_params[:last_name_kana]
     session[:user]["first_name_kana"]  =   user_params[:first_name_kana]
-    
+    session[:user]["user_phone"]       =   user_params[:user_phone]
     session[:deliver_address] = user_params[:deliver_address_attributes]
     
+
+    @user = User.new(session[:user])
+    @user.build_deliver_address(session[:deliver_address])
+    if @user.valid?(:deliver_address)
+      if @user.deliver_address.valid?(:deliver_address)
+      else
+        render :adress
+        return
+      end
+    elsif @user.deliver_address.valid?(:deliver_address)
+      render :adress
+      return
+    else
+      render :adress
+      return
+    end
   end
   
-  def phone
-  end  
-
+  
   def complete
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
 
@@ -50,7 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       return
     end
       
-
+    
     @user = User.new(session[:user])
     @user.build_deliver_address(session[:deliver_address])
     @user.cards.build(
@@ -86,10 +116,10 @@ def user_params
     :first_name_kana,
     :last_name_kana,
     :birthday,
-    :tel,
+    :user_phone,
     deliver_address_attributes:[
       :postal_code,
-      :prefecture,
+      :prefecture_id,
       :city,
       :street_address,
     ]

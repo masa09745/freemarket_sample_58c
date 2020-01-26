@@ -99,3 +99,4 @@ gem 'payjp'
 
 gem 'active_hash'
 gem 'mini_magick'
+gem 'rails-i18n'
