@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def adress
 
-    # session[:user][:user_phone]  = user_params[:user_phone]
+    session[:user][:user_phone]  = user_params[:user_phone]
 
     @user = User.new
     @user.build_deliver_address
