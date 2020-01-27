@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_card
 
   require "payjp"
@@ -13,7 +14,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: 'show' if card.exists?
+    redirect_to action: 'show' if card.present?
   end
 
   def pay

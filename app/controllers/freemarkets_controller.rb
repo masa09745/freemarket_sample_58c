@@ -1,4 +1,6 @@
 class FreemarketsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :buy]
+
   def index
     @freemarkets = Freemarket.limit(10).order('created_at ASC')
   end
@@ -7,8 +9,8 @@ class FreemarketsController < ApplicationController
   end
 
   def new
-    @freemarket = Freemarket.new
-    @freemarket.item_images.build
+      @freemarket = Freemarket.new
+      @freemarket.item_images.build
   end
 
   def edit
@@ -37,7 +39,7 @@ class FreemarketsController < ApplicationController
 
   private
   def freemarket_params
-    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url])
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url]).merge(user_id: current_user.id)
   end
 
 end
