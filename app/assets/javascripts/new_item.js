@@ -63,8 +63,6 @@ $(document).on("turbolinks:load", function() {
         if (countA == 16) {
           $("#image-drop2").css("display", "none");
         };
-
-
       });
     });
 
@@ -76,8 +74,5 @@ $(document).on("turbolinks:load", function() {
 
       file_field.val("")
     })
-
-
-
   });
 });
