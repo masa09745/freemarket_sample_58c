@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
   end
 
   create_table "deliver_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code"
-    t.integer "prefecture"
-    t.string "city"
-    t.string "street_address"
+    t.string "postal_code", null: false
+    t.string "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "street_address", null: false
     t.string "building_name"
     t.string "phone"
     t.datetime "created_at", null: false
