@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     passwords: "users/passwords",
     omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: "freemarkets#index"
-   
-  
+
+
   resources :freemarkets do
     collection do
       get 'buy', to: 'freemarkets#buy'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  
+
   scope :mypage do
     resources :cards, only: [:show, :new] do
       collection do
@@ -36,19 +36,19 @@ Rails.application.routes.draw do
     end
   end
 
-  
+
   devise_scope :user do
     get 'sign_in/registrstion'=>'users/registrations#registration'
     get "sign_in/address" => "users/registrations#adress"
     get "sign_in/credit" => "users/registrations#credit"
     post "sign_in/complete" => "users/registrations#complete"
-  end  
+  end
 
   resources 'freemarkets'
 
   resources 'categories', only: [:index, :show]
 
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
