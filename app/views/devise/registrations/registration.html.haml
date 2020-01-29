@@ -14,7 +14,7 @@
         .signup-form__group
           %label ニックネーム
           %span 必須
-          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) メルカリ太郎", class: "signup-form__group-inner", value:"#{session[:user]["nickname"]}"
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) 太郎", class: "signup-form__group-inner", value:"#{session[:user]["nickname"]}"
         .signup-form__group
           %label メールアドレス
           %span 必須
