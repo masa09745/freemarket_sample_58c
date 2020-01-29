@@ -14,5 +14,6 @@ class UsersController < ApplicationController
   end
 
   def list
+    @freemarkets = Freemarket.where(user_id: current_user.id)
   end
 end
