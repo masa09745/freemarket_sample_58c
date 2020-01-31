@@ -10,9 +10,9 @@ class User < ApplicationRecord
   has_one :deliver_address ,dependent: :destroy
   accepts_nested_attributes_for :deliver_address, allow_destroy: true
   
-
-  has_many :cards
-
+  has_one :cards
+  has_many :freemarkets
+  has_many :orders
 
   def self.find_oauth(auth)
     uid = auth.uid
@@ -78,7 +78,7 @@ class User < ApplicationRecord
   end
   
   def check_birthday
-   
+
     if birthday.present?
       if birthday > Date.today
         
