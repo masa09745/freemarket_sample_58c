@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
     t.string "user_street_address"
     t.string "user_building_name"
     t.string "user_phone"
+    t.text "profile_content"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

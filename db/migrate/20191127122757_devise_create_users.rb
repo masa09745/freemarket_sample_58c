@@ -18,7 +18,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :user_street_address     , null: true
       t.string :user_building_name      , null: true
       t.string :user_phone             , null: true
-
+      t.text :profile_content         , null: true
 
 
       ## Recoverable
