@@ -1,7 +1,7 @@
 .login-main
   .login-main__top
     ="アカウントをお持ちでない方はこちら"
-    = link_to sign_in_registrstion_path,method: :get  do
+    = link_to new_user_registration_path,method: :get  do
       新規会員登録
   .login-main__middle
     = link_to user_facebook_omniauth_authorize_path, method: :post do
@@ -18,7 +18,7 @@
         .form__field--input__email
           = f.text_field :email ,placeholder: "メールアドレス"
         .form__field--input__password
-          = f.text_field :password ,placeholder:"パスワード"      
+          = f.password_field :password ,placeholder:"パスワード"      
         .login-submit
           = f.submit 'ログイン' , class:'form__field--login btn-sns'
         .form__field--forget

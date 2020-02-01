@@ -11,10 +11,6 @@ $(document).on("turbolinks:load", function() {
 
         var countA = $('.sell-upload__image').children().length;
 
-        console.log(countA);
-
-        console.log($('.sell-upload__image').children());
-
         var fileReader = new FileReader();
 
         dataBox.items.add(file);
@@ -72,11 +68,16 @@ $(document).on("turbolinks:load", function() {
       });
     });
 
-    $(document).on("click", '.item-image__operetion--delete', function () {
-      var target_image = $(this).parent().parent();
+    $(document).on("click", '.item-image__operetion--delete', function(){
+
+      var target_image = $(this).parent().parent()
+
       target_image.remove();
-      file_field.val("");
-    });
+
+      file_field.val("")
+    })
+
+
 
   });
 });

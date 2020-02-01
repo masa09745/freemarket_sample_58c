@@ -88,6 +88,7 @@ gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem 'mini_magick'
+gem 'rails-i18n'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
