@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_freemarkets_on_category_id"
     t.index ["user_id"], name: "index_freemarkets_on_user_id"
   end
 
@@ -136,6 +138,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "deliver_addresses", "users"
+  add_foreign_key "freemarkets", "categories"
   add_foreign_key "freemarkets", "users"
   add_foreign_key "item_images", "freemarkets"
   add_foreign_key "orders", "deliver_addresses"
