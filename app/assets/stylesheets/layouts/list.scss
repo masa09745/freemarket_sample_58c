@@ -50,30 +50,32 @@
         background-color: #fff;
       }
       &-item{
-        display: flex;
         background-color: #fff;
         height: 85px;
         width: 100%;
         padding: 15px 20px;
         border-bottom: 1px solid #eee;
-        .list-item__image{
-          margin-right: 20px;
-        }
-        .list-item__namebox{
-          position: relative;
-          .list-item__icon{
-            position: absolute;
-            bottom: 0;
-            color: #ccc;
+        .inner-item{
+          display: flex;
+          .inner-item__image{
+            margin-right: 20px;
+          }
+          .inner-item__namebox{
+            position: relative;
+            .inner-item__icon{
+              position: absolute;
+              bottom: 0;
+              color: #ccc;
             .icon-like, .icon-comment{
               margin-right: 5px;
             }
           }
         }
-        .list-item__chebron{
+        .inner-item__chebron{
           margin-left: auto;
           line-height: 54px;
         }
+      }
       }
     }
   }

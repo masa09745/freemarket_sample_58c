@@ -147,6 +147,22 @@ table{
   }
 }
 
+.edit{
+  width: 700px;
+  margin: 8px auto;
+  background-color: #fff;
+  &-form{
+    padding: 24px;
+    font-size: 14px;
+    padding: 8px;
+    p{
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
 .form-text{
   margin-top: 8px;
   display: block;

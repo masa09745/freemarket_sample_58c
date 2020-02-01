@@ -6,6 +6,8 @@ class FreemarketsController < ApplicationController
   end
 
   def show
+    @freemarket = Freemarket.includes(:user).find(params[:id])
+    prefecture = Prefecture.all
   end
 
   def new
