@@ -31,12 +31,12 @@
                   %label 商品名
                   %span.must 必須
                   .form-name__input
-                    = f.text_field :item, placeholder: '商品名(必須　４０文字まで)', class: 'input-name',  required: "", title: "半角英数字で入力して下さい。"
+                    = f.text_field :item, placeholder: '商品名(必須　４０文字まで)', class: 'input-name',  required: ""
                 .form-info
                   %label 商品の説明
                   %span.must 必須
                   .form-info__text
-                  = f.text_area :description, class:"text-info", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"
+                  = f.text_area :description, class:"text-info", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）", required: ""
               .sell.detail
                 %h3.detail-category 商品詳細
                 .sell-form
@@ -51,7 +51,7 @@
                     %span.must 必須
                     .condition-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {prompt: '---'}, {class: "pulldown"}
+                      = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {prompt: '---'}, {class: "pulldown", required: ""}
               .sell.shipping
                 %h3.shipping-about 配送について
                 .sell-form
@@ -60,19 +60,19 @@
                     %span.must 必須
                     .shipping-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      = f.select :ship_charge, ["送料込み（出品者負担）", "着払い（購入者負担）"], {prompt: '---'}, {class: "pulldown"}
+                      = f.select :ship_charge, ["送料込み（出品者負担）", "着払い（購入者負担）"], {prompt: '---'}, {class: "pulldown",  required: ""}
                   .form-pulldown
                     %label 発送元の地域
                     %span.must 必須
                     .shipping-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      = f.collection_select :ship_from, Prefecture.all, :id, :name, {include_blank: '---'}, {class: 'pulldown'}
+                      = f.collection_select :ship_from, Prefecture.all, :id, :name, {include_blank: '---'}, {class: 'pulldown',  required: ""}
                   .form-pulldown
                     %label 発送までの日数
                     %span.must 必須
                     .shipping-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      = f.select :ship_day, ["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {prompt: '---'}, {class: "pulldown"}
+                      = f.select :ship_day, ["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {prompt: '---'}, {class: "pulldown",  required: ""}
 
               .sell.price
                 %h3.price-limit 販売価格(300~9,999,999)
