@@ -23,7 +23,7 @@
           .signup-form__group
             %label 都道府県
             %span 必須
-            = fields.collection_select :prefecture, Prefecture.all , :name, :name, {prompt: "--",selected: session[:deliver_address]["prefecture_id"]}
+            = fields.collection_select :prefecture_id, Prefecture.all , :name, :name, {prompt: "--",selected: session[:deliver_address]["prefecture"]}
           .signup-form__group  
             %label 市町村名
             %span 必須
