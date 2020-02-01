@@ -27,12 +27,24 @@ crumb :newcard do
   parent :cards
 end
 
-
 crumb :categories do
   link 'カテゴリー一覧', categories_path
   parent :root
 end
 
+# 増やしたやつ
+
+crumb :products do
+  link '出品した商品 - 出品中', categories_path
+  parent :users
+end
+
+crumb :items do
+  link '出品商品画面', categories_path
+  parent :products
+end
+
+# ファイルにrender書く
 
 crumb :category do |category|
   link category.category_name, category_path(category)
