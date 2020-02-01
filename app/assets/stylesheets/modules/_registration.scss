@@ -56,7 +56,17 @@
       line-height: 1.5;
       font-size: 16px;
     }
-   
+   select{
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+   }
    
     p{
      margin:8px 0 0;
@@ -90,8 +100,13 @@
 
    
 .name-form{
+  // display: flex ;
+  //  .field_with_errors{
     
-   input{
+  //   justify-content: center;
+  //  }
+   
+  input{
     width: calc(50% - 6px);
     margin: 8px 0 0;
     height: 48px;
@@ -106,7 +121,8 @@
  }
 
 .birthday-form{
-  
+
+
   select{
     width: 76px;
     margin: 8px 0 0;
@@ -118,9 +134,6 @@
     line-height: 1.5;
     font-size: 16px;
   }
- span{
-   
- }
 
 }
 
@@ -151,4 +164,10 @@
 
 .text-gray{
   color: #888;
+}
+
+.errors {
+  outline: 0;
+  color:#ea352d;
+  background-color:#fff;
 }

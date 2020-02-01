@@ -5,11 +5,12 @@
   .profile-logout
     = render 'shared/mypage_side'
   .logout-content-wrpper
-    =link_to destroy_user_session_path, class: "logout-content__btn",method: :delete do
+    =link_to destroy_user_session_path,method: :delete do
       .logout-container
         %form{action: "", method: "post",class: "logout-content"}
           .button
-            %input{type: "submit", value: "ログアウト", class: "logout-content__btn"}
+            .logout-content__btn
+              ログアウト
 
 
   = render "/shared/sellbutton"
