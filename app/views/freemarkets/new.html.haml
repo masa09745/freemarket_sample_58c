@@ -84,7 +84,7 @@
                         %span.must 必須
                       .input-box__price
                         ¥
-                        = f.text_field :price, placeholder: "例) 300", class: "input-price", id: "jsPrice"
+                        = f.text_field :price, placeholder: "例) 300", class: "input-price", id: "jsPrice", required: ""
 
                   .sell-box__tax
                     %label 販売手数料(10%)

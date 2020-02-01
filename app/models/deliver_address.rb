@@ -17,7 +17,7 @@ with_options on: :deliver_address do | deliver_address |
     presence: true,
     length:{ maximum: 100}
   deliver_address.validates :building_name,
-    length:{ maximum: 100} 
+    length:{ maximum: 100}
 end
 
 end
