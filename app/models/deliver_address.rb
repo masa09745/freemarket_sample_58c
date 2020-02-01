@@ -8,7 +8,7 @@ with_options on: :deliver_address do | deliver_address |
   deliver_address.validates :postal_code,
     presence: true,
     format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'のフォーマットが不適切です'}
-  deliver_address.validates :prefecture,
+  deliver_address.validates :prefecture_id,
     presence: true
   deliver_address.validates :city,
     presence: true,

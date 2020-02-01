@@ -119,7 +119,7 @@ def user_params
     :user_phone,
     deliver_address_attributes:[
       :postal_code,
-      :prefecture,
+      :prefecture_id,
       :city,
       :street_address,
     ]
