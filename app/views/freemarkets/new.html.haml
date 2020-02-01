@@ -66,7 +66,7 @@
                     %span.must 必須
                     .shipping-pulldown
                       =icon('fas', 'chevron-down',class:"down-icon")
-                      = f.collection_select :ship_from, Prefecture.all, :id, :name, {include_blank: '---'}, {class: 'pulldown'}
+                      = f.collection_select :ship_from, Prefecture.all, :name, :name, {prompt: '---'}, {class: 'pulldown'}
                   .form-pulldown
                     %label 発送までの日数
                     %span.must 必須
