@@ -16,6 +16,15 @@ class FreemarketsController < ApplicationController
   end
 
   def edit
+    @freemarket = Freemarket.includes(:user).find(params[:id])
+  end
+
+  def update
+    @freemarket = Freemarket.find(params[:id])
+      if @freemarket.user_id == current_user.id
+        @freemarket.update(freemarket_edit_params)
+        redirect_to  list_users_path
+      end
   end
 
   def delete
@@ -42,6 +51,10 @@ class FreemarketsController < ApplicationController
   private
   def freemarket_params
     params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url]).merge(user_id: current_user.id)
+  end
+
+  def freemarket_edit_params
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
   end
 
 end

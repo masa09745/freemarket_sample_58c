@@ -47,8 +47,9 @@
               = @freemarket.ship_day
     .edit
       .edit-form
-        %button{class:'form-btn edit-btn'}
-          %span 商品編集する
+        = link_to edit_freemarket_path do
+          %button{class:'form-btn edit-btn'}
+            %span 商品編集する
         %p
           or
         %button{class:'form-btn gray-btn comment-send'}
