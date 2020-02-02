@@ -61,10 +61,8 @@
       &__update-btn {
         width: 100%;
         padding: 0;
-        a {
-          color: #fff;
-          @include red-btn();
-        }
+        color: #fff;
+        @include red-btn();
       }
     }
   }

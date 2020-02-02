@@ -49,7 +49,8 @@
         -if @freemarkets.present?
           .toppage-main__contents
             - @freemarkets.each do |freemarket|
-              .toppage-main__content
+              =link_to freemarket_path(freemarket) do
+                .toppage-main__content
 
                 .toppage-main__image
                   = image_tag freemarket.item_images[0].image_url.url
