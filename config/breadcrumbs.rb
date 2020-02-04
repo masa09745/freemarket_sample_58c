@@ -22,6 +22,16 @@ crumb :logout do
   parent :users
 end
 
+crumb :lists do
+  link '出品した商品 - 出品中', list_users_path
+  parent :users
+end
+
+crumb :items do
+  link '出品商品画面', freemarket_path
+  parent :lists
+end
+
 crumb :newcard do
   link 'クレジットカード情報入力' ,new_card_path
   parent :cards
@@ -32,19 +42,6 @@ crumb :categories do
   parent :root
 end
 
-# 増やしたやつ
-
-crumb :products do
-  link '出品した商品 - 出品中', categories_path
-  parent :users
-end
-
-crumb :items do
-  link '出品商品画面', categories_path
-  parent :products
-end
-
-# ファイルにrender書く
 
 crumb :category do |category|
   link category.category_name, category_path(category)

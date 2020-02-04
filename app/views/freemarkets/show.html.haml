@@ -1,5 +1,7 @@
+- breadcrumb :items
 .content
   =render "shared/header"
+  =render 'shared/breadcrumb'
   - if current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
