@@ -32,15 +32,20 @@ class FreemarketsController < ApplicationController
 
   def create
     @freemarket = Freemarket.new(freemarket_params)
+    if @freemarket.item_images.blank?
+      @freemarket.errors.add(:image_url, "画像を選択してください")
+      @freemarket.item_images.build
+      render "new"
+      return
+    end
     if @freemarket.save
       redirect_to root_path
     else
-      # binding.pry
-      render 'new'
+      render "new"
     end
   end
 
-  
+
 
   private
   def freemarket_params
