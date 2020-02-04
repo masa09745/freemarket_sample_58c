@@ -8,6 +8,6 @@ class ItemImage < ApplicationRecord
   #   if image_url.size > 5.megabytes
   #     errors.add(:image_url, "サイズが大きすぎます（５MB以下）")
   #   end
-  end
+  # end
 
 end
