@@ -1,5 +1,5 @@
 class FreemarketsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :buy]
+  before_action :authenticate_user!, only: [:new, :buy, :exhibit]
 
   def index
     @freemarkets = Freemarket.where(status: "1").limit(10).order('created_at ASC')
@@ -18,7 +18,16 @@ class FreemarketsController < ApplicationController
   def edit
   end
 
-  def delete
+  def destroy
+    @freemarket = find_freemarket_by_id
+    @freemarket.destroy
+    redirect_to list_users_path
+    flash[:notice] = '削除しました'
+  end
+
+  def exhibit
+    @freemarket = Freemarket.includes(:user).find(params[:id])
+    prefecture = Prefecture.all
   end
 
   def buy
@@ -43,5 +52,9 @@ class FreemarketsController < ApplicationController
   def freemarket_params
     params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:image_url]).merge(user_id: current_user.id)
   end
+
+  def find_freemarket_by_id
+    Freemarket.find(params[:id])
+    end
 
 end
