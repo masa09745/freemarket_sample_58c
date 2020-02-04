@@ -11,8 +11,8 @@ class FreemarketsController < ApplicationController
   end
 
   def new
-      @freemarket = Freemarket.new
-      @freemarket.item_images.build
+    @freemarket = Freemarket.new
+    @freemarket.item_images.build
   end
 
   def edit
@@ -35,9 +35,12 @@ class FreemarketsController < ApplicationController
     if @freemarket.save
       redirect_to root_path
     else
+      # binding.pry
       render 'new'
     end
   end
+
+  
 
   private
   def freemarket_params
