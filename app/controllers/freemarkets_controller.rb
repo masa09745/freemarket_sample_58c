@@ -2,10 +2,12 @@ class FreemarketsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :buy]
 
   def index
-    @freemarkets = Freemarket.limit(10).order('created_at ASC')
+    @freemarkets = Freemarket.where(status: "1").limit(10).order('created_at ASC')
   end
 
   def show
+    @freemarket = Freemarket.includes(:user).find(params[:id])
+    prefecture = Prefecture.all
   end
 
   def new

@@ -147,6 +147,30 @@ table{
   }
 }
 
+.edit{
+  width: 700px;
+  margin: 8px auto;
+  background-color: #fff;
+  &-form{
+    padding: 24px;
+    font-size: 14px;
+    padding: 15px;
+    p{
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .edit-btn{
+        width: 100%;
+        margin: 8px 0 0;
+        font-size: 0;
+        text-align: center;
+        background-color: #ea352d;
+        color: #fff;
+      }
+  }
+}
+
 .form-text{
   margin-top: 8px;
   display: block;

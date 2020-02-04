@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_01_19_121323) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
+    t.string "prefecture_id"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
   end
 
   create_table "deliver_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code"
-    t.integer "prefecture"
-    t.string "city"
-    t.string "street_address"
+    t.string "postal_code", null: false
+    t.string "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "street_address", null: false
     t.string "building_name"
     t.string "phone"
     t.datetime "created_at", null: false
@@ -66,19 +66,13 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
     t.integer "price", null: false
     t.string "condition", null: false
     t.string "ship_charge", null: false
-    t.integer "ship_from", null: false
+    t.string "ship_from", null: false
     t.string "ship_day", null: false
     t.text "description", null: false
     t.integer "status", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
-    t.bigint "size_id", null: false
-    t.bigint "brand_id", null: false
-    t.index ["brand_id"], name: "index_freemarkets_on_brand_id"
-    t.index ["category_id"], name: "index_freemarkets_on_category_id"
-    t.index ["size_id"], name: "index_freemarkets_on_size_id"
     t.index ["user_id"], name: "index_freemarkets_on_user_id"
   end
 
@@ -131,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
     t.string "user_street_address"
     t.string "user_building_name"
     t.string "user_phone"
+    t.text "profile_content"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -142,9 +137,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_121323) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "deliver_addresses", "users"
-  add_foreign_key "freemarkets", "brands"
-  add_foreign_key "freemarkets", "categories"
-  add_foreign_key "freemarkets", "sizes"
   add_foreign_key "freemarkets", "users"
   add_foreign_key "item_images", "freemarkets"
   add_foreign_key "orders", "deliver_addresses"
