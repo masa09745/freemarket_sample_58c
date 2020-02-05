@@ -54,7 +54,7 @@ class FreemarketsController < ApplicationController
   end
 
   def freemarket_edit_params
-    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    params.require(:freemarket).permit(:item, :description, :price, :condition, :ship_charge, :ship_from, :ship_day, item_images_attributes: [:id, :image_url, :_destroy]).merge(user_id: current_user.id)
   end
 
 end

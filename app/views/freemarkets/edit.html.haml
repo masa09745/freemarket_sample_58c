@@ -12,23 +12,26 @@
                 %label 出品画像
                 %span.must 必須
                 %p.info 最大10枚までアップロードできます
-                .item-preview
-                  -@freemarket.item_images. each do|image|
-                    .item-preview-upr
-                      = image_tag image.image_url.url, width: "112", height: "112"
                 .sell-upload__image
-                  = f.fields_for :item_images do |i|
-                    = i.file_field :image_url, type: 'file', name: 'freemarket[item_images_attributes][][image_url]', id: "image-file"
-                  
+                  .item-preview
+                    -@freemarket.item_images.each do |image|
+                      .item-preview__inner
+                        .item-image
+                          = image_tag image.image_url.url, width: "112", height: "112", alt: "preview"
+                        .item-edit
+                          .item-edit__image
+                            %label.edit_btn 編集
+                          .item-edit__delete
+                            %span 削除
                   #image-drop
-                    %pre
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                .sell-upload__image2
-                  #image-drop2
-                    %pre
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
+                    =f.label :"freemarket_images_attributes_#{@freemarket.item_images.length}_image_url", class: "label-box", id: "label-box--#{@freemarket.item_images.length}" do
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-image
+                    = f.fields_for :item_images do |i|
+                      = i.file_field :image_url, class: "hidden-field"
+                      = i.check_box:_destroy, class: "hidden-checkbox"
+                    - @freemarket.item_images.length.upto(4) do |i|
+                      %input{name: "freemarket[item_images_attributes][#{i}][image_url]", id: "freemarket_item_images_attributes_#{i}_image_url", class:"hidden-field", type:"file"}
               .sell.name
                 .form-name
                   %label 商品名
