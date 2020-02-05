@@ -1,6 +1,6 @@
 .content
   =render "shared/header"
-  - if current_user.id == @freemarket.user_id
+  - if user_signed_in? && current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
         = @freemarket.item

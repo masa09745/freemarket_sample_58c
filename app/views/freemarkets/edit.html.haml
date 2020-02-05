@@ -24,8 +24,9 @@
                           .item-edit__delete
                             %span 削除
                   #image-drop
-                    =f.label :"freemarket_images_attributes_#{@freemarket.item_images.length}_image_url", class: "label-box", id: "label-box--#{@freemarket.item_images.length}" do
-                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                    %label{for: "freemarket_item_images_attributes_#{@freemarket.item_images.length}_image_url", class: "label-box", id: "label-box--#{@freemarket.item_images.length}"}
+                      .label-content
+                        %pre.label-box__text-visible クリックしてファイルをアップロード
                   .hidden-image
                     = f.fields_for :item_images do |i|
                       = i.file_field :image_url, class: "hidden-field"
