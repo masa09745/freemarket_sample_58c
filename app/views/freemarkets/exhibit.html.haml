@@ -1,6 +1,6 @@
 .content
   =render "shared/header"
-  - if  user_signed_in? && current_user.id == @freemarket.user_id
+  - if current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
         = @freemarket.item
@@ -53,8 +53,7 @@
           or
         %button{class:'form-btn gray-btn comment-send'}
           %span 出品を一時停止する
-        %button{class:'form-btn gray-btn comment-send'}
-          %span この商品を削除する
+        = button_to 'この商品を削除する', freemarket_path(@freemarket.id), { method: :delete, id:'item-delete', class:'form-btn gray-btn', data: { confirm: '本当に削除しますか？'} }
     .message
       .message-box
       .message-form
@@ -66,20 +65,16 @@
 
   - else
     %section.content-main
-      %h1.goods-name
-        = @freemarket.item
+      %h1.goods-name サンプル商品
       %p.goods-info
-        この商品は
-        = @freemarket.user.nickname
-        さんが出品した商品になります
+        この商品はtestさんが出品した商品になります
       .goods-main
         .goods-photo
           .goods-photo__main
         %table.goods-data
           %tr
             %th 出品者
-            %td
-              = @freemarket.user.nickname
+            %td テストさん
           %tr
             %th カテゴリー
             %td テストカテゴリ
@@ -91,28 +86,21 @@
             %td M
           %tr
             %th 商品の状態
-            %td
-              = @freemarket.condition
+            %td 非常に良い
           %tr
             %th 配送料の負担
-            %td
-              = @freemarket.ship_charge
-              
+            %td 出品者の負担
           %tr
             %th 配送の方法
             %td フリマらくらく便
           %tr
             %th 配送元地域
-            %td
-              =@freemarket.ship_from
+            %td 大阪
           %tr
             %th 発送日の目安
-            %td
-              = @freemarket.ship_day
+            %td 1〜2日
       .price-box
-        %span.price-box__cash 
-          ¥
-          = @freemarket.price
+        %span.price-box__cash ¥1,800
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
 

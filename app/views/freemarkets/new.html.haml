@@ -19,6 +19,10 @@
                     %pre
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
+                .error-messages
+                  - if @freemarket.errors[:image_url][0]
+                    = @freemarket.errors[:image_url][0]
+
                 .sell-upload__image2
                   #image-drop2
                     = f.fields_for :item_images do |i|

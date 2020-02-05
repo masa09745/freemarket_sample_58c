@@ -51,14 +51,12 @@
             - @freemarkets.each do |freemarket|
               =link_to freemarket_path(freemarket) do
                 .toppage-main__content
-
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
-
+                  .toppage-main__image
+                    = image_tag freemarket.item_images[0].image_url.url
+                    %span
+                      = freemarket.price
+                  .toppage-main__item-name
+                    = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text

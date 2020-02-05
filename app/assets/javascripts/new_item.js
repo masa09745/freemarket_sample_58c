@@ -75,9 +75,7 @@ $(document).on("turbolinks:load", function() {
       target_image.remove();
 
       file_field.val("")
-    })
-
-
+    });
 
   });
 });
