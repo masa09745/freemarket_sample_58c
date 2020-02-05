@@ -20,10 +20,10 @@
                   .hidden-image
                     = f.fields_for :item_images do |i|
                       = i.file_field :image_url, class: "hidden-field"
-                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][1][image_url]", id: "item_images_attributes_1_image" }
-                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][2][image_url]", id: "item_images_attributes_2_image" }
-                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][3][image_url]", id: "item_images_attributes_3_image" }
-                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][4][image_url]", id: "item_images_attributes_4_image" }
+                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][1][image_url]", id: "freemarket_item_images_attributes_1_image_url" }
+                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][2][image_url]", id: "freemarket_item_images_attributes_2_image_url" }
+                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][3][image_url]", id: "freemarket_item_images_attributes_3_image_url" }
+                      %input{class:"hidden-field", type: "file", name: "freemarket[item_images_attributes][4][image_url]", id: "freemarket_item_images_attributes_4_image_url" }
 
 
 
