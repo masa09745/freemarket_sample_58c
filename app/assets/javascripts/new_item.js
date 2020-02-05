@@ -77,7 +77,5 @@ $(document).on("turbolinks:load", function() {
       file_field.val("")
     });
 
-    
-
   });
 });
