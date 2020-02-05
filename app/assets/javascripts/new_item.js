@@ -58,6 +58,7 @@ $(document).on('turbolinks:load', function(){
 
     $(document).on('change', '.hidden-field', function() {
       setLabel();
+      var id = $('.item-preview__inner').length;
       $('.label-box').attr({id: `label-box--${id}`,for: `freemarket_item_images_attributes_${id}_image_url`});
 
       var file = this.files[0];
