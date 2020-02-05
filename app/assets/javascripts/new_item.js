@@ -1,3 +1,4 @@
+
 $(document).on('turbolinks:load', function(){
 
   var id = $('.item-preview__inner').length;
@@ -78,6 +79,7 @@ $(document).on('turbolinks:load', function(){
         }
     }
   });
+
 
   $(document).on('click', '.item-edit__delete', function() {
     var count = $('.item-preview__inner').length;
