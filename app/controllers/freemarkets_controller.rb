@@ -16,7 +16,7 @@ class FreemarketsController < ApplicationController
   end
 
   def edit
-    @freemarket = Freemarket.includes(:user).find(params[:id])
+    @freemarket = Freemarket.find(params[:id])
   end
 
   def update

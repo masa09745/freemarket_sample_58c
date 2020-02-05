@@ -12,17 +12,20 @@
                 %label 出品画像
                 %span.must 必須
                 %p.info 最大10枚までアップロードできます
+                .item-preview
+                  -@freemarket.item_images. each do|image|
+                    .item-preview-upr
+                      = image_tag image.image_url.url, width: "112", height: "112"
                 .sell-upload__image
                   = f.fields_for :item_images do |i|
-                    = i.file_field :image_url, {type: 'file', id: "image-file", style: "display:none"}
+                    = i.file_field :image_url, type: 'file', name: 'freemarket[item_images_attributes][][image_url]', id: "image-file"
+                  
                   #image-drop
                     %pre
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
                 .sell-upload__image2
                   #image-drop2
-                    = f.fields_for :item_images do |i|
-                      = i.file_field :image_url, {type: 'file', id: "image-file", style: "display:none"}
                     %pre
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
