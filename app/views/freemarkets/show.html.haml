@@ -1,6 +1,6 @@
 .content
   =render "shared/header"
-  - if current_user.id == @freemarket.user_id
+  - if  user_signed_in? && current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
         = @freemarket.item
@@ -111,7 +111,8 @@
               = @freemarket.ship_day
       .price-box
         %span.price-box__cash 
-          = @freemarket.price 
+          ¥
+          = @freemarket.price
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
 
