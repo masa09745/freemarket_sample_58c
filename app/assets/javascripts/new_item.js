@@ -4,6 +4,8 @@ $(document).on('turbolinks:load', function(){
       $('.hidden-image').trigger('click');
     });
 
+    var id = $('.item-preview__inner').length;
+    console.log(id)
 
     function buildHTML(count) {
       var html = `<div class="item-preview__inner" id="item-preview__${count}">
@@ -25,6 +27,9 @@ $(document).on('turbolinks:load', function(){
     // 投稿編集時
     //items/:i/editページへリンクした際のアクション=======================================
     if (window.location.href.match(/\/freemarkets\/\d+\/edit/)){
+      var id = $('.item-preview__inner').length;
+      console.log(id)
+
       //登録済み画像のプレビュー表示欄の要素を取得する
       var prevContent = $('#image-drop').prev();
       labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
@@ -53,7 +58,6 @@ $(document).on('turbolinks:load', function(){
 
     $(document).on('change', '.hidden-field', function() {
       setLabel();
-      var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $('.label-box').attr({id: `label-box--${id}`,for: `freemarket_item_images_attributes_${id}_image_url`});
 
       var file = this.files[0];
@@ -72,8 +76,7 @@ $(document).on('turbolinks:load', function(){
         $(`#item-preview__${id} img`).attr('src', `${image}`);
         var count = $('.item-preview__inner').length;
         if (count == 5) {
-          $('#image-drop').css("display", "none");
-          $('.label-box__text-visible').css("display", "none");
+          $('#image-drop').hide();
         }
 
         if ($(`#freemarket_item_images_attributes_${id}__destroy`)){
