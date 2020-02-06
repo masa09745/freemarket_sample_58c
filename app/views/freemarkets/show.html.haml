@@ -75,6 +75,10 @@
       .goods-main
         .goods-photo
           .goods-photo__main
+            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300'
+          .goods-photo__main
+            - @freemarket.item_images.each.with_index do |item_image, index|
+              = image_tag item_image.image_url.url ,  size:'60x60'
         %table.goods-data
           %tr
             %th 出品者
@@ -115,15 +119,11 @@
           = @freemarket.price
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
-
-      %a.buy-btn
+      .buy-btn
         購入画面に進む
       .goods-detail
         %p.goods-detail_comment
-          これはテスト商品です。
-
-          テストのために出品しました。
-          新品未使用となります。
+          = @freemarket.description
       .btn-box
         .btn-box__left
           =link_to "#", class:"btn btn-good" do
@@ -172,60 +172,46 @@
     .user-items
       %h2
         =link_to "#" do
-          テストさんのその他の出品
-      .user-items__main
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content.item3
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
+          = @freemarket.user.nickname
+          さんのその他の出品
+        -if @freemarkets.present?
+          .toppage-main__contents
+            - @freemarkets.each do |freemarket|
+              =link_to freemarket_path(freemarket) do
+                .toppage-main__content
+                  .toppage-main__image
+                    = image_tag freemarket.item_images[0].image_url.url, height:'220', width:'220'
+                    %span
+                      = freemarket.price
+                  .toppage-main__item-name
+                    = freemarket.item
+
+        -# %section.item-content.item3
+        -#   =link_to "#" do
+        -#     .item-content__photo
+        -#       =image_tag @freemarket.item_images[3].image_url.url, height:'220', width:'220'
+        -#     .item-content__detail
+        -#       %h3.item-name
+        -#         テストベッド１
+        -#       .item-box
+        -#         .item-box__price
+        -#           ¥1,000
+        -#         .item-box__like
+        -#           =icon('far', 'heart', class:'icon-like')
+        -#           %span 5
+        -# %section.item-content
+        -#   =link_to "#" do
+        -#     .item-content__photo
+        -#       =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
+        -#     .item-content__detail
+        -#       %h3.item-name
+        -#         テストベッド１
+        -#       .item-box
+        -#         .item-box__price
+        -#           ¥1,000
+        -#         .item-box__like
+        -#           =icon('far', 'heart', class:'icon-like')
+        -#           %span 5
 
   = render partial: 'shared/footertop'
   = render partial: 'shared/footer'
