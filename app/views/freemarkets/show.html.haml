@@ -47,10 +47,10 @@
               = @freemarket.ship_day
     .edit
       .edit-form
-        %button{class:'form-btn edit-btn'}
-          %span 商品編集する
-        %p
-          or
+        = link_to edit_freemarket_path do
+          %button{class:'form-btn edit-btn'}
+            %span 商品編集する
+        %p or
         %button{class:'form-btn gray-btn comment-send'}
           %span 出品を一時停止する
         = button_to 'この商品を削除する', freemarket_path(@freemarket.id), { method: :delete, id:'item-delete', class:'form-btn gray-btn', data: { confirm: '本当に削除しますか？'} }
@@ -114,7 +114,7 @@
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
 
-      %a.buy-btn
+      =link_to "" class:"buy-btn" do
         購入画面に進む
       .goods-detail
         %p.goods-detail_comment
