@@ -50,17 +50,6 @@ class CardsController < ApplicationController
       flash[:notice] = 'クレジットカードの削除が完了しました'
   end
 
-  def buy
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    Payjp::Charge.create(
-    amount: 20000,
-    customer: @card.customer_id,
-    currency: 'jpy',
-  )
-  redirect_to users_path
-  flash[:notice] = '購入が完了しました'
-  end
-
   private
 
   def set_card
