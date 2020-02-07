@@ -1,38 +1,37 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations",
-    passwords: "users/passwords",
-    omniauth_callbacks: 'users/omniauth_callbacks' }
+  sessions: "users/sessions",
+  registrations: "users/registrations",
+  passwords: "users/passwords",
+  omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root to: "freemarkets#index"
-  
+
   resources :freemarkets do
-    collection do
+    member do
       get 'buy', to: 'freemarkets#buy'
-      get 'item', to: 'freemarkets#item'
+      post 'pay', to: 'freemarkets#pay'
     end
   end
 
   scope :mypage do
     resources :users do
-      collection do
+      member do
         get 'profile', to: 'users#profile'
+      end
+      collection do
+        get 'purchased', to: 'users#purchased'
         get 'logout', to: 'users#logout'
         get 'list', to: 'users#list'
-        get 'inprogress', to:'user#inpurogress'
-        get 'complete', to:'user#complete'
+        get 'complete', to:'users#complete'
       end
     end
-  end
-  
-  scope :mypage do
     resources :cards, only: [:show, :new] do
       collection do
         post 'show', to: 'cards#show'
         post 'pay', to: 'cards#pay'
         post 'delete', to: 'cards#delete'
-        post 'buy', to: 'cards#buy'
       end
     end
   end
@@ -43,7 +42,7 @@ Rails.application.routes.draw do
     get "sign_in/address" => "users/registrations#adress"
     get "sign_in/credit" => "users/registrations#credit"
     post "sign_in/complete" => "users/registrations#complete"
-  end  
+  end 
 
   resources 'categories', only: [:index, :show]
   get 'user/show' => "users#show"
