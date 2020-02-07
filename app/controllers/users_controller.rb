@@ -26,11 +26,11 @@ class UsersController < ApplicationController
   end
 
   def purchased
-    @order = Order.find_by(user_id: current_user.id)
+    @orders = Order.where(user_id: current_user.id).includes(:freemarket).limit(10).order('id DESC')
   end
 
   def list
-    @freemarkets = Freemarket.where(user_id: current_user.id)
+    @freemarkets = Freemarket.where(user_id: current_user.id, status: 1).limit(10).order('id DESC')
   end
 
   def complete
