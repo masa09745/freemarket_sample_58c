@@ -6,15 +6,15 @@ class UsersController < ApplicationController
 
   def show
   end
-  
+
   def profile
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
     user = User.find(params[:id])
-    if user.update(user_params)
-      redirect_to profile_users_path(user)
+    if user.update(profile_params)
+      redirect_to profile_user_path(user)
       flash[:notice] = '変更しました'
     else
       render 'profile'
@@ -25,14 +25,22 @@ class UsersController < ApplicationController
   def logout
   end
 
+  def purchased
+    @order = Order.find_by(user_id: current_user.id)
+  end
+
   def list
     @freemarkets = Freemarket.where(user_id: current_user.id)
   end
-  
-  
+
+  def complete
+    @freemarkets = Freemarket.where(user_id: current_user.id, status: 2).limit(10).order('id DESC')
+  end
+
   private
 
-  def user_params
+  def profile_params
     params.require(:user).permit(:nickname, :profile_content)
   end
+
 end
