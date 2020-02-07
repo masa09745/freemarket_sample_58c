@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_one :deliver_address ,dependent: :destroy
   accepts_nested_attributes_for :deliver_address, allow_destroy: true
   
-
+  has_many :orders
   has_many :cards
 
 
