@@ -35,7 +35,7 @@
 #### Association
 
 - has_one :deliver_address
-- has_one :cards
+- has_many :cards
 - has_many :orders
 - has_many :freemarkets
 
