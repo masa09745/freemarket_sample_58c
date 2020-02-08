@@ -13,7 +13,7 @@
       .goods-main
         .goods-photo
           .goods-photo__main
-            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+            = image_tag @freemarket.item_images[0].image_url.url, size:'300x300' 
           .goods-photo__sub
             - @freemarket.item_images.each.with_index do |item_image, index|
               = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
@@ -79,7 +79,7 @@
       .goods-main
         .goods-photo
           .goods-photo__main
-            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+            = image_tag @freemarket.item_images[0].image_url.url, size:'300x300' 
           .goods-photo__sub
             - @freemarket.item_images.each.with_index do |item_image, index|
               = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
