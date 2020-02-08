@@ -42,9 +42,9 @@ crumb :categories do
   parent :root
 end
 
-crumb :categories do
-  link 'カテゴリー一覧', categories_path
-  parent :root
+crumb :show do
+  link '本人確認情報', user_show_path
+  parent :users
 end
 
 crumb :category do |category|
