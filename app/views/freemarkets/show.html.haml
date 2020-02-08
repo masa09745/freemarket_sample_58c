@@ -11,7 +11,10 @@
       .goods-main
         .goods-photo
           .goods-photo__main
-            = image_tag @freemarket.item_images[0].image_url.url, size:'300x300'
+            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+          .goods-photo__sub
+            - @freemarket.item_images.each.with_index do |item_image, index|
+              = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
         %table.goods-data
           %tr
             %th 出品者
@@ -75,10 +78,10 @@
       .goods-main
         .goods-photo
           .goods-photo__main
-            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300'
-          .goods-photo__main
+            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+          .goods-photo__sub
             - @freemarket.item_images.each.with_index do |item_image, index|
-              = image_tag item_image.image_url.url ,  size:'60x60'
+              = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
         %table.goods-data
           %tr
             %th 出品者
@@ -169,49 +172,6 @@
         .pintarest
           =link_to "#" do
             =icon('fab', 'pinterest',class:'logo-pinterest')
-    .user-items
-      %h2
-        =link_to "#" do
-          = @freemarket.user.nickname
-          さんのその他の出品
-        -if @freemarkets.present?
-          .toppage-main__contents
-            - @freemarkets.each do |freemarket|
-              =link_to freemarket_path(freemarket) do
-                .toppage-main__content
-                  .toppage-main__image
-                    = image_tag freemarket.item_images[0].image_url.url, height:'220', width:'220'
-                    %span
-                      = freemarket.price
-                  .toppage-main__item-name
-                    = freemarket.item
-
-        -# %section.item-content.item3
-        -#   =link_to "#" do
-        -#     .item-content__photo
-        -#       =image_tag @freemarket.item_images[3].image_url.url, height:'220', width:'220'
-        -#     .item-content__detail
-        -#       %h3.item-name
-        -#         テストベッド１
-        -#       .item-box
-        -#         .item-box__price
-        -#           ¥1,000
-        -#         .item-box__like
-        -#           =icon('far', 'heart', class:'icon-like')
-        -#           %span 5
-        -# %section.item-content
-        -#   =link_to "#" do
-        -#     .item-content__photo
-        -#       =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-        -#     .item-content__detail
-        -#       %h3.item-name
-        -#         テストベッド１
-        -#       .item-box
-        -#         .item-box__price
-        -#           ¥1,000
-        -#         .item-box__like
-        -#           =icon('far', 'heart', class:'icon-like')
-        -#           %span 5
-
   = render partial: 'shared/footertop'
   = render partial: 'shared/footer'
+
