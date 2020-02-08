@@ -8,7 +8,7 @@ crumb :users do
 end
 
 crumb :profiles do
-  link 'プロフィール', profile_users_path
+  link 'プロフィール', profile_user_path
   parent :users
 end
 
@@ -42,6 +42,10 @@ crumb :categories do
   parent :root
 end
 
+crumb :show do
+  link '本人確認情報', user_show_path
+  parent :users
+end
 
 crumb :category do |category|
   link category.category_name, category_path(category)
