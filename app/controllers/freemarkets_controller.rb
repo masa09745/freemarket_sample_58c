@@ -9,7 +9,7 @@ class FreemarketsController < ApplicationController
     @freemarket = Freemarket.includes(:user).find(params[:id])
     prefecture = Prefecture.all
 
-    if Freemarket.where(status: 2)
+    if @freemarket = Freemarket.where(status: "2")
       redirect_to root_path
     end
   end
