@@ -1,4 +1,5 @@
 - breadcrumb :lists
+= content_for(:html_title) { '出品した商品 - 出品中 - Fmarket' }
 .header
   = render "shared/header"
   = render 'shared/breadcrumb'
@@ -11,7 +12,7 @@
     %ul.list-contents__tabs
       %li.active
         %h3
-          =link_to "" do
+          =link_to list_users_path do
             出品中
       %li
         %h3
