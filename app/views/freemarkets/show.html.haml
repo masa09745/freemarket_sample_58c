@@ -1,5 +1,7 @@
+- breadcrumb :items
 .content
   =render "shared/header"
+  =render 'shared/breadcrumb'
   - if user_signed_in? && current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
@@ -11,7 +13,10 @@
       .goods-main
         .goods-photo
           .goods-photo__main
-            = image_tag @freemarket.item_images[0].image_url.url, size:'300x300'
+            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+          .goods-photo__sub
+            - @freemarket.item_images.each.with_index do |item_image, index|
+              = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
         %table.goods-data
           %tr
             %th 出品者
@@ -74,6 +79,10 @@
       .goods-main
         .goods-photo
           .goods-photo__main
+            = image_tag @freemarket.item_images[1].image_url.url, size:'300x300' 
+          .goods-photo__sub
+            - @freemarket.item_images.each.with_index do |item_image, index|
+              = image_tag item_image.image_url.url ,  size:'60x60',class: "image-sub"
         %table.goods-data
           %tr
             %th 出品者
@@ -108,20 +117,16 @@
             %td
               = @freemarket.ship_day
       .price-box
-        %span.price-box__cash 
+        %span.price-box__cash
           ¥
           = @freemarket.price.to_s(:delimited)
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
-
       =link_to buy_freemarket_path, class:"buy-btn" do
         購入画面に進む
       .goods-detail
         %p.goods-detail_comment
-          これはテスト商品です。
-
-          テストのために出品しました。
-          新品未使用となります。
+          = @freemarket.description
       .btn-box
         .btn-box__left
           =link_to "#", class:"btn btn-good" do
@@ -167,63 +172,5 @@
         .pintarest
           =link_to "#" do
             =icon('fab', 'pinterest',class:'logo-pinterest')
-    .user-items
-      %h2
-        =link_to "#" do
-          テストさんのその他の出品
-      .user-items__main
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content.item3
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-        %section.item-content
-          =link_to "#" do
-            .item-content__photo
-              =image_tag "bed.jpg", class:"item-photo", height:'220', width:'220'
-            .item-content__detail
-              %h3.item-name
-                テストベッド１
-              .item-box
-                .item-box__price
-                  ¥1,000
-                .item-box__like
-                  =icon('far', 'heart', class:'icon-like')
-                  %span 5
-
   = render partial: 'shared/footertop'
   = render partial: 'shared/footer'
