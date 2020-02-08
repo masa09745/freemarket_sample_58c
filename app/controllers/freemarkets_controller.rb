@@ -8,6 +8,10 @@ class FreemarketsController < ApplicationController
   def show
     @freemarket = Freemarket.includes(:user).find(params[:id])
     prefecture = Prefecture.all
+
+    if Freemarket.where(status: 2)
+      redirect_to root_path
+    end
   end
 
   def new
