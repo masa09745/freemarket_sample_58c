@@ -1,6 +1,6 @@
 .content
   =render "shared/header"
-  - if  user_signed_in? && current_user.id == @freemarket.user_id
+  - if user_signed_in? && current_user.id == @freemarket.user_id
     %section.content-main
       %h1.goods-name
         = @freemarket.item
@@ -50,14 +50,13 @@
               = @freemarket.ship_day
     .edit
       .edit-form
-        %button{class:'form-btn edit-btn'}
-          %span 商品編集する
-        %p
-          or
+        = link_to edit_freemarket_path do
+          %button{class:'form-btn edit-btn'}
+            %span 商品編集する
+        %p or
         %button{class:'form-btn gray-btn comment-send'}
           %span 出品を一時停止する
-        %button{class:'form-btn gray-btn comment-send'}
-          %span この商品を削除する
+        = button_to 'この商品を削除する', freemarket_path(@freemarket.id), { method: :delete, id:'item-delete', class:'form-btn gray-btn', data: { confirm: '本当に削除しますか？'} }
     .message
       .message-box
       .message-form
@@ -104,7 +103,6 @@
             %th 配送料の負担
             %td
               = @freemarket.ship_charge
-              
           %tr
             %th 配送の方法
             %td フリマらくらく便
@@ -122,7 +120,7 @@
           = @freemarket.price
         %span.price-box__tax (税込)
         %span.price-box_shipping 送料込み
-      .buy-btn
+      =link_to "" class:"buy-btn" do
         購入画面に進む
       .goods-detail
         %p.goods-detail_comment

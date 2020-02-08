@@ -12,9 +12,6 @@ Rails.application.routes.draw do
       get 'buy', to: 'freemarkets#buy'
       get 'item', to: 'freemarkets#item'
     end
-    member do
-      get 'exhibit', to: 'freemarkets#exhibit'
-    end
   end
 
   scope :mypage do
