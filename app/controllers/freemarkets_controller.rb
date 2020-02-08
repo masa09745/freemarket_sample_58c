@@ -38,7 +38,7 @@ class FreemarketsController < ApplicationController
     @freemarket = Freemarket.find(params[:id])
       if @freemarket.user_id == current_user.id
         @freemarket.update(freemarket_edit_params)
-        redirect_to  list_users_path
+        redirect_to freemarket_path
       end
   end
 
