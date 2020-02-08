@@ -1,5 +1,4 @@
-- breadcrumb :lists
-= content_for(:html_title) { '出品した商品 - 出品中 - Fmarket' }
+= content_for(:html_title) { '出品した商品 - 売却済み - Fmarket' }
 .header
   = render "shared/header"
   = render 'shared/breadcrumb'
@@ -10,15 +9,15 @@
     %h2.list-contents__index
       出品した商品
     %ul.list-contents__tabs
-      %li.active
+      %li
         %h3
           =link_to list_users_path do
             出品中
       %li
         %h3
-          =link_to "" do
+          =link_to '#' do
             取引中
-      %li
+      %li.active
         %h3
           =link_to complete_users_path do
             売却済み
@@ -27,7 +26,7 @@
         - if @freemarkets.present?
           - @freemarkets.each do |freemarket|
             %li.list-contents__inner-item
-              =link_to freemarket_path(freemarket), class:"inner-item" do
+              =link_to '#', class:'inner-item' do
                 .inner-item__image
                   = image_tag freemarket.item_images[0].image_url.url, size:'55x55'
                 .inner-item__namebox
@@ -40,4 +39,4 @@
                   =icon('fas', 'chevron-right')
         - else
           %li.list-contents__inner-noitem
-            出品中の商品がありません
+            売却済みの商品がありません

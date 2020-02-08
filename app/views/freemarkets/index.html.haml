@@ -47,15 +47,27 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            =link_to freemarket_path(freemarket) do
+            - if user_signed_in? 
               -if freemarket.user_id != current_user.id
                 .toppage-main__content
+                  = link_to freemarket_path(freemarket) do
+                    .toppage-main__image
+                      = image_tag freemarket.item_images[0].image_url.url
+                      %span
+                        = freemarket.price
+                    .toppage-main__item-name
+                      = freemarket.item
+            - else
+              .toppage-main__content
+                = link_to freemarket_path(freemarket) do
                   .toppage-main__image
                     = image_tag freemarket.item_images[0].image_url.url
                     %span
                       = freemarket.price
                   .toppage-main__item-name
                     = freemarket.item
+
+
 
     .toppage-main__category-name
       .toppage-main__text
@@ -65,14 +77,25 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            -if freemarket.user_id != current_user.id
+            - if user_signed_in? 
+              -if freemarket.user_id != current_user.id
+                .toppage-main__content
+                  = link_to freemarket_path(freemarket) do
+                    .toppage-main__image
+                      = image_tag freemarket.item_images[0].image_url.url
+                      %span
+                        = freemarket.price
+                    .toppage-main__item-name
+                      = freemarket.item
+            - else
               .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+                = link_to freemarket_path(freemarket) do
+                  .toppage-main__image
+                    = image_tag freemarket.item_images[0].image_url.url
+                    %span
+                      = freemarket.price
+                  .toppage-main__item-name
+                    = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
@@ -82,15 +105,26 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-        - @freemarkets.each do |freemarket|
-          -if freemarket.user_id != current_user.id
-            .toppage-main__content
-              .toppage-main__image
-                = image_tag freemarket.item_images[0].image_url.url
-                %span
-                  = freemarket.price
-              .toppage-main__item-name
-                = freemarket.item
+          - @freemarkets.each do |freemarket|
+            - if user_signed_in? 
+              -if freemarket.user_id != current_user.id
+                .toppage-main__content
+                  = link_to freemarket_path(freemarket) do
+                    .toppage-main__image
+                      = image_tag freemarket.item_images[0].image_url.url
+                      %span
+                        = freemarket.price
+                    .toppage-main__item-name
+                      = freemarket.item
+            - else
+              .toppage-main__content
+                = link_to freemarket_path(freemarket) do
+                  .toppage-main__image
+                    = image_tag freemarket.item_images[0].image_url.url
+                    %span
+                      = freemarket.price
+                  .toppage-main__item-name
+                    = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
@@ -100,14 +134,25 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            -if freemarket.user_id != current_user.id
+            - if user_signed_in?
+              -if freemarket.user_id != current_user.id
+                .toppage-main__content
+                  = link_to freemarket_path(freemarket) do
+                    .toppage-main__image
+                      = image_tag freemarket.item_images[0].image_url.url
+                      %span
+                        = freemarket.price
+                    .toppage-main__item-name
+                      = freemarket.item
+            - else
               .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+                = link_to freemarket_path(freemarket) do
+                  .toppage-main__image
+                    = image_tag freemarket.item_images[0].image_url.url
+                    %span
+                      = freemarket.price
+                  .toppage-main__item-name
+                    = freemarket.item
 
   .toppage-main__category-top
     人気のブランド
@@ -130,10 +175,8 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-        - @freemarkets.each do |freemarket|
-          -if freemarket.user_id != current_user.id
+          - @freemarkets.each do |freemarket|
             .toppage-main__content
-
               .toppage-main__image
                 = image_tag freemarket.item_images[0].image_url.url
                 %span
@@ -148,10 +191,8 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-        - @freemarkets.each do |freemarket|
-          -if freemarket.user_id != current_user.id
+          - @freemarkets.each do |freemarket|
             .toppage-main__content
-
               .toppage-main__image
                 = image_tag freemarket.item_images[0].image_url.url
                 %span
@@ -166,10 +207,8 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-        - @freemarkets.each do |freemarket|
-          -if freemarket.user_id != current_user.id
+          - @freemarkets.each do |freemarket|
             .toppage-main__content
-
               .toppage-main__image
                 = image_tag freemarket.item_images[0].image_url.url
                 %span
@@ -184,10 +223,8 @@
           = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
       .toppage-main__item
         .toppage-main__contents
-        - @freemarkets.each do |freemarket|
-          -if freemarket.user_id != current_user.id
+          - @freemarkets.each do |freemarket|
             .toppage-main__content
-
               .toppage-main__image
                 = image_tag freemarket.item_images[0].image_url.url
                 %span

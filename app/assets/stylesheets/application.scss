@@ -24,13 +24,13 @@
 @import 'layouts/identification';
 @import 'layouts/profile';
 @import 'layouts/card';
-@import "modules/registration";
-@import "modules/regi_header";
+@import 'modules/registration';
+@import 'modules/regi_header';
 @import 'layouts/item_new';
 @import 'layouts/categories';
 @import 'layouts/list';
 @import 'layouts/item_edit';
-
+@import 'layouts/purchased';
 
 body {
   position: relative;

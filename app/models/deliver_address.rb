@@ -1,5 +1,6 @@
 class DeliverAddress < ApplicationRecord
   belongs_to :user
+  has_many :orders
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
