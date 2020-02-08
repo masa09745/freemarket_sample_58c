@@ -175,22 +175,13 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            - if user_signed_in? && freemarket.user_id != current_user.id
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
-            - else
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+            .toppage-main__content
+              .toppage-main__image
+                = image_tag freemarket.item_images[0].image_url.url
+                %span
+                  = freemarket.price
+              .toppage-main__item-name
+                = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
@@ -200,22 +191,13 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            - if user_signed_in? && freemarket.user_id != current_user.id
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
-            - else
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+            .toppage-main__content
+              .toppage-main__image
+                = image_tag freemarket.item_images[0].image_url.url
+                %span
+                  = freemarket.price
+              .toppage-main__item-name
+                = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
@@ -225,22 +207,13 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            - if user_signed_in? && freemarket.user_id != current_user.id
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
-            - else
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+            .toppage-main__content
+              .toppage-main__image
+                = image_tag freemarket.item_images[0].image_url.url
+                %span
+                  = freemarket.price
+              .toppage-main__item-name
+                = freemarket.item
 
     .toppage-main__category-name
       .toppage-main__text
@@ -250,22 +223,13 @@
       .toppage-main__item
         .toppage-main__contents
           - @freemarkets.each do |freemarket|
-            - if user_signed_in? && freemarket.user_id != current_user.id
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
-            - else
-              .toppage-main__content
-                .toppage-main__image
-                  = image_tag freemarket.item_images[0].image_url.url
-                  %span
-                    = freemarket.price
-                .toppage-main__item-name
-                  = freemarket.item
+            .toppage-main__content
+              .toppage-main__image
+                = image_tag freemarket.item_images[0].image_url.url
+                %span
+                  = freemarket.price
+              .toppage-main__item-name
+                = freemarket.item
 
   =render "/shared/sellbutton"
 .footertop
