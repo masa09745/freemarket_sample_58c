@@ -11,45 +11,51 @@
 
 ### users table
 
-| Column          | Type     | Options                                |
-| --------------- | -------- | -------------------------------------- |
-| nickname        | string   | null: false                            |
-| email           | string   | null: false, unique: true, index: true |
-| password        | string   | null: false                            |
-| mobile          | string   | null: true                             |
-| last_name       | string   | null: false                            |
-| first_name      | string   | null: false                            |
-| last_name_kana  | string   | null: false                            |
-| first_name_kana | string   | null: false                            |
-| birth_year      | integer  | null: false                            |
-| birth_month     | integer  | null: false                            |
-| birth_day       | integer  | null: false                            |
-| postal_code     | integer  | null: true                             |
-| prefecture      | integer  | null: true                             |
-| city            | string   | null: true                             |
-| address         | string   | null: true                             |
-| building_name   | string   | null: true                             |
-| profile_content | text     | null: true                             |
-| deleted_at      | datetime | null: true                             |
+| Column              | Type   | Options                                |
+| ------------------- | ------ | -------------------------------------- |
+| nickname            | string | null: true                             |
+| email               | string | null: true                             |
+| last_name           | string | null: true                             |
+| first_name          | string | null: true                             |
+| last_name_kana      | string | null: true                             |
+| first_name_kana     | string | null: true                             |
+| birthday            | date   | null: true                             |
+| user_postal_code    | string | null: true                             |
+| user_prefecture     | string | null: true                             |
+| user_city           | string | null: true                             |
+| user_street_address | string | null: true                             |
+| user_building_name  | string | null: true      v                      |
+| user_phone          | string | null: true                             |
+| profile_content     | text   | null: true                             |
 
 #### Association
 
-- has_one :deliver_address
+- has_one :deliver_address ,dependent: :destroy
+- accepts_nested_attributes_for :deliver_address, allow_destroy: true
 - has_many :cards
 - has_many :orders
 - has_many :freemarkets
+- has_many :sns_credentials ,dependent: :destroy
+
+### sns_credential table
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| provider | string     |                                |
+| uid      | string     |                                |
+| user_id  | references |                                |
+
+#### Association
+
+- belongs_to :user
+
 
 ### deliver_addresses table
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| user_id         | references | null: false, foreign_key: true |
-| last_name       | string     | null: false                    |
-| first_name      | string     | null: false                    |
-| last_name_kana  | string     | null: false                    |
-| first_name_kana | string     | null: false                    |
-| postal_code     | integer    | null: false                    |
-| prefecture      | integer    | null: false                    |
+| postal_code     | string     | null: false                    |
+| prefecture_id   | string     | null: false                    |
 | city            | string     | null: false                    |
 | street_address  | string     | null: false                    |
 | building_name   | string     | null: true                     |
@@ -58,7 +64,8 @@
 #### Association
 
 - belongs_to :user
-- belongs_to :order
+- has_many :orders
+- belongs_to_active_hash :prefecture
 
 #### Description
 
@@ -82,15 +89,15 @@
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| user_id     | references | null: false, foreign_key: true |
 | item        | string     | null: false                    |
 | price       | integer    | null: false                    |
 | condition   | string     | null: false                    |
 | ship_charge | string     | null: false                    |
-| ship_from   | string     | null: false, default: 0        |
+| ship_from   | string     | null: false,                   |
 | ship_day    | string     | null: false                    |
 | description | text       | null: false                    |
 | status      | integer    | null: false, default: 1        |
+| user_id     | references | null: false, foreign_key: true |
 | category_id | references | null: false, foreign_key: true |
 | size_id     | references | null: false, foreign_key: true |
 | brand_id    | references | null: false, foreign_key: true |
@@ -98,11 +105,9 @@
 #### Association
 
 - belongs_to :user
-- belongs_to :category
-- belongs_to :size
-- belongs_to :brand
 - has_many :orders
 - has_many :item_images, dependent: :destroy
+- accepts_nested_attributes_for :item_images, allow_destroy: true
 
 #### Description
 
@@ -128,9 +133,6 @@
 
 #### Association
 
-- has_many :sizes, through: categories_sizes
-- has_many :categories_sizes
-- has_many :freemarkets
 - has_ancestry
 
 #### Description
@@ -142,10 +144,9 @@
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| user_id     | references | null: false, foreign_key: true |
 | customer_id | string     | null: false                    |
 | card_id     | string     | null: false                    |
-
+| user_id     | references | null: false, foreign_key: true |
 #### Association
 
 - belongs_to :user
