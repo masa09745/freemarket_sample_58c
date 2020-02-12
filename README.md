@@ -24,7 +24,7 @@
 | user_prefecture     | string | null: true                             |
 | user_city           | string | null: true                             |
 | user_street_address | string | null: true                             |
-| user_building_name  | string | null: true      v                      |
+| user_building_name  | string | null: true                             |
 | user_phone          | string | null: true                             |
 | profile_content     | text   | null: true                             |
 
