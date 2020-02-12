@@ -138,40 +138,6 @@
 - カテゴリを多階層に分けて管理する"ancestry"という gem 利用前提の設計。（経路列挙モデル）
 - 階層化したいカテゴリは db/seed.rb に記述する。
 
-### sizes table
-
-| Column    | Type   | Options                   |
-| --------- | ------ | ------------------------- |
-| item_size | string | null: false, unique: true |
-
-#### Association
-
-- has_many :categories, through: categories_sizes
-- has_many :categories_sizes
-- has_many :freemarkets
-
-### categories_sizes table
-
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| category_id | references | null: false, foreign_key: true |
-| size_id     | references | null: false, foreign_key: true |
-
-#### Association
-
-- belongs_to :category
-- belongs_to :size
-
-### brands table
-
-| Column     | Type   | Options                   |
-| ---------- | ------ | ------------------------- |
-| brand_name | string | null: false, unique: true |
-
-#### Association
-
-- has_many :freemarkets
-
 ### cards table
 
 | Column      | Type       | Options                        |
