@@ -147,10 +147,7 @@
 | customer_id | string     | null: false                    |
 | card_id     | string     | null: false                    |
 | user_id     | references | null: false, foreign_key: true |
+
 #### Association
 
 - belongs_to :user
-
-### reviews table
-
-- 実装段階で検討。実装必須機能ではない。
