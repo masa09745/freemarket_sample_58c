@@ -24,7 +24,7 @@
 | user_prefecture     | string | null: true                             |
 | user_city           | string | null: true                             |
 | user_street_address | string | null: true                             |
-| user_building_name  | string | null: true      v                      |
+| user_building_name  | string | null: true                             |
 | user_phone          | string | null: true                             |
 | profile_content     | text   | null: true                             |
 
@@ -147,10 +147,7 @@
 | customer_id | string     | null: false                    |
 | card_id     | string     | null: false                    |
 | user_id     | references | null: false, foreign_key: true |
+
 #### Association
 
 - belongs_to :user
-
-### reviews table
-
-- 実装段階で検討。実装必須機能ではない。
