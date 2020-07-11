@@ -1,6 +1,6 @@
 # config valid only for current version of Capistrano
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
-lock '3.11.2'
+lock '3.14.1'
 
 # Capistranoのログの表示に利用する
 set :application, 'freemarket_sample_58c'
@@ -15,7 +15,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['publickey'], keys: ['~/.ssh/mercari_team_c.pem'] 
+set :ssh_options, auth_methods: ['publickey'], keys: ['~/.ssh/freemarket_o58c.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -39,16 +39,4 @@ namespace :deploy do
     invoke 'unicorn:stop'
     invoke 'unicorn:start'
   end
-
-  # desc 'upload secrets.yml'
-  # task :upload do
-  #   on roles(:app) do |host|
-  #     if test "[ ! -d #{shared_path}/config ]"
-  #       execute "mkdir -p #{shared_path}/config"
-  #     end
-  #     upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
-  #   end
-  # end
-  # before :starting, 'deploy:upload'
-  # after :finishing, 'deploy:cleanup'
 end
