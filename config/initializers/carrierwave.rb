@@ -13,8 +13,8 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
 
-    config.fog_directory  = '58.mercari.wc'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/58.mercari.wc'
+    config.fog_directory  = 'freemarket-o58wc'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-o58wc'
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
