@@ -130,15 +130,15 @@
       .btn-box
         .btn-box__left
           =link_to "#", class:"btn btn-good" do
-            =icon('fas', 'heart')
+            %i.fas.fa-heart
             %span いいね
             %span.good-count 1
           =link_to "#", class:"btn btn-report" do
-            =icon('fas', 'flag')
+            %i.fas.fa-flag
             %span 不適切な商品の報告
         .btn-box__right
           =link_to "#", class:"btn btn-lock" do
-            =icon('fas', 'lock')
+            %i.fas.fa-lock
             %span あんしん・あんぜんへの取り組み
     .message
       .message-box
@@ -152,25 +152,25 @@
     .another-goods
       .another-goods__back
         =link_to "#" do
-          =icon('fas', 'chevron-left')
+          %i.fas.fa-chevron-left
           テスト戻る
       .another-goods__next
         =link_to "#" do
           テスト進む
-          =icon('fas', 'chevron-right')
+          %i.fas.fa-chevron-right
     .sns-links
       .sns-links__box
         .facebook
           =link_to "#" do
-            =icon('fab', 'facebook-square',class:'logo-facebook')
+            %i.fab.fa-facebook-square.logo-facebook
         .twetter
           =link_to "#" do
-            =icon('fab', 'twitter',class:'logo-twitter')
+            %i.fab.fa-twitter.logo-twitter
         .line
           =link_to "#" do
-            =icon('fab', 'line',class:'logo-line')
-        .pintarest
+            %i.fab.fa-line.logo-line
+        .pinterest
           =link_to "#" do
-            =icon('fab', 'pinterest',class:'logo-pinterest')
+            %i.fab.fa-pinterest.logo-pinterest
   = render partial: 'shared/footertop'
   = render partial: 'shared/footer'
