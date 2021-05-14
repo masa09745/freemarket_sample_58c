@@ -23,12 +23,6 @@
     .toppage-button__main-link {
       text-decoration: none;
       color: white;
-      &::after {
-        @include fa-icon($icon: '\f030', $color: white, $wg: 900);
-        @include media('sp') {
-          @include fa-icon($icon: '\f030', $color: white, $wg: 900, $size: 2em);
-        }
-      }
     }
     @include media('sp') {
       width: 80px;

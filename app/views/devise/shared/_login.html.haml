@@ -6,11 +6,11 @@
   .login-main__middle
     = link_to user_facebook_omniauth_authorize_path, method: :post do
       .btn-sns.btn-sns__facebook
-        =icon('fab', 'facebook',class:"icon--facebook")
+        %i.fab.fa-facebook.icon--facebook
         = "Facebookでログイン"
     = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
       .btn-sns.btn-sns__google
-        =icon('fab', 'google',class:"icon--google")
+        %i.fab.fa-google.icon--google
         = "Googleでログイン"
   .login-main__under
     .form__field      

@@ -38,19 +38,19 @@
         - if user_signed_in?
           .lwr-user__like
             =link_to"",class:"login-menu" do
-              %i.far.fa-heart.icon-header
+              %i.far.fa-heart
               %span いいね！一覧
           .lwr-user__notice
             =link_to"",class:"login-menu" do
-              %i.far.fa-bell.icon-header
+              %i.far.fa-bell
               %span お知らせ
           .lwr-user__todo
             =link_to"",class:"login-menu" do
-              %i.fas.fa-check.icon-header
+              %i.fas.fa-check
               %span やることリスト
           .lwr-user__mypage
             =link_to  users_path,class:"login-menu" do
-              %i.far.fa-user.icon-header
+              %i.far.fa-user
               %span マイページ
         - else
           .lwr-user__new
