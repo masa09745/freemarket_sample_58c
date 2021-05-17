@@ -38,7 +38,7 @@
             = f.label '都道府県', class: 'indentification-content__prefecture'
             %span.indentification-content__arbitrary 任意
             .indentification-content__select
-              =icon('fas', 'chevron-down',class:"down-icon")
+              %i.fas.fa-chevron-down.down-icon
               = f.collection_select :ship_from, Prefecture.all, :id, :name, {include_blank: '---'}, {class: 'pulldown'}
             .indentification-content__group
               = f.label '市区町村', class: 'indentification-content__postcode'

@@ -18,7 +18,7 @@ require("slider.js")
 require("slick.min.js")
 require("balloon.js")
 require("detail_image.js")
-require("editimage.js")
+require("new_item.js")
 require("payjp.js")
 require("pricesum.js")
 
